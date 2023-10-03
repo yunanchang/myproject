@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav {
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+        }
+
+        table,
+        tr,
+        td {
+            /* width: 100%  ; */
+            border: 1px solid black;
+            border-collapse: separate;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            vertical-align: text-top;
+        }
+
+        .h-20 {
+            height: 20vh;
+        }
+
+        .h-70 {
+            /* vh viewpoint */
+            height: 70vh;
+        }
+
+        .h-90 {
+            /* vh viewpoint */
+            height: 90vh;
+        }
+
+
+
+        .w-25 {
+            width: 25%;
+        }
+
+        .w-30 {
+            width: 30%;
+        }
+
+        .w-50 {
+            width: 50%;
+        }
+
+        .text-red {
+            color: red;
+        }
+
+        .top {
+            /* background-color: red; */
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navigation -->
+    <div class="nav">
+        <a href="#item1">康乃爾筆記</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#item2">東大筆記</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#item3">麥肯錫筆記</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+    <div id="item1"></div>
+    <div class="container">
+        <a href="#" class="top">top</a>
+        <h3>康乃爾筆記</h3>
+        <table>
+            <tr>
+                <td class="h-70 w-30">
+                    <h4 class="text-red">Lorem, ipsum dolor.</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam eveniet qui perferendis dicta
+                        ipsum consectetur, repellendus id cumque deleniti ad.
+                    </p>
+                </td>
+                <td class="h-70">
+                    <h4 class="text-red">Lorem, ipsum dolor.</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam eveniet qui perferendis dicta
+                        ipsum consectetur, repellendus id cumque deleniti ad.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="h-20">
+                    <h4>Lorem, ipsum dolor.</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam eveniet qui perferendis dicta
+                        ipsum consectetur, repellendus id cumque deleniti ad.
+                    </p>
+                </td>
+                <!-- <td>22</td> -->
+            </tr>
+        </table>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div id="item2"></div>
+    <div class="container">
+        <a href="#" class="top">top</a>
+        <h3>東大筆記</h3>
+        <table>
+            <tr>
+                <td class="w-50 h-90">11</td>
+                <td class="w-25">12</td>
+                <td>13</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div id="item3"></div>
+    <div class="container">
+        <a href="#" class="top">top</a>
+        <h3>麥肯錫筆記</h3>
+        <table>
+            <tr>
+                <td colspan="3" class="h-20">01</td>
+                <!-- <td>02</td>
+                <td>03</td> -->
+            </tr>
+            <tr>
+                <td class="w-50 h-70">11</td>
+                <td class="w-25">12</td>
+                <td>13</td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
