@@ -9,32 +9,30 @@
         table,
         tr,
         td {
+            /* width: 100%  ; */
             border: 1px solid black;
             border-collapse: collapse;
             text-align: center;
+            background-color:lightcyan;
+
         }
 
         table {
-            width: 100%;
+            width: 80%;
         }
-
+        td {
+            vertical-align: text-top;
+        }
         td {
             height: 25vh;
         }
-
-        .no-border-top {
-            border-top: 0px;
-        }
-           td {
-            vertical-align: text-top;
-        }
+        .no-border-top{border-top: 0px;}
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h3>獲利時代</h3>
-        <table>
+        <table >
             <tr>
                 <td rowspan="2">11</td>
                 <td>12</td>
@@ -49,12 +47,12 @@
                 <td>24</td>
                 <!-- <td>25</td> -->
             </tr>
-
         </table>
+     
         <table class="no-border-top">
-            <tr class="no-border-top">
-                <td class="no-border-top">31</td>
-                <td class="no-border-top">33</td>
+            <tr class="no-border-top" >
+                <td class="no-border-top"></td>
+                <td class="no-border-top"></td>
             </tr>
         </table>
     </div>
