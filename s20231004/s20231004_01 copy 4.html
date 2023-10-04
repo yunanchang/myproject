@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+        .nav a:hover{
+            color: white;
+        }
+        .nav a:active{
+            font-size: 200%;
+        }
+        table:hover,
+        tr:hover,
+        td:hover {
+            background: linear-gradient(to right, red, yellow);
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+        }
+
+        td {
+            width: 50%;
+            height: 80vh;
+        }
+
+        iframe {
+            width: 90%;
+            height: 90%;
+        }
+        .nav{margin: auto;text-align: center;}
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+    <a href="#youtube">youtube</a>
+    <a href="#googlemap">googlemap</a>
+</div>
+    <div class="container">
+        
+        <table>
+            <!-- <h3>youtube</h3> -->
+            <tr>
+   
+                <td> <div id="youtube">youtube</div>
+                    <iframe width="300" height="200" src="https://www.youtube.com/embed/5aiqWiwHWkQ?si=HIPlePDAHp-9wF1X"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div id="googlemap">googlemap</div>
+                    <!-- <h3>googlemap</h3> -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14488.22690775814!2d121.24454626977536!3d24.793511000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34683e0508718fd5%3A0x7294bb3cf92f4ced!2z55-z54mb5bGx!5e0!3m2!1szh-TW!2stw!4v1696389439556!5m2!1szh-TW!2stw"
+                        width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

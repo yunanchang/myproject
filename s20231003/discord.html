@@ -14,13 +14,14 @@
         td,
         tr {
             width: 700px;
-            border: 1px solid blue;
+            
             margin: auto;
         }
         .w-40{width:40vw;}
         .w-60{width:60vw;}
 
-        table{background-color: aqua;}
+        table{background-color: aqua;border: 1px solid blue;}
+        label{margin-left: -25%;}
     </style>
 </head>
 
@@ -32,11 +33,11 @@
                 <td class="w-60">
                     <h3>歡迎回來</h3>
                     <p>我們很高興又見到你:)</p>
-                   <p> Name</p>
-                    <input type="text">
+                   <p> <label for="Name">NAME</label></p>
+                    <input type="text" id="Name">
                 
-                    <p> Mobile</p> 
-                    <input type="text"></p> 
+                    <p> <label for="Mobile">Mobile</label></p> 
+                    <input type="text" id="Mobile"></p> 
 
                     <input type="reset" value="重整">
                     <input type="submit" value="送出">
