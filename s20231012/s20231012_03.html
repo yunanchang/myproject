@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,tr,th,td{border:1px solid black}
+        table{width:100%;}
+ 
+        /* .money{background-color: aqua;} */
+        .money::before{content: "$";}
+        .money::after{content:"元"}
+        .status::after{content: "%";}
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <th width="20%">name</th>
+                <th width="25%">bonus</th>
+                <th width="25%">績效</th>
+                <th>set</th>
+            </tr>
+            <tr>
+                <td>amy</td>
+                <td class="money">500</td>
+                <td class="status">80</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>bob</td>
+                <td class="money">200</td>
+                <td class="status">50</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>alex</td>
+                <td class="money">200</td>
+                <td class="status">50</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <form action="">
+        <p>
+            <label for=""></label>
+            <input type="text">
+        </p>
+
+    </form>
+</body>
+</html>
