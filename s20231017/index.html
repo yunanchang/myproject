@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            margin-top: 100px;
+
+        }
+
+        table {
+            width: 100%;
+
+        }
+
+        table,
+        tr,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        /* 定义偶数行的背景颜色 */
+        tr:nth-child(even) {
+            background-color: #b96e6e;
+        }
+
+        .container {
+            text-align: right;
+        }
+
+        .container h3 {
+            text-align: center;
+        }
+
+        .text-right  a {
+            text-decoration: none;
+         
+            background-color: rgb(12, 185, 170);
+        }
+        .text-right> a {
+            text-decoration: none;
+            text-align: right;
+            background-color: rgb(185, 145, 12);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-right">
+        <h3>table</h3>
+        <a href="./create.html">Add</a>
+        <table>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>moblie</th>
+                <th>pic</th>
+
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>amy</td>
+                <td>0955-555-555</td>
+                <td><img src="" alt="">
+                    amy.jpg</td>
+                <td><a href="edit.html?id=1">新增</a>
+                <a href="del.html?id=1">刪除</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>bob</td>
+                <td>0989-885-888</td>
+
+                <td>bob.jpg</td>
+                <td><a href="edit.html?id=2">新增</a>
+                <a href="del.html?id=2">刪除</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>allen</td>
+                <td>0955-333-333</td>
+                <td>allen.jpg</td>
+                <td><a href="edit.html?id=3">新增</a>
+                <a href="del.html?id=3">刪除</a></td>
+            </tr>
+
+
+
+
+        </table>
+    </div>
+</body>
+
+</html>

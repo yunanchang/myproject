@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .container{text-align: right;} */
+        span {
+            background-color: lightgreen;
+            text-align: right;
+            height: 10Vh;
+        }
+
+        .displai-block {
+            display: block;
+            height: 5Vh;
+        }
+
+        .box_inline {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px;
+            width: 150px;
+            background-color: yellow;
+            display: inline;
+        }
+
+        .box_block {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px;
+            background-color: yellow;
+            width: 150px;
+            display: block;
+        }
+
+        .box_inline-block {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px;
+            width: 150px;
+            background-color: yellow;
+            display: inline-block;
+        }
+
+
+        /*div原屬性即為block*/
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>block可換行條整大小</h2>
+        <span>111</span>
+        <span style="display: block">222</span>
+        <span>2.5</span>
+        <span>2.6</span>
+        <span class="displai-block">333</span>
+    </div>
+
+    <h5 class="box_inline">556</h5> <h5 class="box_inline">556</h5>
+    <h5 class="box_block">666</h5> <h5 class="box_block">666</h5>
+    <h5 class="box_inline-block">777</h5> <h5 class="box_inline-block">777</h5>
+    
+
+</body>
+
+</html>

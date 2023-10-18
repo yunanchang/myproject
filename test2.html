@@ -1,51 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <style>
-        a:link {
-            color: green;
-            background-color: transparent;
-            text-decoration: none;
+        .flex-container {
+            display: flex;
+            justify-content: space-around;
+            /* 项目水平分布 */
+            align-items: center;
+            /* 项目垂直居中对齐 */
+            height: 200px;
+            /* 容器高度 */
+            border: 2px solid #333;
+            /* 为了可视化效果添加边框 */
         }
-
-        a:visited {
-            color: pink;
-            background-color: transparent;
-            text-decoration: none;
-        }
-
-        a:visited {
-            color: purple;
-            text-decoration: underline;
-        }
-
-        a:hover {
-            color: red;
-            background-color: transparent;
-            text-decoration: underline;
-        }
-
-        a:active {
-            color: yellow;
-            background-color: transparent;
-            text-decoration: underline;
-        }
-        a:visited {
-            color: purple;
-            text-decoration: underline;
+        .grad {
+            height: 20vh;
+  background-image: linear-gradient( 90deg,rgba(104, 62, 158, 0.849), rgb(224, 226, 223));
+}
+        .item {
+            width: 50px;
+            height: 50px;
+            background-color: #007bff;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: ;
         }
     </style>
 </head>
 
 <body>
-
-    <h2>Link Colors</h2>
-
-    <p>You can change the default colors of links</p>
-
-    <a href="html_images.asp" target="_blank">HTML Images</a>
-
+    <div class="flex-container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+<div class="grad">ss</div>
 </body>
 
 </html>
