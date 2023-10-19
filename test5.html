@@ -2,21 +2,31 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Box Shadow 示例</title>
+    <title>使用justify-content: end的示例</title>
     <style>
-        /* 添加样式来创建 box-shadow */
-        .box-with-shadow {
-            width: 200px;
-            height: 200px;
+        .container {
+            background-color: aqua;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            /* 如果 flex-direction 是 'row'，它將彈性項目對齊到右邊。
+               如果 flex-direction 是 'column'，它將彈性項目對齊到底部。 */
+        }
+
+        .item {
+            width: 100px;
+            height: 50px;
             background-color: #3498db;
-            box-shadow: 5px 5px 60px rgba(0, 0, 0, 0.5);
+            margin: 5px;
         }
     </style>
 </head>
 <body>
-    <h1>Box Shadow 示例</h1>
-    <div class="box-with-shadow">
-        这是一个具有阴影效果的方块。
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
     </div>
 </body>
 </html>
