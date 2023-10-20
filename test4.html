@@ -1,86 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Showhand Example</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <style>
         body {
-            background-image: url(../picture/MAINMEWTWO_2000x.jpg);}
-      
-            /* body {
-            background-image: url(../picture/MAINMEWTWO_2000x.jpg);
-        } */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
-        .container {
+.card {
+    width: 150px;
+    height: 200px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+}
 
-            width: 80%;
-            text-align: center;
-            margin: auto;
-        }
+.rank {
+    margin-top: 10px;
+}
 
-        table,
-        tr,
-        td {
-            /* border:1px solid black; */
-            border-collapse: collapse;
-
-        }
-
-        table {
-            margin-top: 25vh;
-            width: 100%;
-        }
-
-        td {
-            height: 50vh;
-            border-radius: 200px;
-        }
-
-        td:hover {
-            background-color: rgba(107, 19, 19, 0);
-            box-shadow: 0 0 0 rgba(0, 0, 0, 0.9);
-
-        }
-
-        .bg-blue {
-            background-color: rgb(45, 114, 114);
-        }
-
-        .bg-pink {
-            background-color: rgb(148, 62, 76);
-        }
-
-        .w-50 {
-            width: 50%;
-        }
-
-        a {
-            text-decoration: none;
-            color: azure;
-            font-size: 60px;
-        }
-
-        body {
-            background-color: #ccc;
-        }
+.suit {
+    font-size: 40px;
+}
     </style>
 </head>
-
 <body>
-    <div class="container">
-        <table>
-            <tr>
-                <td class="bg-blue w-50">
-                    <a href="./student/index.html">student</a>
-                </td>
-                <td class="bg-pink w-50">
-                    <a href="./teacher/index.html">teacher</a>
-                </td>
-            </tr>
-        </table>
+    <div class="card">
+        <div class="rank">A</div>
+        <div class="suit spades">♠</div>
     </div>
 </body>
-
 </html>
