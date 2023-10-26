@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+     .container{display:flex;
+        flex-direction: row;
+        background-color: lightblue;
+        flex-wrap: wrap;
+    width: 50%;
+    /* height: 600px; */
+    justify-content: center;
+    /* align-items: center; */
+
+    /* height: 30vh; */
+}
+
+    .item{
+        margin: 20px;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+
+    /* line-height: 200px; */
+    background-color: rgb(193, 167, 218);
+    
+}
+    .bg-r{       
+    background-color: rgb(223, 103, 70);
+}
+    .bg-g{ 
+    background-color: rgb(144, 179, 146);
+}   
+ .bg-g::before{ 
+   content: "";
+}
+
+
+   </style>
+</head>
+<body>
+    <div class="container">
+  
+        <div class="item bg-g">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item1</div>
+        <div class="item bg-g">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item1</div>
+        <div class="item bg-r">item2</div>
+        <div class="item bg-g">item3</div>
+   
+    </div>
+</body>
+</html>
