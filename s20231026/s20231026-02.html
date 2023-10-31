@@ -1,99 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{margin: auto;}
-        body{margin: auto;
-        text-align: center;
-    background-color: rgb(22, 2, 8);}
-    .header {
+        * {
+            margin: auto;
+        }
+
+        body {
+            margin: auto;
+            text-align: center;
+            background-color: rgb(22, 2, 8);
+        }
+
+        .header {
             width: 100%;
-            height: 2vh;
+            height: 3vh;
             background-color: pink;
         }
 
-        nav{
-            position:sticky;
-            top:10px;
+        nav {
+            text-align: center;
+            position: sticky;
+            top: 10px;
             width: 100%;
             background-color: lightcoral;
             font-size: 30px;
-            
+
         }
-        nav a{text-decoration: none;}
-        .container-1{
-            width:80%;
-            display:flex;
+
+        nav a {
+            text-decoration: none;
+            /* background:#f00; */
+            /* display: block; */
+            display: inline-block;
+        }
+
+        .container-1 {
+            width: 80%;
+            display: flex;
             flex-direction: row;
             justify-content: center;
             height: 70vh;
             background-color: lightblue;
-            background: linear-gradient(to bottom right, #00f, #f00,#00f);
+            background: linear-gradient(to bottom right, #00f, #f00, #00f);
             flex-wrap: wrap;
             align-items: center;
             margin-bottom: 20px;
 
         }
-        .container-2{
-            width:80%;
-            display:flex;
+
+        .container-2 {
+            width: 80%;
+            display: flex;
             flex-direction: row;
             height: 70vh;
             flex-wrap: wrap;
             background-color: rgb(29, 177, 41);
-            background: linear-gradient(to bottom left, #00f,#f00,#00f );
+            background: linear-gradient(to bottom left, #00f, #f00, #00f);
             justify-content: center;
             align-items: center;
         }
+
         .item {
-         
+
             display: flex;
             justify-content: center;
             align-items: center;
             width: 24%;
             /* background-color: lightgray; */
-           
+
             margin: 5px;
             border: 1px solid black;
         }
-        
+
         .container-2 .item {
             width: 24%;
             margin: 5px;
         }
+        nav > img:hover {
+    
+        width: 0vw;
+        opacity: 20%;
+        transition-duration: 3s;
+      }
+      .down{
+        position: fixed; bottom: 150px;right:0; }
+      .down:hover{
+
+        position: fixed; bottom: 150px;left:0;}
     </style>
 </head>
+
 <body>
     <header class="header">
-        pokemon
+        <h2>pokemon</h2>
     </header>
     <nav>
-        <a href="#0">御三家</a>
-        <a href="#1">日月</a>
+        <img src="../picture/pokemon/600px-380Latias-Mega.png" alt=""width='90px'></a>
+        <a href="#0"><img src="../picture/pokemon/600px-491Darkrai.png" alt="" width='90px'></a>
+        <a href="#1"><img src="../picture/pokemon/600px-487Giratina-Origin.png" alt=""width='90px'></a>
+        <img src="../picture/pokemon/600px-381Latios-Mega.png" alt=""width='90px'>
     </nav>
     <div id="0"></div>
     <div class="container-1">
-        <div class="item"><img src="../picture/pokemon/600px-722Rowlet.png" width="200"alt=""><h2 style="background-color: aliceblue;">ss<hr>
-
-        </h2>
-            <p>靠一對柔韌的翅膀悄然無聲地飛行。有著用翅膀將鋒利程度不遜於小刀的羽毛巧妙地發射出去的本領。</div>
-        <div class="item"><img src="../picture/pokemon/600px-723Dartrix.png" width="200"alt="">經常為了積蓄力量而沐浴陽光。吾人推測這是因為當地氣候較為寒冷，然而藏於雙翅中的刃羽鋒利程度並無不同。</div>
-        <div class="item"><img src="../picture/pokemon/600px-724Decidueye.png" width="200"alt="">托弓拉弦射出藏在翅膀裡的箭羽。精準度高到連前方１００米遠的小石頭也能貫穿。</div>
+        <div class="item">
+            <img src="../picture/pokemon/600px-722Rowlet.png" width="200" alt="">
+            <h2 >木木梟</h2>
+            <br>
+            <p>靠一對柔韌的翅膀悄然無聲地飛行。有著用翅膀將鋒利程度不遜於小刀的羽毛巧妙地發射出去的本領。</p>
+        </div>
+        <div class="item"><img src="../picture/pokemon/600px-723Dartrix.png" width="200"
+                alt=""><h2>投羽梟</h2>經常為了積蓄力量而沐浴陽光。吾人推測這是因為當地氣候較為寒冷，然而藏於雙翅中的刃羽鋒利程度並無不同。
+            <br></div>
+        <div class="item"><img src="../picture/pokemon/600px-724Decidueye.png" width="200"
+                alt=""><h2>狙射樹梟	</h2>托弓拉弦射出藏在翅膀裡的箭羽。精準度高到連前方１００米遠的小石頭也能貫穿。</div>
     </div>
-  
+
     <div id="1"></div>
     <div class="container-2">
-        <div class="item"><img src="../picture/pokemon/600px-725Litten.png"width="200" alt="">將理毛時屯積在肚子裡的落毛引燃並吐出火焰。火焰會隨著吐毛的方式不同而變化。</div>
-        <div class="item"><img src="../picture/pokemon/600px-726Torracat.png" width="200"alt="">脖子上掛著火焰鈴鐺。噴出火焰的時候，會叮鈴鈴地發出響亮的聲音。</div>
-        <div class="item"><img src="../picture/pokemon/600px-727Incineroar.png" width="200"alt="">會從自己的肚臍噴出攝氏２０００度以上的火焰。擅長沒有規則限制的粗暴戰鬥。</div>
-        <div class="item"><img src="../picture/pokemon/600px-791Solgaleo.png" width="200"alt="">當牠全身放出猛烈的光芒，變成如同太陽一般的身姿時，便會抹去黑暗，照亮世界。</div>
-        <div class="item"><img src="../picture/pokemon/600px-728Popplio.png" width="200"alt="">操縱水做的氣球。為了製造大大的氣球，孜孜不倦地反復練習。</div>
-        <div class="item"><img src="../picture/pokemon/600px-729Brionne.png"width="200" alt="">很擅長跳舞，會邊跳舞邊一個接一個地製造水氣球扔向敵人。</div>
-        <div class="item"><img src="../picture/pokemon/600px-730Primarina.png"width="200" alt="">	擁有歌姬的別名。在月夜裡率領群體歌唱的樣子充滿了幻想色彩。</div>
-        <div class="item"><img src="../picture/pokemon/600px-792Lunala.png" width="200"alt="">奪走四周所有的光，自己則變身為滿月的模樣，在黑夜中散發出光芒。</div>
+        <div class="item"><img src="../picture/pokemon/600px-725Litten.png" width="200"
+                alt=""><h2>火斑喵</h2>將理毛時屯積在肚子裡的落毛引燃並吐出火焰。火焰會隨著吐毛的方式不同而變化。</div>
+        <div class="item"><img src="../picture/pokemon/600px-726Torracat.png" width="200"
+                alt=""><h2>炎熱喵</h2>脖子上掛著火焰鈴鐺。噴出火焰的時候，會叮鈴鈴地發出響亮的聲音。</div>
+        <div class="item"><img src="../picture/pokemon/600px-727Incineroar.png" width="200"
+                alt=""><h2>熾焰咆哮虎</h2>會從自己的肚臍噴出攝氏２０００度以上的火焰。擅長沒有規則限制的粗暴戰鬥。</div>
+        <div class="item"><img src="../picture/pokemon/600px-791Solgaleo.png" width="200"
+                alt=""><h2>	索爾迦雷歐	</h2>當牠全身放出猛烈的光芒，變成如同太陽一般的身姿時，便會抹去黑暗，照亮世界。</div>
+        <div class="item"><img src="../picture/pokemon/600px-728Popplio.png" width="200"
+                alt=""><h2>球球海獅	</h2>操縱水做的氣球。為了製造大大的氣球，孜孜不倦地反復練習。</div>
+        <div class="item"><img src="../picture/pokemon/600px-729Brionne.png" width="200"
+                alt=""><h2>花漾海獅	</h2>很擅長跳舞，會邊跳舞邊一個接一個地製造水氣球扔向敵人。</div>
+        <div class="item"><img src="../picture/pokemon/600px-730Primarina.png" width="200" alt="">
+            <h2>西獅海壬	</h2>擁有歌姬的別名。在月夜裡率領群體歌唱的樣子充滿了幻想色彩。</div>
+        <div class="item"><img src="../picture/pokemon/600px-792Lunala.png" width="200"
+                alt=""><h2>露奈雅拉	</h2>奪走四周所有的光，自己則變身為滿月的模樣，在黑夜中散發出光芒。</div>
     </div>
+    <div class="down">
+        <img src="../picture/169494757962435_P25121044.jpg" alt="" width="200">
+    </div>
+   
+
 </body>
+
 </html>
