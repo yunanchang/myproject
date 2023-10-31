@@ -1,34 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style> 
-#main {
-  width: 700px;
-  height: 700px;
-  border: 1px solid #c3c3c3;
-  display: flex;
-  flex-wrap: wrap;
-  /* align-content: center; */
-  /* align-items: center; */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Animation</title>
+    <style>
+      .image-container {
+    width: 100%;
+    overflow: hidden; /* 隐藏溢出内容 */
 }
 
-#main div {
-  width: 70px;
-  height: 70px;
+/* 图片样式 */
+img {
+    width: 100%; /* 图片宽度填充容器 */
+    transition: transform 9s; /* 添加 transform 属性的过渡效果 */
 }
-</style>
+
+/* 鼠标悬停时应用的样式 */
+img:hover {
+    transform: translateX(-800%); 
+    transition-duration: 10s;/* 将图片向左平移100%，即移出屏幕 */
+}
+    </style>
+   
+    
 </head>
 <body>
-
-<h1>The align-content Property</h1>
-
-<div id="main">
-  <div style="background-color:coral;"></div>
-  <div style="background-color:lightblue;"></div>
-  <div style="background-color:pink;"></div>
-</div>
-
-<p><b>Note:</b> Internet Explorer 10 and earlier versions do not support the align-content property.</p>
-
+    <div class="image-container">
+        <img src="./picture/1.png" alt="Your Image">
+    </div>
 </body>
 </html>
