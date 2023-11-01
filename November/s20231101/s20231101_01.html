@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display:flex;
+            width:80%;
+            height:90vh;
+            /* flex-direction:column; */
+            background-color:lightgreen;
+            justify-content:space-between;
+       
+            align-items: center;
+            flex-wrap: wrap;
+            /* align-content:  center; */
+
+        }
+        .item{
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+        }
+        .item1{align-self: flex-start;
+        background:lightcoral;}
+        .item6{align-self: flex-end;
+        background:rgb(188, 240, 128);}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item item6"></div>
+    </div>
+
+</body>
+</html>
