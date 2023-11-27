@@ -33,7 +33,10 @@ body{
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-    align-items: center;
+   
+    /* align-items: center;  */
+  
+    /* 影響最近更新日期 */
 }
 
 .aside-header{
@@ -68,12 +71,16 @@ li:hover{
     background-image: url('../17300-104301/menu2.png');
 
 }
+
 .aside-footer{
     font-size: 16px;
     color: #000000;
     height: 25px;
-    text-align: center;
+    text-align: center ;
+    background-color: #FF00FF;
+ 
 }
+
 .main{
     /* background-color: black; */
     width: calc(1024px - 215px);
@@ -104,3 +111,4 @@ iframe{
     font-size: 16px;
 
 }
+/* ///////////// */

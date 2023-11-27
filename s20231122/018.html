@@ -14,18 +14,24 @@
         /* .w-100{
         width:  600px!important;
        } */
-       /* *{margin: auto;} */
+        /* *{margin: auto;} */
         .card-img-top {
             width: 700px !important;
             height: 450px;
         }
-        .card >img{
-            width:100% !important;
-           
+
+        .card>img {
+            width: 100% !important;
+
         }
+
         /* nav{background-color: black;} */
-        .w-90{width: 85%;
-        margin:auto;}
+        .w-90 {
+            width: 85%;
+            margin: auto;
+        }
+        .bt-1{}
+        .bt-2{}
     </style>
 
 </head>
@@ -42,7 +48,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                  
+
                         <a class="nav-link active" aria-current="page" href="#carousel">carousel</a>
                     </li>
                     <li class="nav-item">
@@ -70,6 +76,10 @@
                     aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                     aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -82,6 +92,12 @@
                 <div class="carousel-item">
                     <img src="./images/pexels-photo-209798.jpeg" class="d-block w-100" alt="...">
                 </div>
+                <div class="carousel-item">
+                    <img src="./images/pexels-photo-347145.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/pexels-photo-1440476.jpeg" class="d-block w-100" alt="...">
+                </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="prev">
@@ -93,6 +109,7 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
+
         </div>
     </div>
     <!-- card -->
@@ -131,75 +148,130 @@
         </div>
     </div>
     <!-- collapse -->
-    
+
     <div class="container mt-4">
         <div class="row">
-          <div class="col-8">
-            <button class="btn btn-primary w-100" data-bs-toggle="collapse" href="#multiCollapseExample1" type="button" aria-expanded="false" aria-controls="multiCollapseExample1">
-              Toggle first element
-            </button>
-          </div>
-          <div class="col-4">
-            <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">
-              Toggle second element
-            </button>
-          </div>
+            <div class="col-8">
+                <button class="btn btn-primary w-100" data-bs-toggle="collapse" href="#multiCollapseExample1"
+                    type="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                    Toggle first element
+                </button>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">
+                    Toggle second element
+                </button>
+            </div>
         </div>
-    
+
         <div class="row mt-2 ">
-          <div class="col-8">
-            <div class="collapse multi-collapse" id="multiCollapseExample1">
-              <div class="card card-body">
-                Some placeholder content for the first collapse component of this
-                multi-collapse example. This panel is hidden by default but
-                revealed when the user activates the relevant trigger.
-              </div>
+            <div class="col-8">
+                <div class="collapse multi-collapse" id="multiCollapseExample1">
+                    <div class="card card-body">
+                        Some placeholder content for the first collapse component of this
+                        multi-collapse example. This panel is hidden by default but
+                        revealed when the user activates the relevant trigger.
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-4">
-            <div class="collapse multi-collapse" id="multiCollapseExample2">
-              <div class="card card-body">
-                Some placeholder content for the second collapse component of this
-                multi-collapse example. This panel is hidden by default but
-                revealed when the user activates the relevant trigger.
-              </div>
+            <div class="col-4">
+                <div class="collapse multi-collapse" id="multiCollapseExample2">
+                    <div class="card card-body">
+                        Some placeholder content for the second collapse component of this
+                        multi-collapse example. This panel is hidden by default but
+                        revealed when the user activates the relevant trigger.
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-        
+    </div>
+
 
     <!-- Dropdowns -->
-   <div class="container w-90 row" id="Dropdowns">
-    <div class="btn-group  col-4">
-        <button type="button" class="btn btn-danger dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
-          Action
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">Separated link</a></li>
-        </ul>
+    <div class="container w-90 row" id="Dropdowns">
+        <div class="btn-group  col-4">
+            <button type="button" class="btn btn-danger dropdown-toggle " data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Action
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+        </div>
+        <div class="btn-group col-8">
+            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Action
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- //////////////////////// -->
+
+    <div class="text-center "><button type="button" class="btn-close btn-close-white m-auto"
+            aria-label="Close"></button>
+    </div>
+    </div>
+    
+ <div class="container">
+    <div class="row">
+        <div class="col-4">
+            
+        </div>
+        <div class="col-4">
+            <button type="button" class="btn-close btn-close-white bt-1 "
+            aria-label="Close">
+        </div>
+        <div class="col-4 ">
+            <button type="button" class="btn-close btn-close-white bt-2 "
+            aria-label="Close"> 
+        </div>
       </div>
-      <div class="btn-group col-8" >
-        <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          Action
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">Separated link</a></li>
-        </ul>
+    <div class="row">
+        <div class="col-6">
+            <button type="button" class="btn-close btn-close-white bt-1 "
+            aria-label="Close">
+        </div>
+        <div class="col-6 text-end">
+            <button type="button" class="btn-close btn-close-white bt-2 "
+            aria-label="Close"> 
+        </div>
       </div>
-   </div>
-   <!-- //////////////////////// -->
- 
- 
-</div>
+ </div>
+ <div class="container-fiuld">
+    <div class="row">
+        <div class="col-6">
+            <button type="button" class="btn-close btn-close-white bt-1 "
+            aria-label="Close">
+        </div>
+        <div class="col-6 text-end">
+            <button type="button" class="btn-close btn-close-white bt-2 "
+            aria-label="Close"> 
+        </div>
+      </div>
+
+ </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
+            aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+    </div>
+    </div>
+    <!--  -->
   
 </body>
 

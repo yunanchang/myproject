@@ -1,0 +1,26 @@
+*{ margin: 0;
+box-sizing: border-box;}
+
+header{height: 65px;
+width: 1024px;}
+
+.container{
+    display: flex;
+    width:1024px
+}
+
+aside{
+    height: calc(768px - 65px - 20px);
+    width:215px ;
+}
+.aside-top{
+    height: calc(100% - 25px);
+}
+.aside-bottom{
+ height: 25px;
+}
+main{
+    height: calc(1024px - 215px);
+}
+
+.main
