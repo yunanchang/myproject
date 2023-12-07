@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screen Size Display</title>
+</head>
+<body>
+
+  <p id="screenInfo"></p>
+
+  <script>
+    let screenHeight = screen.height;
+    let screenWidth = screen.width;
+
+    // 顯示屏幕寬度和高度在網頁上
+    let screenInfoElement = document.getElementById('screenInfo');
+    screenInfoElement.textContent = `Screen Width: ${screenWidth}, Screen Height: ${screenHeight}`;
+ 
+ </script>
+
+</body>
+</html>

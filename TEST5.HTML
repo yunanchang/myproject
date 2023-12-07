@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mouse Enter Event Example</title>
 </head>
+
 <body>
 
   <!-- Button in HTML -->
   <button id="myButton">Hover over me</button>
 
   <script>
+    let firstName = "小明";
+    let lastName = "王";
+    let fullName = firstName + lastName;
+    let Hello = "你好，我的名字是 " + fullName + "，請多指教";
+    let Hello2 = `你好，我的名字是 ${fullName}，請多指教`;
+
+    // 將文字印出到網頁上
+    document.write("<p>" + Hello + "</p>");
+    document.write("<p>" + Hello2 + "</p>");
     // JavaScript code for handling the mouseenter event
     // Get the button element by its ID
     var button = document.getElementById("myButton");
 
     // Add a mouseenter event listener to the button
-    button.addEventListener("mouseenter", function() {
+    button.addEventListener("mouseenter", function () {
       // Code to be executed when the mouse enters the button
       console.log("Mouse enters the button!");
-      button.innerHTML='hey'
+      button.innerHTML = 'hey'
+      
+    
+
     });
   </script>
 
 </body>
+
 </html>
