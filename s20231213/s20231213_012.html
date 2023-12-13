@@ -11,10 +11,9 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <style>
-    * {
-      box-sizing: border-box;
+    *{
+    box-sizing: border-box;
     }
-
     .box {
       display: flex;
       width: 550px;
@@ -30,6 +29,7 @@
     }
 
     .my-container {
+      /* background-color: lightpink; */
       position: relative;
       height: 90vh;
       overflow: hidden;
@@ -38,40 +38,65 @@
     #myImg {
       position: absolute;
       right: 20px;
+      /* right: 1400px; */
       bottom: 0px;
       width: 300px;
       height: 200px;
     }
 
+
+
+
     .myImgAnimation {
       position: absolute;
+
+      /* right: 1400px; */
       bottom: 0px;
       animation-name: example;
-      animation-duration: 5s;
-      animation-fill-mode: forwards;
-      
+      animation-duration: 3s;
     }
 
     .myImgAnimationInit {
       position: absolute;
+
+      /* right: 1400px; */
       bottom: 0px;
     }
 
+
+
     @keyframes example {
       0% {
-        bottom: 0px;
+        right: 50px;
+        bottom: 0px; 
       }
+      10%{
+        right: 50px;
+        bottom: 25px; 
+      }
+      30% {
+        right: 150px;
+        bottom: 50px; 
+      }
+      40% {
+        right: 50px;
+        bottom: 150px; 
+      }
+      
+      50% {
+      
+        bottom: 20px; 
+      }
+     
+      /* 35% {
 
-      25% {
-        bottom: 10px;
-      }
-
-      75% {
-        bottom: 200px;
-      }
+        bottom: 20px; 
+      } */
 
       100% {
-        bottom: 700px;
+     
+        bottom: 2400px; 
+    
       }
     }
   </style>
@@ -80,33 +105,41 @@
 <body>
   <div class="container-fluid mt-5 my-container">
     <div class="mb-5">
-      <h1 class="text-center text-warning ">紅 綠 燈</h1>
+      <h1 class="text-center text-warning "></h1>
     </div>
     <div class="row">
       <div class="col">
         <div class="box rounded-pill">
-          <div id="light1" class="item bg-danger rounded-circle"></div>
-          <div id="light2" class="item bg-danger rounded-circle"></div>
-          <div id="light3" class="item bg-danger rounded-circle"></div>
+          <div id="light1" class="item bg-danger rounded-circle">
+          </div>
+          <div id="light2" class="item bg-danger rounded-circle">
+          </div>
+          <div id="light3" class="item bg-danger rounded-circle">
+          </div>
         </div>
       </div>
       <div class="col">
-        <button type="button" id="myBtn" class="btn btn-primary btn-lg mt-5">行人過馬路按鈕</button>
+        <button type="button" id="myBtn" class="btn btn-primary btn-lg mt-5">發射</button>
+
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <img src="./picture/1.png" alt="">
-        <img src="../picture/MAINMEWTWO_2000x.jpg" alt="紅綠燈" title="全國學生美術比賽漫畫類特優" id="myImg">
+        <img src="../picture/p.png" alt="紅綠燈" title="全國學生美術比賽漫畫類特優" id="myImg">
+        <!-- <img src="../picture/boom.jpg" alt=""> -->
       </div>
     </div>
   </div>
 
+
   <script>
+    // initFun
     function initFun() {
+      myImg.setAttribute('class', 'd-none');
       myBtn.setAttribute('class', 'btn btn-primary btn-lg mt-5 d-block');
-      myImg.setAttribute('class', 'myImgAnimationInit');
+      myImg.setAttribute('class', 'myImgAnimationInit d-none');
     }
+
 
     let light1 = document.getElementById('light1');
     let light2 = document.getElementById('light2');
@@ -114,11 +147,24 @@
     let myBtn = document.getElementById('myBtn');
     let myImg = document.getElementById('myImg');
 
+    // init action
+    myImg.setAttribute('class', 'd-none');
     initFun();
+
+    console.log('light1', light1);
+    console.log('light2', light2);
+    console.log('light3', light3);
+    console.log('myBtn', myBtn);
 
     myBtn.addEventListener('click', function () {
       myBtn.setAttribute('class', 'btn btn-primary btn-lg mt-5 d-none');
+      // console.log('myBtn', myBtn);
+      // light1.setAttribute('class','item bg-danger rounded-circle');
+      // light1.setAttribute('class', 'item bg-success rounded-circle');
+      // light2.setAttribute('class', 'item bg-success rounded-circle');
+      // light3.setAttribute('class', 'item bg-success rounded-circle');
 
+      // time start
       setTimeout(function () {
         light1.setAttribute('class', 'item bg-success rounded-circle');
       }, 2500);
@@ -129,32 +175,27 @@
 
       setTimeout(function () {
         light3.setAttribute('class', 'item bg-success rounded-circle');
-        myImg.setAttribute('class', 'd-block myImgAnimation');
+        myImg.setAttribute('class', 'd-block');
+        myImg.setAttribute('class', 'myImgAnimation');
       }, 3500);
+      // time end
 
+      // red
       setTimeout(function () {
         light1.setAttribute('class', 'item bg-danger rounded-circle');
         light2.setAttribute('class', 'item bg-danger rounded-circle');
         light3.setAttribute('class', 'item bg-danger rounded-circle');
 
-        // 切換圖片
-        myImg.setAttribute('src', "./picture/1.png"  ); // 請替換成新圖片的URL
-        myImg.setAttribute('class', 'd-block myImgAnimationInit');
 
         initFun();
-      }, 8000);
+
+      }, 8300);
+
     });
 
-    myImg.addEventListener('animationiteration', function () {
+// ++++++++++++++++++++
 
-      // 在每次迭代後检查当前的bottom值
-      let currentBottom = parseInt(myImg.style.bottom);
-      if (currentBottom === 700) {
-        // 如果当前的bottom值为700px，则切换图片
-        myImg.setAttribute( 'src', "./picture/1.png"  ); // 請替換成新圖片的URL
-        
-      }
-    });
+
   </script>
 </body>
 

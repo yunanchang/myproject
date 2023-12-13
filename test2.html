@@ -2,45 +2,160 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .flex-container {
-            display: flex;
-            justify-content: space-around;
-            /* 项目水平分布 */
-            align-items: center;
-            /* 项目垂直居中对齐 */
-            height: 200px;
-            /* 容器高度 */
-            border: 2px solid #333;
-            /* 为了可视化效果添加边框 */
-        }
-        .grad {
-            height: 20vh;
-  background-image: linear-gradient( 90deg,rgba(104, 62, 158, 0.849), rgb(224, 226, 223));
-}
-        .item {
-            width: 50px;
-            height: 50px;
-            background-color: #007bff;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-           
-        }
-    </style>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .box {
+      display: flex;
+      width: 550px;
+      height: 200px;
+      justify-content: space-around;
+      align-items: center;
+      border: 1px solid black;
+    }
+
+    .item {
+      width: 150px;
+      height: 150px;
+    }
+
+    .my-container {
+      position: relative;
+      height: 90vh;
+      overflow: hidden;
+    }
+
+    #myImg {
+      position: absolute;
+      right: 20px;
+      bottom: 0px;
+      width: 300px;
+      height: 200px;
+    }
+
+    .myImgAnimation {
+      position: absolute;
+      bottom: 700px;
+      animation-name: example;
+      animation-duration: 5s;
+      animation-fill-mode: forwards;
+    }
+
+    .myImgAnimationInit {
+      position: absolute;
+      bottom: 700px;
+    }
+
+    @keyframes example {
+      0% {
+        bottom: 0px;
+      }
+
+      25% {
+        bottom: 10px;
+      }
+
+      75% {
+        bottom: 200px;
+      }
+     
+      100% {
+        bottom: 1400px;
+       
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="flex-container">
-        <div class="item">1</div>
-        <div class="item">2</div>
-        <div class="item">3</div>
+  <div class="container-fluid mt-5 my-container">
+    <div class="mb-5">
+      <h1 class="text-center text-warning ">紅 綠 燈</h1>
     </div>
-<div class="grad">ss</div>
+    <div class="row">
+      <div class="col">
+        <div class="box rounded-pill">
+          <div id="light1" class="item bg-danger rounded-circle"></div>
+          <div id="light2" class="item bg-danger rounded-circle"></div>
+          <div id="light3" class="item bg-danger rounded-circle"></div>
+        </div>
+      </div>
+      <div class="col">
+        <button type="button" id="myBtn" class="btn btn-primary btn-lg mt-5">行人過馬路按鈕</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <!-- <img src="../picture/MAINMEWTWO_2000x.jpg" alt="紅綠燈" title="全國學生美術比賽漫畫類特優" id="myImg"> -->
+        <img src="./picture/p.png" alt="紅綠燈" title="全國學生美術比賽漫畫類特優" id="myImg">
+       
+    </div>
+    </div>
+  </div>
+
+  <script>
+    function initFun() {
+      myBtn.setAttribute('class', 'btn btn-primary btn-lg mt-5 d-block');
+      myImg.setAttribute('class', 'myImgAnimationInit');
+    }
+    initFun();
+    let light1 = document.getElementById('light1');
+    let light2 = document.getElementById('light2');
+    let light3 = document.getElementById('light3');
+    let myBtn = document.getElementById('myBtn');
+    let myImg = document.getElementById('myImg');
+
+
+
+    myBtn.addEventListener('click', function () {
+      myBtn.setAttribute('class', 'btn btn-primary btn-lg mt-5 d-none');
+
+      setTimeout(function () {
+        light1.setAttribute('class', 'item bg-success rounded-circle');
+      }, 2500);
+
+      setTimeout(function () {
+        light2.setAttribute('class', 'item bg-success rounded-circle');
+      }, 3000);
+
+      setTimeout(function () {
+        light3.setAttribute('class', 'item bg-success rounded-circle');
+        myImg.setAttribute('class', 'd-block myImgAnimation');
+      }, 3500);
+
+      setTimeout(function () {
+        light1.setAttribute('class', 'item bg-danger rounded-circle');
+        light2.setAttribute('class', 'item bg-danger rounded-circle');
+        light3.setAttribute('class', 'item bg-danger rounded-circle');
+
+        // 切換圖片
+        // myImg.setAttribute('src', "./picture/1.png"); // 請替換成新圖片的URL
+        myImg.setAttribute('class', 'd-block myImgAnimationInit');
+
+       
+      }, 8000);
+    });
+
+//     myImg.addEventListener('animationiteration', function () {
+//   // 使用 getComputedStyle 確保取得正確的屬性值
+//   let currentBottom = parseInt(getComputedStyle(myImg).bottom);
+//   if (currentBottom === 700) {
+//     // 如果当前的bottom值为700px，则切换图片
+//     myImg.setAttribute('src',  "./picture/1.png" ); // 請替換成新圖片的URL
+//   }
+// });
+  </script>
 </body>
 
 </html>
+
