@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Form Example</title>
+</head>
+
+<body>
+
+  <h2>Simple Form</h2>
+
+  <form action="/submit" method="post">
+    <!-- Text Input -->
+   
+    <label for="username">username:</label>
+    <input type="text" id="username" name="username" required>
+    
+
+    <br>
+
+    <!-- Password Input -->
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <br>
+
+
+    <!-- Textarea -->
+    <label for="comments">Comments:</label>
+    <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+
+    <br>
+
+    <!-- Submit Button -->
+    <input type="submit" value="Submit">
+    <!--  -->
+   
+  
+   
+    <!--  -->
+  </form>
+
+  <script>
+   
+    let studentObj = {
+      'name': 'amy',
+      'mobile': '0911-111-111',
+      'address': 'aaaaaaaaa',
+      'love': ['html', 'css', 'js', 'php']
+    };
+    let  username=document.getElementById('username');
+    let  password=document.getElementById('password');
+    let  comments=document.getElementById('comments');
+    console.log(' username', username);
+    console.log(' password', password);
+    console.log(' comments', comments);
+    username.value = studentObj.name;
+    comments.value = studentObj.love;
+
+    
+
+
+  </script>
+</body>
+
+</html>
