@@ -37,9 +37,14 @@
 
             mySpan.innerHTML = '';
             let sum = 0;
-
+            let order=0
             for (let i = num1; i < num2; i++) {
-              
+             
+                if( sum>num2){
+                    mySpan.innerHTML +=`第${order-1}次`+'over'
+
+                    break;
+                }
                 g=sum;
                 sum += i;
                 mySpan.innerHTML += `${i}+${g} = ${sum}  <br>`;
@@ -47,6 +52,7 @@
                 // if(sum> num2){
                 //   mySpan.innerHTML ='!!!';
                 // }
+                order++
             }
 
             // 刪除多餘的加號，然後加總結果
