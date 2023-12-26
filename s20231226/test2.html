@@ -17,16 +17,17 @@
 
 
   <script>
-let iterable = [1, 2, 3];
-
-// 获取迭代器对象
-let iterator = iterable[Symbol.iterator]();
-
-// 迭代过程
-console.log(iterator.next()); // { value: 1, done: false }
-console.log(iterator.next()); // { value: 2, done: false }
-console.log(iterator.next()); // { value: 3, done: false }
-console.log(iterator.next()); // { value: undefined, done: true }
+    let date=[2,6,98,95];
+    let=[];
+    let str = "Hello, welcome to the world of Javascript";
+    let strindex = str.indexOf("Javascript");
+    let date2 = str.indexOf(98);
+    console.log(date2);
+    newDate=date.filter(value=>{
+        return value>10;
+    })
+    console.log(newDate)
+    
 
   </script>
 </body>

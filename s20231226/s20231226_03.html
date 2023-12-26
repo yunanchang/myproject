@@ -17,16 +17,19 @@
 
 
   <script>
-let iterable = [1, 2, 3];
 
-// 获取迭代器对象
-let iterator = iterable[Symbol.iterator]();
 
-// 迭代过程
-console.log(iterator.next()); // { value: 1, done: false }
-console.log(iterator.next()); // { value: 2, done: false }
-console.log(iterator.next()); // { value: 3, done: false }
-console.log(iterator.next()); // { value: undefined, done: true }
+
+// 是否有包含指定文字，回傳 true 或 false
+let str = "Hello, welcome to the world of Javascript";
+let strMatchAll = str.matchAll(/Javascript/g)
+console.log(strMatchAll)
+for (let match of strMatchAll) {
+  console.log(match)
+}
+
+
+
 
   </script>
 </body>
