@@ -14,16 +14,47 @@
 <script src="../css/js.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- jq -->
+<style>
+    .box{width:300px;height: 300px;}
+    .bg-pink {
+      background-color: lightpink;
+    }
+
+    .bg-blue {
+      background-color: lightblue;
+    }
+</style>
 </head>
 
 <body>
-
+<div class="row">
+    <div class="col">
+        <div class="box bg-blue"></div>
+    </div>
+</div>
 
 
 <script>
-
+$(document).ready(function(){
+    const box =$('.box');
+    
+    box.on({
+  mouseenter: function(){
+    // $(this).css("background-color", "lightgray");
+    $(this).attr('class','box bg-pink')
+  },
+  mouseleave: function(){
+    $(this).attr('class','box bg-')
+    // $(this).css("background-color", "lightblue");
+  },
+  click: function(){
+    // $(this).css("background-color", "yellow");
+  }
+});
+})
 
 </script>
+
 
 </body>
 

@@ -17,11 +17,20 @@
 </head>
 
 <body>
-
-
+<button type="button" class="myBtn">ss</button>
+<button type="button" class="myBtn">s2</button>
 
 <script>
+$(function(){
+    const myBtn=$('.myBtn');
+    // const myBtn2=$('#myBtn2');
+    myBtn.click(function (e) { 
+      console.log('ok',this);
+      console.log('ok',$(this));
+    $(this).text('clicked')
 
+    });
+});
 
 </script>
 

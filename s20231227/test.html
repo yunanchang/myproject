@@ -57,63 +57,55 @@
     </table>
   </div>
 
-<!-- ... 其他 HTML 內容 ... -->
+  <script>
+    // 获取所有项的元素
+    const items = [
+      { price: 'item1price', num: 'item1num', total: 'item1total' },
+      { price: 'item2price', num: 'item2num', total: 'item2total' },
+      { price: 'item3price', num: 'item3num', total: 'item3total' }
+    ];
 
-<script>
-  // 获取所有项的元素
-  const items = [
-    { price: 'item1price', num: 'item1num', total: 'item1total' },
-    { price: 'item2price', num: 'item2num', total: 'item2total' },
-    { price: 'item3price', num: 'item3num', total: 'item3total' }
-  ];
-
-  // 全域範圍的 sum 變數
-  let sum = 0;
-
-  // 为每个项添加事件监听器
-  items.forEach(item => {
-    const price = document.getElementById(item.price);
-    const num = document.getElementById(item.num);
-    const total = document.getElementById(item.total);
-
-    // 添加事件监听器
-    price.addEventListener('change', calculateTotal);
-    num.addEventListener('change', calculateTotal);
-  });
-
-  // 计算总价的函数
-  function calculateTotal() {
-    sum = 0; // 重新初始化 sum
+    // 为每个项添加事件监听器
     items.forEach(item => {
       const price = document.getElementById(item.price);
       const num = document.getElementById(item.num);
       const total = document.getElementById(item.total);
 
-      // 计算总价
-      const totalPrice = num.value * price.value;
-
-      // 更新总价输入框
-      total.value = totalPrice;
-      sum += totalPrice;
+      // 添加事件监听器
+      price.addEventListener('change', calculateTotal);
+      num.addEventListener('change', calculateTotal);
     });
 
-    c('sum', sum);
-    if (sum > 500) {
-      sum = sum * 0.8;
+    // 计算总价的函数
+    let sum = 0;
+    function calculateTotal() {
+          sum = 0;
+      items.forEach(item => {
+        const price = document.getElementById(item.price);
+        const num = document.getElementById(item.num);
+        const total = document.getElementById(item.total);
+
+        // 计算总价
+        const totalPrice = num.value * price.value;
+
+        // 更新总价输入框
+        total.value = totalPrice;
+        sum += totalPrice
+      });
+      c('sum', sum);
+      if (sum > 500) {
+        sum = sum * 0.8;
+      }
+
+      let result = document.getElementById('result')
+      result.textContent = sum;
     }
+    let myBtn =document.getElementById('myBtn');
+    myBtn.addEventListener('click',function(){
+      result.textContent = sum;
+    });
 
-    let result = document.getElementById('result');
-    result.textContent = sum;
-  }
-
-  let myBtn = document.getElementById('myBtn');
-  myBtn.addEventListener('click', function () {
-    result.textContent = sum;
-  });
-</script>
-
-<!-- ... 其他 HTML 內容 ... -->
-
+  </script>
 </body>
 
 </html>
