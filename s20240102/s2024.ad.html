@@ -24,23 +24,36 @@
                     <button data-ad="#ad1" data-ani="toggle" class="myBtn btn btn-primary" type="button">toggle
                         Button</button>
                 </div>
-                <div id="ad1">ad1</div>
+                <div id="ad1">ad1dignissimos dolorem ad sunt! Blanditiis nam iure vel sit non excepturi sint magni
+                    aperiam modi natus dolor fugit tempore soluta vero dolorum quasi saepe, qui cupiditate quae minima
+                    est nobis dignissimos laboriosam! Ad officiis cumque quae incidunt sit maxime placeat, at magnam a
+                    totam labore tempora qui vero. Ipsam ipsum vel unde minima ducimus laborum distin
+                    ctio rem odio eos eaque qui quis, similique omnis.</div>
             </div>
             <div class="col">
                 <div class="d-grid gap-2">
-                    <button data-ad="#ad2" data-ani="fadeToggle" class="myBtn btn btn-primary" type="button">toggle
+                    <button data-ad="#ad2" data-ani="fadeToggle" class="myBtn btn btn-primary" type="button">fadeToggle
 
                 </div>
-                <div id="ad1">ad2</div>
+                <div id="ad2">ad2dignissimos dolorem ad sunt! Blanditiis nam iure vel sit non excepturi sint magni
+                    aperiam modi natus dolor fugit tempore soluta vero dolorum quasi saepe, qui cupiditate quae minima
+                    est nobis dignissimos laboriosam! Ad officiis cumque quae incidunt sit maxime placeat, at magnam a
+                    totam labore tempora qui vero. Ipsam ipsum vel unde minima ducimus laborum distinctio rem odio eos
+                    eaque qui quis, similique omnis.</div>
             </div>
             <div class="col">
                 <div class="d-grid gap-2">
-                <button data-ad="#ad3" data-ani="slideToggle" class="myBtn btn btn-primary" type="button">slideToggle
+                    <button data-ad="#ad3" data-ani="slideToggle" class="myBtn btn btn-primary"
+                        type="button">slideToggle
+                </div>
+                <div id="ad3">ad3dignissimos dolorem ad sunt! Blanditiis nam iure vel sit non excepturi sint magni
+                    aperiam modi natus dolor fugit tempore soluta vero dolorum quasi saepe, qui cupiditate quae minima
+                    est nobis dignissimos laboriosam! Ad officiis cumque quae incidunt sit maxime placeat, at magnam a
+                    totam labore tempora qui vero. Ipsam ipsum vel unde minima ducimus laborum distinctio rem odio eos
+                    eaque qui quis, similique omnis.</div>
             </div>
-            <div id="ad1">ad3</div>
-        </div>
 
-    </div>
+        </div>
     </div>
 
 
@@ -52,23 +65,38 @@
 
     <script>
         $(document).ready(function () {
-            const myBtn = $('.myBtn');
-            myBtn.click(function () {
-                console.log('this', this);
-                let getDataAd=$(this).attr('data-ad');
-                let getDataAni = $(this).attr('data-ani');
-                console.log('getDataAd', getDataAd);
-                console.log('getDataAni', getDataAni);
-                switch(getDataAd){
-                    case 'toggle':
-                    $(getDataAd).toggle(3000);
-                    break;
-                }
-            })
-        })
+      const myBtn = $('.myBtn');
+      $('#ad1, #ad2, #ad3').hide();
+      myBtn.click(function () {
+          console.log('this', this);
+          let getDataAd = $(this).attr('data-ad');
+          let getDataAni = $(this).attr('data-ani');
+          console.log('getDataAd', getDataAd);
+          console.log('getDataAni', getDataAni);
+         
+        switch (getDataAni) {
+          case 'toggle':
+            $(getDataAd).toggle(3000);
+            break;
+          case 'fadeToggle':
+            $(getDataAd).fadeToggle(3000);
+            break;
+          case 'slideToggle':
+            $(getDataAd).slideToggle(3000);
+            break;
+
+          default:
+            break;
+        }
+
+      });
 
 
 
+
+
+
+    });
 
 
     </script>

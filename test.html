@@ -10,109 +10,27 @@
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- 特製 -->
-  <script src="../css/js.js"></script>
-  <!--  -->
+<!-- 特製 -->
+<script src="../css/js.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- jq -->
 </head>
 
 <body>
-  <div class="container mt-3">
-    <h2>Bordered Table</h2>
-    <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>item</th>
-          <th>price</th>
-          <th>num</th>
-          <th>total</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>John</td>
-          <td><input  class="form-control" type="number" name="" id="item1price" value="100" ></td>
-          <td><input  class="form-control" type="number" name="" id="item1num" value="1" min="0"></td>
-          <td><input  class="form-control" type="number" name="" id="item1total" value="100" readonly></td>
-        </tr>
-        <tr>
-          <td>Mary</td>
-          <td><input  class="form-control" type="number" name="" id="item2price" value="200" ></td>
-          <td><input  class="form-control" type="number" name="" id="item2num" value="1" min="0"></td>
-          <td><input  class="form-control" type="number" name="" id="item2total" value="200" readonly></td>
-        </tr>
-        <tr>
-          <td>July</td>
-          <td><input  class="form-control" type="number" name="" id="item3price" value="50" ></td>
-          <td><input  class="form-control" type="number" name="" id="item3num" value="1" min="0"></td>
-          <td><input  class="form-control" type="number" name="" id="item3total" value="50" readonly></td>
-        </tr>
-        <tr>
-          <td>alltoall</td>
-          <td colspan="2" id="result" >result</td>
-          <td  class="d-grid "><button type="button" class="btn btn-primary" id="myBtn">result</button></td>
-        </tr>
+    <button id="myBtn">ss</button>
 
-      </tbody>
-    </table>
-  </div>
-
-<!-- ... 其他 HTML 內容 ... -->
 
 <script>
-  // 获取所有项的元素
-  const items = [
-    { price: 'item1price', num: 'item1num', total: 'item1total' },
-    { price: 'item2price', num: 'item2num', total: 'item2total' },
-    { price: 'item3price', num: 'item3num', total: 'item3total' }
-  ];
-
-  // 全域範圍的 sum 變數
-  let sum = 0;
-
-  // 为每个项添加事件监听器
-  items.forEach(item => {
-    const price = document.getElementById(item.price);
-    const num = document.getElementById(item.num);
-    const total = document.getElementById(item.total);
-
-    // 添加事件监听器
-    price.addEventListener('change', calculateTotal);
-    num.addEventListener('change', calculateTotal);
-  });
-
-  // 计算总价的函数
-  function calculateTotal() {
-    sum = 0; // 重新初始化 sum
-    items.forEach(item => {
-      const price = document.getElementById(item.price);
-      const num = document.getElementById(item.num);
-      const total = document.getElementById(item.total);
-
-      // 计算总价
-      const totalPrice = num.value * price.value;
-
-      // 更新总价输入框
-      total.value = totalPrice;
-      sum += totalPrice;
+$(function(){
+    let myBtn=$('#myBtn');
+    myBtn.click(function () { 
+        myBtn.hide();
+        
     });
 
-    c('sum', sum);
-    if (sum > 500) {
-      sum = sum * 0.8;
-    }
+})
 
-    let result = document.getElementById('result');
-    result.textContent = sum;
-  }
-
-  let myBtn = document.getElementById('myBtn');
-  myBtn.addEventListener('click', function () {
-    result.textContent = sum;
-  });
 </script>
-
-<!-- ... 其他 HTML 內容 ... -->
 
 </body>
 
