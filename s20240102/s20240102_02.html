@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- 特製 -->
+<script src="../css/js.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- jq -->
+</head>
+
+<body>
+<div class="container">
+    
+<div class="container mt-3">
+    <h2>Hover Rows</h2>
+    <p>The .table-hover class enables a hover state (grey background on mouse over) on table rows:</p>            
+    <table class="table table-hover">
+      <thead>
+        <tr>
+            <th>name</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td><img src="https://picsum.photos/seed/picsum/300/200" alt=""> </td>
+          <td ><input type="number" class="form-control my-price" id="item1Price" value="100"></td>
+          <td><input type="number" class="form-control my-num" id="item1Num" value="1"></td>
+          <td><input type="number" class="form-control my-total" id="item1Total"value="100"></td>
+        </tr>
+        <tr>
+          <td><img src="https://picsum.photos/seed/picsum/300/200" alt=""> </td>
+        <td ><input type="number" class="form-control my-price" id="item2Price" value="200"></td>
+        <td><input type="number" class="form-control my-num" id="item2Num" value="1"></td>
+        <td><input type="number" class="form-control my-total" id="item2Total"value="100"></td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <span id="resultSpan">s</span>
+        </td>
+      </tr>
+ 
+   
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+      function sumFun(){
+        let sum = 0;
+        myTotal.each(function (index, element) {
+          console.log('index', index);
+          console.log('element', element);
+          console.log('this', this);
+          let getValue = Number($(this).val());
+          console.log('getValue', getValue);
+          sum += getValue;
+        });
+        console.log('sum', sum);
+        if (sum >= 500) {
+          result = sum * 0.8;
+          resultText = `恭喜您 打八折 ${result}`;
+          resultSpan.attr('class', 'text-danger');
+        }else {
+          resultText = sum;
+          resultSpan.attr('class', '');
+        }
+        resultSpan.text(resultText);
+      }
+      
+
+
+     const myPrice=$('.my-price');
+     const myNum=$('.my-num');
+     const myTotal=$('.my-total');
+     const resultSpan = $('#resultSpan');
+     console.log('myPrice',myPrice);
+     console.log('myNum',myNum);
+     console.log('myTotal', myTotal);
+     sumFun();
+     myNum.change(function(){
+      let trObj = $(this).parent().parent();
+        let nowPrice = trObj.find('.my-price');
+        let nowNum = trObj.find('.my-num');
+        let nowTotal = trObj.find('.my-total');
+
+        console.log('trObj', trObj);
+        console.log('nowPrice', nowPrice);
+        console.log('nowNum', nowNum);
+        console.log('nowTotal', nowTotal);
+
+        let getPrice= Number(nowPrice.val());
+        let getNum=Number(nowNum.val());
+        let resultTotal=getPrice*getNum;
+        nowTotal.val(resultTotal);
+        sumFun();
+
+     })
+    })
+
+</script>
+
+</body>
+
+</html>
