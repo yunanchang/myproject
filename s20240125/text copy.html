@@ -19,18 +19,37 @@
 </head>
 
 <body>
-    <div class="parent">
-        <div class="child">Child 1</div>
-        <div class="child">Child 2
-            <div class="grandchild">Grandchild</div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <input id="mySearch" type="text">
+                <input type="submit" value="submit" class="btn btn-success">
+            </div>
+            <div class="btns">
+                <div class="myBtn btn btn-info">新北</div>
+                <div class="myBtn btn btn-info">台北</div>
+                <div class="myBtn btn btn-info">台中</div>
+                <div class="myBtn btn btn-info">高雄</div>
+            </div>
         </div>
-        <div class="child">Child 3</div>
     </div>
+    
+      </div>
 
 
     <script>
-        const children = $('.parent').children();
-        console.log(children);  // 输出: 2
+        $(document).ready(function () {
+           const myBtn =$('.myBtn');
+           const mySearch=$('#mySearch');
+           myBtn.click(function (e){
+                console.log($(this));
+            mySearch.val($(this).text())
+           })
+        });
+
+
+
+
     </script>
 
 </body>
