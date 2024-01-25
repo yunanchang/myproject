@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css'>
+    <style>
+        body {
+            padding-bottom: 500px;
+        }
+
+        h3 {
+            margin: 20px 0;
+        }
+
+        .box1,
+        .box2,
+        .box3,
+        .box4,
+        .box5,
+        .box6,
+        .box7,
+        .box8,
+        .box9,
+        .box10,
+        .box11 {
+            width: 50px;
+            height: 50px;
+            background: black;
+            margin: 5px;
+        }
+
+        .box2 {
+            background-color: red;
+        }
+
+        .box3 {
+            background-color: green;
+        }
+
+        .box4 {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>1.選擇目標</h1>
+        <div class="box1"></div>
+
+
+        <h1>2.選擇群組使用陣列</h1>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box3"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box4"></div>
+        <div class="box4"></div>
+
+        <h1>3.設定css</h1>
+        <div class="box5" style="margin: auto;"></div>
+        <p id="word">
+            worddddddddddd
+        </p>
+    </div>
+
+
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.js'></script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js'></script>
+
+    <script src="../gsap/gsap.js"></script>
+
+    <script>
+        //1.選擇目標
+        const b1 = document.querySelector('.box1') //js
+        const b2 = $('.box1') //jq
+        const tween1 = gsap.to(b1, {
+            x: 500,
+            duration: 3
+        })
+
+        //2.選擇群組使用陣列
+        const dom1 = document.querySelectorAll('.box2')
+        const dom2 = document.querySelectorAll('.box3')
+        const dom3 = document.querySelectorAll('.box4')
+
+        const jq1 = $('.box2')
+        const jq3 = $('.box3')
+        const jq4 = $('.box4')
+
+        // const tween2=gsap.to('.box2','.box3',{
+        //     x:500,duration:3
+        // })
+        //-----------------
+        const tween3 = gsap.to('.box5', {
+            x: 100,
+            y: 100,
+            rorarion: 720,
+            scale: 2,
+            width:100,
+            border: '2px solid red',
+            backgroundColor:'trabsprent',
+          
+   
+        })
+        const tween4=gsap.to('.box6',)
+
+
+
+
+    </script>
+</body>
+
+</html>

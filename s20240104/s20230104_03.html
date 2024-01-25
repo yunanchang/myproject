@@ -41,55 +41,55 @@
       </div>
     </div>
     <div class="row mt-3">
-        <div class="col">
-          <input type="number" class=" my-num1 form-control" name="" id="num1" placeholder="num1?">
-        </div>
-        <div class="col">
-          <input type="number" class="my-num2 form-control" name="" id="num2" placeholder="num2?">
-        </div>
-        <div class="col">
-          <!-- <input type="text" class="form-control" name="" id="opt" placeholder="option?"> -->
-          <select name="" id="opt" class="form-select my-opt">
-            <option value="1">+</option>
-            <option value="2">-</option>
-            <option value="3">*</option>
-            <option value="4">/</option>
-          </select>
-        </div>
-        <div class="col">
-          <div class="d-grid gap-2">
-            <button class=" my-btn btn btn-primary" type="button" id="myBtn">Button</button>
-          </div>
-        </div>
-        <div class="col mt-2">
-          <span class="result-span" id="resultSpan">result...</span>
+      <div class="col">
+        <input type="number" class=" my-num1 form-control" name="" id="num1" placeholder="num1?">
+      </div>
+      <div class="col">
+        <input type="number" class="my-num2 form-control" name="" id="num2" placeholder="num2?">
+      </div>
+      <div class="col">
+        <!-- <input type="text" class="form-control" name="" id="opt" placeholder="option?"> -->
+        <select name="" id="opt" class="form-select my-opt">
+          <option value="1">+</option>
+          <option value="2">-</option>
+          <option value="3">*</option>
+          <option value="4">/</option>
+        </select>
+      </div>
+      <div class="col">
+        <div class="d-grid gap-2">
+          <button class=" my-btn btn btn-primary" type="button" id="myBtn">Button</button>
         </div>
       </div>
-      <div class="row mt-3">
-        <div class="col">
-          <input type="number" class=" my-num1 form-control" name="" id="num1" placeholder="num1?">
-        </div>
-        <div class="col">
-          <input type="number" class="my-num2 form-control" name="" id="num2" placeholder="num2?">
-        </div>
-        <div class="col">
-          <!-- <input type="text" class="form-control" name="" id="opt" placeholder="option?"> -->
-          <select name="" id="opt" class="form-select my-opt">
-            <option value="1">+</option>
-            <option value="2">-</option>
-            <option value="3">*</option>
-            <option value="4">/</option>
-          </select>
-        </div>
-        <div class="col">
-          <div class="d-grid gap-2">
-            <button class=" my-btn btn btn-primary" type="button" id="myBtn">Button</button>
-          </div>
-        </div>
-        <div class="col mt-2">
-          <span class="result-span" id="resultSpan">result...</span>
+      <div class="col mt-2">
+        <span class="result-span" id="resultSpan">result...</span>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <input type="number" class=" my-num1 form-control" name="" id="num1" placeholder="num1?">
+      </div>
+      <div class="col">
+        <input type="number" class="my-num2 form-control" name="" id="num2" placeholder="num2?">
+      </div>
+      <div class="col">
+        <!-- <input type="text" class="form-control" name="" id="opt" placeholder="option?"> -->
+        <select name="" id="opt" class="form-select my-opt">
+          <option value="1">+</option>
+          <option value="2">-</option>
+          <option value="3">*</option>
+          <option value="4">/</option>
+        </select>
+      </div>
+      <div class="col">
+        <div class="d-grid gap-2">
+          <button class=" my-btn btn btn-primary" type="button" id="myBtn">Button</button>
         </div>
       </div>
+      <div class="col mt-2">
+        <span class="result-span" id="resultSpan">result...</span>
+      </div>
+    </div>
   </div>
 
 
@@ -111,14 +111,14 @@
       console.log('myBtn', myBtn);
 
       myBtn.click(function () {
-        console.log('this',this);
-        console.log('jqthis',$(this));
-        console.log('jqthis.parent()',$(this).parent().parent().parent());
-        const nowRow=$(this).parent().parent().parent(); 
-        const nowNum1=nowRow.find('.my-num1');
-        const nowNum2=nowRow.find('.my-num2');
-        const nowOpt=nowRow.find('.my-opt');
-        const resultSpan=nowRow.find('.result-span')
+        console.log('this', this);
+        console.log('jqthis', $(this));
+        console.log('jqthis.parent()', $(this).parent().parent().parent());
+        const nowRow = $(this).parent().parent().parent();
+        const nowNum1 = nowRow.find('.my-num1');
+        const nowNum2 = nowRow.find('.my-num2');
+        const nowOpt = nowRow.find('.my-opt');
+        const resultSpan = nowRow.find('.result-span')
 
         let getNum1Value = Number(nowNum1.val());
         let getNum2Value = Number(nowNum2.val());
