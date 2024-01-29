@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,10 +88,96 @@
       <div class="col">
         <div class="text-center">
           合計 : <span id="mySum" class="display-4">0</span> NT.
+=======
+<<<<<<< HEAD
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sunny</title>
+  <link href="./css/style.css" rel="stylesheet">
+  <link href="./css/mycss.css" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=excon@100&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: "標楷體";
+      font-size: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- content  -->
+    <div class="content">
+      <div class="row">
+        <div class="col">
+          <div class="box">
+            <br>
+            <br>
+            <br>
+
+            <h5 class="nameTag">Happy Birthday <br><br><hr><br> to Sunny  </h5>
+            <br>
+
+
+            <p style="color: #8ff844;text-align: center;margin: 10px;font-size:10px;" id="confessionText">
+              晴晴~18歲生日快樂
+              <br>
+              祝妳常常吃到好吃的甜點
+              <br>
+              祝妳打牌常常連莊自摸
+              <br>
+              祝妳都遇到好的按摩師
+              <br>
+              祝妳天天都快樂沒煩惱
+              <br>
+              祝妳明年的9/9日能帶著我
+              <br> 
+              <br>
+              <br>
+              <button id="confessButton">接收禮物</button>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+    <!-- row-2 -->
+    <div class="row row-2">
+      <div class="col">
+        <div class="workarea">
+          <!-- work---1 -->
+          <div>
+            <div class="worklist work-1">
+              01_Calender
+              <br> &nbsp;( PHP )
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+    <!-- row-3 -->
+    <div class="row row-3">
+      <div class="col">
+        <div class="infoarea">
+          <div class="info-pic">
+            <img src="./img/info-poc.png" alt="">
+          </div>
+>>>>>>> 1c150869b240b82550351915e474f673a2759569
         </div>
       </div>
     </div>
   </div>
+<<<<<<< HEAD
 
 
 
@@ -237,3 +324,214 @@
 </body>
 
 </html>
+=======
+  </div>
+  </div>
+
+  </div>
+
+
+
+  <div id="CanvasContainer">
+    <canvas></canvas>
+
+  </div>
+  <!-- bg effect js  -->
+  <script src="./js/vendor.js"></script>
+  <script src="./js/main.js"></script>
+  <!-- jq src -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+  <!-- jq start -->
+  <script>
+    $(document).ready(function () {
+      // 綁定
+      const workT = $('.workTag');
+      const workA = $('.workarea');
+      const infoT = $('.infoTag');
+      const infoA = $('.infoarea');
+      const nameT = $('.nameTag')
+
+      //  workTag onclick event
+      workT.click(function () {
+
+        workA.animate({
+          opacity: 0.8,
+          height: "60vh",
+
+
+        }, 3000,)
+        $('.work-1').animate({
+          "margin-left": "5rem"
+
+        }, 2200,)
+        $('.work-2').animate({
+          "margin-left": "5rem"
+
+        }, 2500,)
+        $('.work-3').animate({
+          "margin-left": "5rem"
+
+        }, 2800,)
+        $('.work-4').animate({
+          "margin-left": "5rem"
+
+        }, 3000,)
+        $('.work-5').animate({
+          "margin-left": "5rem"
+
+        }, 3200,)
+
+        $('.work-link').animate({
+          "margin-left": "38rem",
+          opacity: 1,
+
+        }, 3200,)
+        infoA.animate({
+          opacity: 0,
+          height: "1vh",
+
+
+        }, 2000,)
+        $(this).hide()
+        infoT.show()
+      })
+
+      // infoTag onclick event 
+      infoT.click(function () {
+        workA.animate({
+          opacity: 0,
+          height: "15vh",
+        }, 1200,)
+        infoA.animate({
+          opacity: 0.8,
+          height: "40vh",
+        }, 2000,)
+
+        $('.worklist').animate({
+          "margin-left": "",
+
+        }, 2000,)
+        $('.work-link').animate({
+          "margin-left": "20rem",
+          opacity: 0,
+
+        }, 2000,)
+
+        $(this).hide();
+
+        workT.show()
+      })
+    });
+
+  </script>
+  <!-- jq end -->
+  <script>
+    const confessionText = document.getElementById("confessionText");
+    const confessButton = document.getElementById("confessButton");
+
+    const a1 = "未來如果妳和我都沒其他對象";
+    const a2 = "每年的農曆9/9我會預訂好台中餐廳";
+    const a3 = "每年的10/31我都會帶著晴晴出國";
+    const a4 = "不論未來我們的關係變成怎樣";
+    const a5 = "不論妳的脾氣有多麼任性";
+    const a6 = "我都會努力當一個疼愛妳的男人";
+    const a7 = "我都會用心安排每一個節日";
+    const a8 = "生日快樂";
+
+    confessButton.addEventListener("click", () => {
+      confessionText.innerHTML = a1 + '<br>' + a2 + '<br>' + a3 + '<br>' + a4 + '<br>' + a5 + '<br>' + a6 + '<br>' + a7 + '<br>' + a7;
+      confessionText.style.lineHeight = "2"; // 调整行高，可以根据需要设置不同的值
+      confessionText.style.fontSize = "10px"; // 增加字体大小，可以根据需要设置不同的值
+      confessButton.style.display = "none";
+    });
+
+  </script>
+  <div class="heart">
+    <div class="box1"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1"></div>
+    <div class="box1"></div>
+    <div class="box1"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 "></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 "></div>
+    <div class="box1 "></div>
+    <div class="box1 "></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 "></div>
+    <div class="box1 "></div>
+    <div class="box1 "></div>
+    <div class="box1 "></div>
+    <div class="box1 "></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 color"></div>
+    <div class="box1 "></div>
+    <div class="box1 "></div>
+    <div class="box1 "></div>
+    <div class="box1 "></div>
+    <div class="box1 "></div>
+    <div class="box1 "></div>
+    <div class="box1 "></div>
+    <div class="box1 color"></div>
+    <div class="box1 "></div>
+    <div class="box1 "></div>
+    <div class="box1 "></div>
+    <div class="box1 "></div>
+  </div>
+
+</body>
+
+</html>
+=======
+let getClassText = nowElement.attr('class');
+getClassText = getClassText + ' text-danger';
+console.log('getClassText', getClassText);
+// nowElement.attr('class', 'mySpan border border-danger p-3 text-danger');
+nowElement.attr('class', getClassText);
+>>>>>>> e987e3fd51be76ee4955c227b8473559bbca6a18
+>>>>>>> 1c150869b240b82550351915e474f673a2759569

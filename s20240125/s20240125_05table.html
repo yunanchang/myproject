@@ -23,7 +23,7 @@
         <div class="text-end">
             <button type="button" class="addBtn btn btn-success">Add</button>
         </div>
-        <table class="table table-hover" id="'myTable"> 
+        <table class="table table-hover" id="myTable">
             <thead>
                 <tr>
                     <th>id</th>
@@ -37,13 +37,16 @@
                     <td>amy</td>
                     <td>
                         <button type="button" class="cloneBtn "><i class="fa-regular fa-copy"></i></button>
-        
-                        <button class="delBtn "><i class="fa-regular fa-trash-can"></i></button></td>
+
+                        <button class="delBtn "><i class="fa-regular fa-trash-can"></i></button>
+                    </td>
                 </tr>
                 <tr>
-                    <td>2</td>
+                    <td id="2">2</td>
                     <td>bon</td>
-                    <td><button class="delBtn"><i class="fa-regular fa-trash-can"></i></button></td>
+                   
+                    <td> <button type="button" class="cloneBtn "><i class="fa-regular fa-copy"></i></button>
+                        <button class="delBtn"><i class="fa-regular fa-trash-can"></i></button></td>
                 </tr>
             </tbody>
         </table>
@@ -52,28 +55,34 @@
 
     <script>
         $(document).ready(function () {
-      const delBtn = $('.delBtn');
-      const addBtn = $('.addBtn');
-      const cloneBtn = $('.cloneBtn');
-      const myTable = $('#myTable');
-      delBtn.click(function (e) {
-        console.log('this', this);
-        let thisParent = $(this).parent();
-        let thisParentParent = $(this).parent().parent();
-        console.log('thisParent', thisParent);
-        console.log('thisParentParent', thisParentParent);
-        thisParentParent.remove();
+            const delBtn = $('.delBtn');
+            const addBtn = $('.addBtn');
+            const cloneBtn = $('.cloneBtn');
+            const myTable = $('#myTable');
+            delBtn.click(function (e) {
+                console.log('this', this);
+                let thisParent = $(this).parent();
+                let thisParentParent = $(this).parent().parent();
+                console.log('thisParent', thisParent);
+                console.log('thisParentParent', thisParentParent);
+                thisParentParent.remove();
 
-        // ajax del method
-      });
+                // ajax del method
+            });
 
-      addBtn.click(function (e) {
-        console.log('this', this);
-        let myTableLastTr = myTable.find('tr').last();
-        console.log('myTableLastTr', myTableLastTr);
-        myTableLastTr.clone().appendTo("tbody");
-      });
-    });
+            addBtn.click(function (e) {
+                console.log('this', this);
+                let myTableLastTr = myTable.find('tr').last();
+                console.log('myTableLastTr', myTableLastTr);
+                myTableLastTr.clone().appendTo("tbody");
+
+            });
+            cloneBtn.click(function () {
+                let closestTr = $(this).closest('tr');
+                console.log('closesTr', closestTr);
+                closestTr.clone().appendTo('tbody');
+            })
+        });
     </script>
 
 </body>

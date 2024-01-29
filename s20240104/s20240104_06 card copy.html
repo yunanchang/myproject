@@ -32,8 +32,56 @@
                         <h4 class="card-title">John Doe</h4>
                         <p class="card-text">Some example text some example text. John Doe is an architect and engineer
                         </p>
+                        <button id="myBtn"  data-price="1000" data-level="A" type="button" class="btn btn-primary myBtn">取得優惠價</button>
+                        <div id='myBox'  class=" myBox text-danger">
+                            <span id="mySpan" class="mySpan">滿額</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h2>Card Image</h2>
+                <p>Image at the top (card-img-top):</p>
+                <div class="card" style="width:400px">
+                    <img class="card-img-top" src="../picture/MAINMEWTWO_2000x.jpg" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">John Doe</h4>
+                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer
+                        </p>
+                        <button id="myBtn"  data-price="1000" data-level="B" type="button" class="btn btn-primary myBtn">取得優惠價</button>
+                        <div id='myBox'  class=" myBox text-danger">
+                            <span id="mySpan" class="mySpan">滿額</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h2>Card Image</h2>
+                <p>Image at the top (card-img-top):</p>
+                <div class="card" style="width:400px">
+                    <img class="card-img-top" src="../picture/MAINMEWTWO_2000x.jpg" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">John Doe</h4>
+                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer
+                        </p>
                         <button id="myBtn"  data-price="1000" data-level="C" type="button" class="btn btn-primary myBtn">取得優惠價</button>
-                        <div id='myBox'  class="  text-danger">
+                        <div id='myBox'  class=" myBox text-danger">
+                            <span id="mySpan" class="mySpan">滿額</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h2>Card Image</h2>
+                <p>Image at the top (card-img-top):</p>
+                <div class="card" style="width:400px">
+                    <img class="card-img-top" src="../picture/MAINMEWTWO_2000x.jpg" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">John Doe</h4>
+                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer
+                        </p>
+                        <button id="myBtn"  data-price="1000" data-level="C" type="button" class="btn btn-primary myBtn">取得優惠價</button>
+                        <div id='myBox'  class=" myBox text-danger">
                             <span id="mySpan" class="mySpan">滿額</span>
                         </div>
                     </div>
@@ -76,8 +124,8 @@
                 const nowMyBox = nowCardBody.find('.myBox');
         const nowMySpan = nowCardBody.find('.mySpan');
 
-                myBox.show();
-                mySpan.text(`原價:${getDataPrice},優惠價${result}`)
+        nowMyBox.slideToggle();
+        nowMySpan.text(`原價:${getDataPrice},優惠價${result}`)
             });
 
 
