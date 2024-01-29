@@ -65,8 +65,8 @@
         </tr>
       </thead>
       <tbody>
-        <!-- <tr>
-         
+        <tr>
+          <!-- <td>a01</td> -->
           <td>
             <img src="../game/薩爾達傳說：王國之淚.jpg" alt="" style="width: 250px;">
             
@@ -85,7 +85,7 @@
             <button type="button" class="cloneBtn btn btn-warning">Clone</button>
             <button type="button" class="delBtn btn btn-danger">Del</button>
           </td>
-        </tr> -->
+        </tr>
       </tbody>
     </table>
 
@@ -105,25 +105,14 @@
   <script>
     $(document).ready(function () {
       function sumFun(){
-       let myTotal=$('.myTotal');
-       console.log('myTotal',myTotal);
-       let getMyTotal=myTotal.length;
-      //  console.log(getMyTotal)
-      let sum=0;
-      myTotal.each(function(index,value){
-        // console.log('index', index);
-          // console.log('value', value);
-          sum=sum+Number($(value).text());
-      });
-      mySum.text(sum);
-
+       let myTotal=$('.mytotal');
       }
 
       function delFun(nowThis) {
         // console.log('del ok');
         let nowTr = $(nowThis).parent().parent();
           nowTr.remove();
-          sumFun();
+
         // let getTrCount = $('tr').length;
         // console.log('getTrCount', getTrCount);
         // if (getTrCount > 2) {
@@ -139,23 +128,24 @@
         let nowTr = $(nowThis).parent().parent();
           // nowTr.clone(true).appendTo("tbody");
           nowTr.clone(true).insertAfter(nowTr);
-          sumFun();
       }
       const myBtn = $('.myBtn');
       const mySum=$('#mySum');
    
       let delBtn = $('.delBtn');
       let cloneBtn = $('.cloneBtn');
-
+      // // 
+      let quantity=$('.quantity');
+      quantity.change(function(){
+       console.log('ddd');
+      });
+// 
       cloneBtn.click(function (e) {
         cloneFun(this);
-        sumFun();
-      
       });
 
       delBtn.click(function (e) {
         delFun($(this));
-        sumFun();
       });
 
       myBtn.click(function (e) {
@@ -171,12 +161,12 @@
             <br>
             ${name}
           </td>
-          <td><span>${price}</span>元</td>
+          <td>100</td>
           <td>
-            <input type="number" class="quantity form-control" id="" max="20" min="1" value="1">
+            <input type="number" class="quantity form-control" id="" max="20" min="1" value="5">
           </td>
           <td>
-            小計 : <span class="myTotal">${price}</span>元
+            小計 : <span class="myTotal">${price}</span>
             </td>
           <td>
             <input type="text" class="form-control" name="" id="" >
@@ -195,9 +185,6 @@
         addDelBtn = $('.delBtn').last();
         addCloneBtn=$('.cloneBtn').last();
          addQuantity = $('.quantity').last();
-
-
-         sumFun();
         addDelBtn.click(function () {
           delFun($(this));
         });
@@ -209,15 +196,8 @@
        
      
         addQuantity.change(function(){
-          let getQuantity= Number($(this).val());
-          let closestQuantityTr=$(this).parent().parent()
-          // console.log('getQuantity', getQuantity);
-          let findTotal=closestQuantityTr.find('.myTotal');
-         console.log('closestQuantityTr', closestQuantityTr);
-          let total=getQuantity*price;
-          findTotal.text(total);
-          sumFun()
-        });
+       console.log('ddd');
+      });
    
    
       });
