@@ -1,201 +1,1308 @@
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-Hant-TW" >
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta charset="UTF-8">
+<title>NS - 巴哈商城 - 巴哈姆特</title>
+
+<meta property="og:site_name" content="巴哈姆特電玩資訊站">
+<meta name="description" content="巴哈商城提供許多NS的商品，購買後還能獲得紅利點數折抵下次消費，買越多回饋越多。多元的付款與配送方式，更方便玩家網路訂購喜歡的電玩動漫精品。">
+<meta property="og:description" content="巴哈商城提供許多NS的商品，購買後還能獲得紅利點數折抵下次消費，買越多回饋越多。多元的付款與配送方式，更方便玩家網路訂購喜歡的電玩動漫精品。"/>
+<link href="https://i2.bahamut.com.tw/css/basic.css?v=1706150491" rel="stylesheet" type="text/css" />
+<link href="https://i2.bahamut.com.tw/css/search.css" rel="stylesheet" type="text/css" />
+<link href="https://i2.bahamut.com.tw/css/index_top.css?v=1663318940" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Teko:300,400">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="https://i2.bahamut.com.tw/css/dailybonus.css?v=1694422001" rel="stylesheet" type="text/css">
+<link href="https://i2.bahamut.com.tw/css/plugins/driver-0.9.8.min.css?v=1611287218" rel="stylesheet" type="text/css">
+<link rel="icon" href="https://i2.bahamut.com.tw/favicon.svg?v=1689129528" type="image/svg+xml">
+<link rel="apple-touch-icon" href="https://i2.bahamut.com.tw/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://i2.bahamut.com.tw/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://i2.bahamut.com.tw/apple-touch-icon-144x144.png">
+<script src="https://i2.bahamut.com.tw/js/sys.js?v=1602574456"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://i2.bahamut.com.tw/js/BAHA_EGG.js"></script>
+<script src="https://i2.bahamut.com.tw/js/rsearch.js"></script>
+<script src="https://i2.bahamut.com.tw/js/plugins/js.cookie-2.1.4.js"></script>
+<script src="https://i2.bahamut.com.tw/js/plugins/ResizeSensor.js?v=1667200186"></script>
+<script src="https://i2.bahamut.com.tw/js/plugins/dialogify.min.js?v=1692157609"></script>
+<script src="https://i2.bahamut.com.tw/js/user_login.js?v=1685524172"></script>
+<script src="https://i2.bahamut.com.tw/js/BH_topBar_noegg.js?v=1702975577" defer></script>
+<script src="https://i2.bahamut.com.tw/js/BH_mainmenu.js?v=1705460898" defer></script>
+<script src="https://i2.bahamut.com.tw/js/changeText.js?v=1701759729"></script>
+<script src="https://i2.bahamut.com.tw/js/util.js?v=1706260871"></script>
+<script src="https://i2.bahamut.com.tw/js/dfp.js"></script>
+
+<script src="https://i2.bahamut.com.tw/js/plugins/lightbox.js"></script>
+<script src="https://i2.bahamut.com.tw/js/csrf.js?v=1689666161"></script>
+<script src="https://i2.bahamut.com.tw/js/plugins/nunjucks-slim-3.2.2.min.js?v=1612340501"></script>
+<script src="https://i2.bahamut.com.tw/build/template/signin.min.js?v=1694421412"></script>
+<script src="https://i2.bahamut.com.tw/js/signin.js?v=1705976287"></script>
+<script src="https://i2.bahamut.com.tw/js/signin_ad.js?v=1692001305"></script>
+<script>
+
+jQuery(document).ready(function($) {
+if (typeof BH_AlkasooD === 'function') {
+BH_AlkasooD($);
+}
+});
+
+// anti adblock
+var AntiAd = AntiAd || {};
+(function(AntiAd) {
+'use strict';
+
+AntiAd.flag = false;
+AntiAd.whiteList = [];
+
+AntiAd.verifyLink = function (link) {}
+AntiAd.block = function() {}
+AntiAd.check = function(element) {}
+})(AntiAd);
+</script>
+<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+<script type="text/javascript" src="https://i2.bahamut.com.tw/js/im_layout_lib.js?v=1705633400" defer></script>
+<script type="text/javascript" src="https://i2.bahamut.com.tw/js/im_top_bar.js?v=1676615928" defer></script>
+<script type="text/javascript" src="https://i2.bahamut.com.tw/js/plugins/driver-0.9.8.min.js?v=1611287218" defer></script>
+<script src="https://i2.bahamut.com.tw/js/gshop.js?v=1689308161"></script><script src="https://i2.bahamut.com.tw/js/plugins/js.cookie-2.1.4.js"></script><script src="https://i2.bahamut.com.tw/js/jquery/jquery.magnific-popup.min.js"></script><script src="https://i2.bahamut.com.tw/js/plugins/toastr-2.1.3.min.js"></script><script src="https://i2.bahamut.com.tw/js/plugins/slick-1.9.0.min.js?v=1608603448"></script><link rel="stylesheet" href="https://i2.bahamut.com.tw/css/plugins/magnific-popup.css"><link rel="stylesheet" href="https://i2.bahamut.com.tw/css/plugins/toastr.min.css"><link rel="stylesheet" href="https://i2.bahamut.com.tw/css/newgshop.css">
+<meta property="og:title" content="NS - 巴哈商城 - 巴哈姆特"><meta property="og:url" content="https://buy.gamer.com.tw/indexList.php?gc1=27"><meta property="og:image" content="https://i2.bahamut.com.tw/bahaLOGO_1200x630.jpg"><link rel="stylesheet" href="https://i2.bahamut.com.tw/css/baha-shopping.css?v=1700814693"><script>
+jQuery(document).ready(function($) {
+window.newIndex.commonEvent.bindEvent();
+var screenwidth = $(window).width();
+if (screenwidth > 998) {
+$(".btn-products-sort").hover(function() {
+$(this).addClass('btn-sort-on');
+$(this).prev().addClass('products-list-open');
+}, function() {
+$(this).removeClass('btn-sort-on');
+$(this).prev().removeClass('products-list-open');
+});
+$(".products-sort-list").hover(function() {
+$(this).addClass('products-list-open');
+$(this).next().addClass('btn-sort-on');
+}, function() {
+$(this).removeClass('products-list-open');
+$(this).next().removeClass('btn-sort-on');
+});
+} else {
+$(".btn-products-sort").click(function() {
+var $this = $(this);
+$this.toggleClass('btn-sort-on');
+$this.prev().toggleClass("products-list-open");
+});
+}
+});
+</script>
+<script async='async' src='https://securepubads.g.doubleclick.net/tag/js/gpt.js'></script>
+<script>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+if (window.Cookies) {
+bahalv = Cookies.get('BAHALV') || "";
+} else if (window.getCookie) {
+bahalv = getCookie( 'BAHALV' );
+} else if (window.jQuery && jQuery.cookie) {
+bahalv = jQuery.cookie('BAHALV') || "";
+} else {
+bahalv = "";
+}
+
+bahalv = (bahalv) ? bahalv : 0;
+
+var fparam = location.search;
+var bsnary = fparam.match(/\d+/g);
+var gpt_bsn = (bsnary === null) ? 0 : bsnary[0];
+
+googletag.cmd.push(function() {
+googletag.defineSlot('/1017768/B300', [[300, 250], [300, 600]], 'div-gpt-ad-1489070677458-0').addService(googletag.pubads());googletag.pubads().setTargeting("LV", bahalv);
+googletag.pubads().setTargeting("bsn", gpt_bsn);
+googletag.pubads().setTargeting("service","ec");
+googletag.pubads().enableSingleRequest();
+googletag.pubads().collapseEmptyDivs();
+googletag.enableServices();
+});
+</script>
 </head>
-
 <body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KDKMGT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KDKMGT');</script>
+<!-- End Google Tag Manager --><div class="TOP-bh"><!--全站內頁天-->
+<div class="TOP-data" id="BH-top-data"><!--全站內頁天中間區塊-->
+<div class="TOP-my"></div>
+<div id="topBarMsg_more" style="display:none" class="TOP-msg"></div>
+<a href="https://www.gamer.com.tw/">
+<img src="https://i2.bahamut.com.tw/top_logo.svg" style="height:35px;"/>
+</a>
+<p class="TOP-search mobilehide">
+<gcse:searchbox-only resultsUrl="https://search.gamer.com.tw"></gcse:searchbox-only>
+</p>
+<form id="js-SearchForm" class="nav_searchform" style="display: none;">
+<span class="nav-search-close-button" tabindex="0" onclick="TopBar.hideSearchBar();">✕</span>
+<div class="nav-search-inner">
+<p class="TOP-search">
+<gcse:searchbox-only resultsUrl="https://search.gamer.com.tw"></gcse:searchbox-only>
+</p>
+</div>
+</form>
+</div><!--全站內頁天中間區塊結束-->
+</div><!--全站內頁天結束-->
+<script>
+jQuery(function() {
+TopBar.render();
+TopBar.getNotifyNumber();
+});
 
-  <div class="container-fluid">
-    <div class="row mt-3">
-      <div class="col">
-        <button id="sumBtn" type="button" class="btn btn-danger d-none " data-name="咖啡" data-price="100" data-img="24">
-          合計
-        </button>
-        <button type="button" class="myBtn btn btn-primary" data-name="咖啡" data-price="100" data-img="24">
-          咖啡
-        </button>
-        <button type="button" class="myBtn btn btn-primary" data-name="花茶" data-price="200" data-img="25">
-          花茶
-        </button>
-        <button type="button" class="myBtn btn btn-primary" data-name="礦泉水" data-price="50" data-img="26">
-          礦泉水
-        </button>
-      </div>
-    </div>
-    <div class="row mt-3">
-      <div class="col">
-        <button type="button" class="myBtn btn btn-success" data-name="手工餅乾" data-price="120" data-img="35" data-id="1">
-          手工餅乾
-        </button>
-        <button type="button" class="myBtn btn btn-success" data-name="吐司" data-price="65" data-img="36">
-          吐司
-        </button>
-        <button type="button" class="myBtn btn btn-success" data-name="馬卡龍" data-price="50" data-img="37">
-          馬卡龍
-        </button>
-      </div>
-    </div>
+(function() {
+var cx = 'partner-pub-9012069346306566:kd3hd85io9c';
+var gcse = document.createElement('script');
+gcse.type = 'text/javascript';
+gcse.async = true;
+gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(gcse, s);
+})();
+
+</script><div id="bh-banner" class="bh-banner__no-menu"><div id="BH-bigbanner"></div></div>
+<div id="BH-background">
+<div id="BH-wrapper" class=""><!--最外層寬1000包裝-->
+<div style="width:0;height:0;position:relative;top:0px;left:0px;z-index:100;"><div style="position:absolute; top:0px; left:730px; width:268px; border: solid 1px #000000; background: #FFFFFF; z-index:100;display:none;" class="rsearch" id="rsearch" align="left"><ol id="suggestol"></ol></div></div><!--搜尋BAR下拉結束-->
+
+<!--服務選單-->
+<div id="BH-master"><!--內容左側區塊--><div class="shopping-container">
+<div class="shopping-wrap">
+<div class="shopping-header">
+<div class="header-content"><a href="//buy.gamer.com.tw/index.php" class="header-shopping-logo">
+<img src="https://i2.bahamut.com.tw/newgshop/baha_shopping_logo.png" alt="">
+</a><div class="header-search-input-area qa-input">
+<form method="GET" action="search.php" name="searchf" onsubmit="return chksearch(this)">
+<input type="text" id="ser_bar" name="kw" class="search-input" placeholder="搜尋想要的商品或遊戲...">
+<button type="submit">
+<i class="material-icons">search</i>
+</button>
+</form>
+</div><div class="header-btn-bar">
+<a href="javascript:void(0)" class="btn-shopping-car">
+<img src="https://i2.bahamut.com.tw/newgshop/store_shopping_car.svg" alt="" class="pic-shopping-car">
+<div id="js-cart-index" class="notice-on" style="display:none"></div>
+購物車
+</a>
+<a href="order_history.php" class="btn-my-order">
+<img src="https://i2.bahamut.com.tw/newgshop/store_my_order.svg" alt="" class="pic-my-order">
+我的訂單
+</a>
+<a href="//buy.gamer.com.tw/atmQA.php" class="btn-custom-service">
+<img src="https://i2.bahamut.com.tw/newgshop/store_custom_service.svg" alt="" class="pic-custom-service">
+客服中心
+</a>  <a href="//buy.gamer.com.tw/announce.php" class="btn-anouncement">
+<img src="https://i2.bahamut.com.tw/newgshop/store_announcement.svg" alt="" class="pic-anouncement" id="js-announce" data-up="1706578713">
+<div id="js-announce-index" class="notice-on" style="display:none"></div>
+公告
+</a>
+</div><svg aria-hidden="true" data-icon="angle-down" role="img" viewBox="0 0 256 512" class="arrows-down">
+<path d="M119.5 326.9L3.5 209.1c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L128 287.3l100.4-102.2c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L136.5 327c-4.7 4.6-12.3 4.6-17-.1z" class="arrows-down-content"></path>
+</svg>
+<div class="popup-shopping-card-area">
+</div></div><ul class="header-link-list pagination-nav"><li class=><a class="link-preorder" href="//buy.gamer.com.tw/indexList.php?gc1=998">預購</a></li><li class=><a class="link-preorder" href="//buy.gamer.com.tw/indexList.php?gc1=996">新上架</a></li><li class=><a href="//buy.gamer.com.tw/indexList.php?gc1=9">點數產包</a><ul class="menu_second"><li class="menu_second_list">
+<a class="sec_list_item" href="search.php?gc1=9&gc2=92&kw=Mycard">Mycard</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=9&c2=99">PSN 點數商品</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=9&c2=104">Xbox 數位商品</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="search.php?gc1=9&gc2=93&kw=其他點數">其他點數</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=9&c2=18UP">限制級專區</a>
+</li></ul></li><li class=><a href="//buy.gamer.com.tw/indexList.php?gc1=10">數位遊戲</a><ul class="menu_second"><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=10&c2=chineseVer">中文化軟體</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=10&c2=102">Bethesda</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=10&c2=105">CAPCOM</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=10&c2=103">SEGA</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=10&c2=104">Xbox</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=10&c2=100">光榮特庫摩</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=10&c2=101">萬代南夢宮</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=10&c2=95">其他遊戲</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=10&c2=18UP">限制級專區</a>
+</li></ul></li><li class=><a href="//buy.gamer.com.tw/indexList.php?gc1=28">PS5</a><ul class="menu_second"><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=28&c2=1">遊戲軟體</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=28&c2=chineseVer">中文化軟體</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=28&c2=2">遊戲主機</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=28&c2=3">硬體週邊</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=9&c2=99">PSN 點數商品</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=28&c2=18UP">限制級專區</a>
+</li></ul></li><li class=><a href="//buy.gamer.com.tw/indexList.php?gc1=29">Xbox SX</a><ul class="menu_second"><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=29&c2=1">遊戲軟體</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=29&c2=chineseVer">中文化軟體</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=29&c2=2">遊戲主機</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=29&c2=3">硬體週邊</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=9&c2=104">Xbox 數位商品</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=29&c2=18UP">限制級專區</a>
+</li></ul></li><li class=products-on-active><a href="//buy.gamer.com.tw/indexList.php?gc1=27">NS</a><ul class="menu_second"><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=27&c2=1">遊戲軟體</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=27&c2=chineseVer">中文化軟體</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=27&c2=2">遊戲主機</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=27&c2=3">硬體週邊</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=27&c2=18UP">限制級專區</a>
+</li></ul></li><li class=><a href="//buy.gamer.com.tw/indexList.php?gc1=25">PS4</a><ul class="menu_second"><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=25&c2=1">遊戲軟體</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=25&c2=chineseVer">中文化軟體</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=25&c2=2">遊戲主機</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=25&c2=3">硬體週邊</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=9&c2=99">PSN 點數商品</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=25&c2=18UP">限制級專區</a>
+</li></ul></li><li class=><a href="//buy.gamer.com.tw/indexList.php?gc1=26">Xbox One</a><ul class="menu_second"><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=26&c2=1">遊戲軟體</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=26&c2=chineseVer">中文化軟體</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=26&c2=2">遊戲主機</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=26&c2=3">硬體週邊</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=9&c2=104">Xbox 數位商品</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=26&c2=18UP">限制級專區</a>
+</li></ul></li><li class=><a href="//buy.gamer.com.tw/indexList.php?gc1=3">PC</a><ul class="menu_second"><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=3&c2=chineseVer">中文化軟體</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=3&c2=33">角色扮演</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=3&c2=34">動作</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=3&c2=35">射擊</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=3&c2=38">冒險</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=3&c2=39">策略模擬</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=3&c2=73">其它類型</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=3&c2=18UP">限制級專區</a>
+</li></ul></li><li class=><a href="//buy.gamer.com.tw/indexList.php?gc1=8">電腦週邊</a><ul class="menu_second"><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=8&c2=81">鍵盤</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=8&c2=82">滑鼠</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=8&c2=83">耳機、麥克風</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=8&c2=84">攝影機</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=8&c2=85">遊戲控制器</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=8&c2=86">行動電源</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=8&c2=87">其他</a>
+</li></ul></li><li class=><a href="//buy.gamer.com.tw/indexList.php?gc1=6">動畫影音</a><ul class="menu_second"><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=6&c2=65">BD</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=6&c2=61">DVD</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=6&c2=62">原聲音樂 CD</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=6&c2=63">Sony Music 館</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=6&c2=64">普威爾動畫館</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=6&c2=18UP">限制級專區</a>
+</li></ul></li><li class=><a href="//buy.gamer.com.tw/indexList.php?gc1=4">精品書籍</a><ul class="menu_second"><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=4&c2=43">ACG 模型盒玩</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=4&c2=44">ACG 週邊產品</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=4&c2=46">巴哈姆特週邊</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=4&c2=47">漫博書展精品</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=4&c2=41">遊戲攻略</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=4&c2=42">畫冊、設定集</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=4&c2=45">小說、漫畫</a>
+</li></ul></li><li class=><a href="//buy.gamer.com.tw/indexList.php?gc1=999">特價</a><ul class="menu_second"><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=999&c2=11">$1 ~ $399</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=999&c2=12">$400 ~ $699</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=999&c2=13">$700 ~ $999</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=999&c2=14">$1000 以上</a>
+</li></ul></li><li class=><a href="//buy.gamer.com.tw/indexList.php?gc1=5">其他</a><ul class="menu_second"><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=5&c2=4">其他</a>
+</li><li class="menu_second_list">
+<a class="sec_list_item" href="index_second_list.php?c1=5&c2=18UP">限制級專區</a>
+</li></ul></li></ul><ul class ="link-list-second" id="digital-game-list"><li class="link-list-second-area">
+<a href="index_second_list.php?c1=27&c2=1" class="list-second-item">遊戲軟體</a>
+</li><li class="link-list-second-area">
+<a href="index_second_list.php?c1=27&c2=chineseVer" class="list-second-item">中文化軟體</a>
+</li><li class="link-list-second-area">
+<a href="index_second_list.php?c1=27&c2=2" class="list-second-item">遊戲主機</a>
+</li><li class="link-list-second-area">
+<a href="index_second_list.php?c1=27&c2=3" class="list-second-item">硬體週邊</a>
+</li><li class="link-list-second-area">
+<a href="index_second_list.php?c1=27&c2=18UP" class="list-second-item">限制級專區</a>
+</li></ul></div>
+<div class="shopping-index-main-content pagination-page-content">
+<div class="main-area-products">
+
+<!--實體商品 開始-->
+<div class="pagination-products-block">
+<div class="products-block-head">
+<div class="breadcrumbs-nav">
+<a href="https://buy.gamer.com.tw" class="nav-items">巴哈商城</a>
+<p>&nbsp;>&nbsp;</p>
+<p class="last-nav-items">NS</p>
+</div>
+<ul class="products-sort-list">
+<li><a href="indexList.php?sort=2&gc1=27">熱門現貨</a></li><li><a href="indexList.php?sort=3&gc1=27">熱門預購</a></li><li><a href="indexList.php?sort=4&gc1=27">價格低 > 高</a></li>
+<li><a href="indexList.php?sort=5&gc1=27">價格高 > 低</a></li>
+</ul>
+<div class="btn-products-sort">
+<img src="https://i2.bahamut.com.tw/newgshop/btn_products_sort.png" alt="sort" class="pic-sort">
+<p>排序</p>
+</div>
+</div>
+<div class="products-card-scroll">
+<div class = "products-card-control">
+<div class="products-cards-area"><div class="products-card">
+<a href="atmItem.php?sn=35937" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/25/8548576a53d9d3021af32c03da1ord55.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35937" class="products-name" title="《東方月神夜》多語言版">
+<p>《東方月神夜》多語言版</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利4</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$990</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', 'TW-12TO18', buyPart.buyNext(35937, '050ba8d8cd340e22ea3254755de52d5c9db719cd4b9f218a65bb4e7a'))">前往預購</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35929" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/19/bc63e730d40eedce1842ff18d81oqwb5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35929" class="products-name" title="《九魂的久遠》中文限定版（附贈預購特典）">
+<p>《九魂的久遠》中文限定版（附贈預購特典）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利20</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$2020</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', 'TW-15TO18', buyPart.buyNext(35929, '050bc7b4d4bd73f030d7a675931c46c807f819c2c71c380365bb4e7a'))">前往預購</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35927" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/16/c42f562afdb221d811f27d78ad1oqw85.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35927" class="products-name" title="《九魂的久遠》中文一般版（附贈預購特典）">
+<p>《九魂的久遠》中文一般版（附贈預購特典）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利7</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$1090</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', 'TW-15TO18', buyPart.buyNext(35927, '050be05015ff26298c4f21577771ad4740e6dce0dee8dc2365bb4e7a'))">前往預購</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35912" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/04/38d3f61ff67cfac6d4355d5c1a1oovo5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35912" class="products-name" title="《桃太郎電鐵 ~昭和 平成 令和 也是定番！~》中文版">
+<p>《桃太郎電鐵 ~昭和 平成 令和 也是定番！~》中文版</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$1890</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', 'TW-ALL', buyPart.buyNext(35912, '050c0760815f9e1172a77e57cfe57b79ab982f306e08aa5c65bb4e7a'))">前往預購</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35890" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/16/d86525e95da5aa369b0a2a0b911oock5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35890" class="products-name" title="《病態：憤怒之王》多語言版">
+<p>《病態：憤怒之王》多語言版</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$1090</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', 'TW-18UP', buyPart.buyNext(35890, '050c17c85548c94b0964a8ea8bea6dfcb5a420dc4b30f4f365bb4e7a'))">前往預購</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35828" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/69/6a3f78a321a8bef303bef283cd1olud5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35828" class="products-name" title="《探靈直播 2》中日英文版">
+<p>《探靈直播 2》中日英文版</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利3</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$1090</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now btn-no-item" onclick="wantorderType('want_order','35828',5)">補貨通知我</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35826" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/74/e05cc366f42776885afcd73ab21olxa5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35826" class="products-name" title="PowerA Nintendo Switch 控制器二合一充電座">
+<p>PowerA Nintendo Switch 控制器二合一充電座</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利15</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$1599</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', '', buyPart.buyNext(35826, '050c389879d2cca0ecbd65e334dc82d18d71e2504b38c41f65bb4e7a'))">前往購買</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35825" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/80/71e498ba6b186b2bf7dc118ecc1hlow5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35825" class="products-name" title="PowerA Joy-Con 控制器充電座">
+<p>PowerA Joy-Con 控制器充電座</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利11</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$1199</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', '', buyPart.buyNext(35825, '050c62c899135766392a5323edf25e86a47103d7f61a4ce765bb4e7a'))">前往購買</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35809" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/92/ec1970e78aeb5058f6e7711cb11olh45.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35809" class="products-name" title="《寶可夢》特仕 PowerA Nintendo Switch 專用耐用收納便攜包（復刻皮卡丘款）">
+<p>《寶可夢》特仕 PowerA Nintendo Switch 專用耐用收納便攜包（復刻皮卡丘款）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利9</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$999</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', '', buyPart.buyNext(35809, '050c86545ef8a336fea0c15e252cbac9fded529d8ab3f15e65bb4e7a'))">前往購買</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35804" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/48/d3a55f6a9f48fe73ad2df051471old45.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35804" class="products-name" title="《索尼克》特仕 PowerA Nintendo Switch 卡匣三折收納包（索尼克踢擊款）">
+<p>《索尼克》特仕 PowerA Nintendo Switch 卡匣三折收納包（索尼克踢擊款）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利6</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$699</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now btn-no-item" onclick="wantorderType('want_order','35804',5)">補貨通知我</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35803" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/22/c8b4b8ee7c371d892c116b79b01olce5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35803" class="products-name" title="《索尼克》特仕 PowerA Nintendo Switch 專用耐用收納便攜包（索尼克奔馳款）">
+<p>《索尼克》特仕 PowerA Nintendo Switch 專用耐用收納便攜包（索尼克奔馳款）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利11</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$1199</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', '', buyPart.buyNext(35803, '050cb4081d8f23694989b32c6faa50412b071878254aff8165bb4e7a'))">前往購買</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35802" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/72/cf971322a70792c4c0c0b1c2671olb05.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35802" class="products-name" title="《索尼克》特仕 PowerA 增強款 Nintendo Switch 專用控制器（索尼克衝刺款）">
+<p>《索尼克》特仕 PowerA 增強款 Nintendo Switch 專用控制器（索尼克衝刺款）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利15</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$1599</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', '', buyPart.buyNext(35802, '050ccd08a92ad742b3d3e4100bcd5c30a430a7495f3f413f65bb4e7a'))">前往購買</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35801" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/34/7b82bc0e89eb1c921f537888f11ol9y5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35801" class="products-name" title="《寶可夢》特仕 PowerA 增強款 Nintendo Switch 專用無線控制器（復刻皮卡丘款）">
+<p>《寶可夢》特仕 PowerA 增強款 Nintendo Switch 專用無線控制器（復刻皮卡丘款）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利26</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$2699</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', '', buyPart.buyNext(35801, '050cdf64d8db111cc0563aa32a525c0e57626dba4f987e8c65bb4e7a'))">前往購買</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35800" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/06/1e386d632fed876ed88e0d92691ol965.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35800" class="products-name" title="《超級瑪利歐》特仕 PowerA 增強款 Nintendo Switch 專用無線控制器（瑪利歐出發款）">
+<p>《超級瑪利歐》特仕 PowerA 增強款 Nintendo Switch 專用無線控制器（瑪利歐出發款）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利26</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$2699</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', '', buyPart.buyNext(35800, '050cf288c86aedc6299f848bfe87f0ca61eb2ac449e586fe65bb4e7a'))">前往購買</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35799" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/65/7ab14d0fce1537496f7996d20c1ol815.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35799" class="products-name" title="《超級瑪利歐》特仕 PowerA 增強款 Nintendo Switch 專用無線控制器（瑪利歐嘻哈款）">
+<p>《超級瑪利歐》特仕 PowerA 增強款 Nintendo Switch 專用無線控制器（瑪利歐嘻哈款）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利26</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$2699</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', '', buyPart.buyNext(35799, '050d2230dc6b89e2921d97f34a241384bfbf25ced186011365bb4e7a'))">前往購買</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35798" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/29/161c57edf28a095ca36cb9bbbb1ol715.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35798" class="products-name" title="《超級瑪利歐》特仕 PowerA 增強款 Nintendo Switch 專用無線控制器（混亂瑪利歐款）">
+<p>《超級瑪利歐》特仕 PowerA 增強款 Nintendo Switch 專用無線控制器（混亂瑪利歐款）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利26</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$2699</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', '', buyPart.buyNext(35798, '050d43645bfe008f7cc3c24e34fedcf59f956108d656cfb365bb4e7a'))">前往購買</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35790" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/90/0957ba457768e1c902f17b182a1oke65.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35790" class="products-name" title="《雷霆任務 2 重製版》中日英文版">
+<p>《雷霆任務 2 重製版》中日英文版</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$990</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', 'TW-12TO18', buyPart.buyNext(35790, '050d5e58def13d022088f2a90d558735c34246aa350d698065bb4e7a'))">前往預購</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35764" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/59/2fdecd6fa3dbed81259b7fddb21m33f5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35764" class="products-name" title="《索尼克 超級巨星》中文限定版">
+<p>《索尼克 超級巨星》中文限定版</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利22</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$2290</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('&lt;font color=&quot;#ff0000&quot;&gt;&lt;font size=&quot;2&quot;&gt;購買前請詳閱商品頁面「壓克力立牌」說明，謝謝。&lt;/font&gt;&lt;/font&gt;', 'TW-ALL', buyPart.buyNext(35764, '050d749c5cbf921ad240c94e79f551083fc2397a4aef9e7065bb4e7a'))">前往購買</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35761" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/04/be6bc54e22ec3ac31f7d4bd9f51oj645.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35761" class="products-name" title="《重裝機兵 Leynos 2 Saturn 致敬精選輯》中文特裝版（附贈預購特典）">
+<p>《重裝機兵 Leynos 2 Saturn 致敬精選輯》中文特裝版（附贈預購特典）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利11</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$1590</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now btn-no-item" onclick="wantorderType('want_order','35761',5)">補貨通知我</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35759" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/17/8ddce4b32a252f11652d67812f1oj6h5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35759" class="products-name" title="《重裝機兵 Leynos 2 Saturn 致敬精選輯》中文一般版（附贈預購特典）">
+<p>《重裝機兵 Leynos 2 Saturn 致敬精選輯》中文一般版（附贈預購特典）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$890</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', 'TW-6TO12', buyPart.buyNext(35759, '050d9cd83d9ecad7a5486c719c8d23340f652f6bce0548fb65bb4e7a'))">前往預購</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35732" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/49/f7d79162075af12c2048e6c9351oith5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35732" class="products-name" title="《軒轅劍柒》中文限定版">
+<p>《軒轅劍柒》中文限定版</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利13</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$1690</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now btn-no-item" onclick="wantorderType('want_order','35732',5)">補貨通知我</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35731" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/51/2f69e49cc82d04b8aa899c65581oitj5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35731" class="products-name" title="《軒轅劍柒》中文一般版">
+<p>《軒轅劍柒》中文一般版</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利6</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$1390</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now btn-no-item" onclick="wantorderType('want_order','35731',5)">補貨通知我</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35699" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/11/7445c05db1b1a73afd6a5bbac11oh635.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35699" class="products-name" title="《DreadOut 2》中文初回版">
+<p>《DreadOut 2》中文初回版</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利11</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$1590</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', 'TW-18UP', buyPart.buyNext(35699, '050dc3840ee87e8dcb5601b979db4c569f1083976c91088f65bb4e7a'))">前往購買</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35698" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/24/e05c0b69aa4ded647cab136ade1ogsk5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35698" class="products-name" title="《巧克甜戀》中日英文版">
+<p>《巧克甜戀》中日英文版</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$1090</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', 'TW-12TO18', buyPart.buyNext(35698, '050dd900080f2eebbd392238ce04ab917f1984b2a33f919865bb4e7a'))">前往預購</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35697" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/52/2125f167ccde2798d4eb78015f1ogyw5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35697" class="products-name" title="《南方四賤客：下雪天！》一般版">
+<p>《南方四賤客：下雪天！》一般版</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$990</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('&lt;font color=&quot;#ff0000&quot;&gt;※ 此商品為原裝進口版本，後續遊戲追加內容，可能須以歐版帳戶下載。&lt;/font&gt;', 'TW-18UP', buyPart.buyNext(35697, '050de7d8f2c0ff1d46ff6ca019f2178c427186ce69e8740665bb4e7a'))">前往預購</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35675" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/43/96f979e40d6668e0dcb74c2bed1odc35.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35675" class="products-name" title="《遺跡傳說 HD Remastered》中文版（附贈預購特典）">
+<p>《遺跡傳說 HD Remastered》中文版（附贈預購特典）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利11</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$1390</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now btn-no-item" onclick="wantorderType('want_order','35675',5)">補貨通知我</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35543" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/61/49ac6a1223fb4a2db6d7c85c401o8hl5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35543" class="products-name" title="amiibo 人偶玩具：索拉（大亂鬥系列）">
+<p>amiibo 人偶玩具：索拉（大亂鬥系列）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$590</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now btn-no-item" onclick="wantorderType('want_order','35543',5)">補貨通知我</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35542" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/05/7c8baf9815bbd3717d3edd89301o8it5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35542" class="products-name" title="amiibo 人偶玩具：諾亞 &amp; 彌央（異度神劍系列）">
+<p>amiibo 人偶玩具：諾亞 &amp; 彌央（異度神劍系列）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利11</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$1100</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now btn-no-item" onclick="wantorderType('want_order','35542',5)">補貨通知我</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35539" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/85/303a17a10691f18100a930447d1o6nl5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35539" class="products-name" title="《瑪利歐賽車 8 豪華版》Nintendo Switch OLED 款式台灣專用機同梱組">
+<p>《瑪利歐賽車 8 豪華版》Nintendo Switch OLED 款式台灣專用機同梱組</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利43</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$10750</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', 'TW-6TO12', buyPart.buyNext(35539, '050e2e282fe5f3ed19b1a55d450500ae12a2a02792bca61f65bb4e7a'))">前往購買</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35537" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/19/dda2734f147d269ffe13f66a511ocgv5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35537" class="products-name" title="Omelet Gaming Nintendo Switch 專用迷你 Joy-Pad 控制器（伏特綠，R）">
+<p>Omelet Gaming Nintendo Switch 專用迷你 Joy-Pad 控制器（伏特綠，R）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$790</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', '', buyPart.buyNext(35537, '050e40208510842ecaeb9ce4d68b318d1ebd710496aa3d4f65bb4e7a'))">前往購買</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35536" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/16/2060d1f18a6659038e5a5929081ocgs5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35536" class="products-name" title="Omelet Gaming Nintendo Switch 專用迷你 Joy-Pad 控制器（伏特綠，L）">
+<p>Omelet Gaming Nintendo Switch 專用迷你 Joy-Pad 控制器（伏特綠，L）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$790</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', '', buyPart.buyNext(35536, '050e527c4300afbe640674315843643e91fc7f3fe924115065bb4e7a'))">前往購買</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35535" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/13/7594eff5d09e85a765b507cd461ocgp5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35535" class="products-name" title="Omelet Gaming Nintendo Switch 專用迷你 Joy-Pad 控制器（夕陽橙，R）">
+<p>Omelet Gaming Nintendo Switch 專用迷你 Joy-Pad 控制器（夕陽橙，R）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$790</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', '', buyPart.buyNext(35535, '050e685c15e2cf8066c9f7e45f49245f40d680163f73574665bb4e7a'))">前往購買</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35533" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/07/a9de791228ad090f88b174e0e41ocgj5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35533" class="products-name" title="Omelet Gaming Nintendo Switch 專用迷你 Joy-Pad 控制器（天空藍，R）">
+<p>Omelet Gaming Nintendo Switch 專用迷你 Joy-Pad 控制器（天空藍，R）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$790</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', '', buyPart.buyNext(35533, '050e76d0f96b2ecc2e59c41d05873092473a157c5286b2aa65bb4e7a'))">前往購買</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35532" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/03/e7398370fe1f80a84b0672782d1ocgf5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35532" class="products-name" title="Omelet Gaming Nintendo Switch 專用迷你 Joy-Pad 控制器（天空藍，L）">
+<p>Omelet Gaming Nintendo Switch 專用迷你 Joy-Pad 控制器（天空藍，L）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$790</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', '', buyPart.buyNext(35532, '050e86d4465f0e49a816baa333c020d210caddc47c4bf5bb65bb4e7a'))">前往購買</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35530" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/97/7e67e3ac938b3a20ebd4559a411ocg95.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35530" class="products-name" title="Omelet Gaming Nintendo Switch 專用迷你 Joy-Pad 控制器（檸檬黃，L）">
+<p>Omelet Gaming Nintendo Switch 專用迷你 Joy-Pad 控制器（檸檬黃，L）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$790</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now btn-no-item" onclick="wantorderType('want_order','35530',5)">補貨通知我</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35529" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/93/2b75099938d6bcba3ebc1d54021ocg55.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35529" class="products-name" title="Omelet Gaming Nintendo Switch 專用迷你 Joy-Pad 控制器（月牙白，R）">
+<p>Omelet Gaming Nintendo Switch 專用迷你 Joy-Pad 控制器（月牙白，R）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$790</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', '', buyPart.buyNext(35529, '050eb938995d4abd9d6f75a4da7b762ea93b0fae3bceed7565bb4e7a'))">前往購買</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35528" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/88/4ce99b9fdf9222bc94af3512d51ocg05.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35528" class="products-name" title="Omelet Gaming Nintendo Switch 專用迷你 Joy-Pad 控制器（月牙白，L）">
+<p>Omelet Gaming Nintendo Switch 專用迷你 Joy-Pad 控制器（月牙白，L）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$790</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now btn-no-item" onclick="wantorderType('want_order','35528',5)">補貨通知我</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35508" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/31/ff847b63cb73df59d12675ab2b1o52j5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35508" class="products-name" title="《咒術迴戰 雙華亂舞》中文一般版（附贈預購特典）">
+<p>《咒術迴戰 雙華亂舞》中文一般版（附贈預購特典）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利17</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$1790</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now btn-no-item" onclick="wantorderType('want_order','35508',5)">補貨通知我</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35435" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/99/b57c75e316968f2ac37e016bae1o2vv5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35435" class="products-name" title="《幻日夜羽 -蜃景努瑪梓-》中文限定版（附贈預購特典）">
+<p>《幻日夜羽 -蜃景努瑪梓-》中文限定版（附贈預購特典）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利32</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$3250</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', 'TW-12TO18', buyPart.buyNext(35435, '050f1248c6b91f412bfb6d34b29090149b2c4b58e2dd4fb265bb4e7a'))">前往預購</a>
+</div><div class="products-card">
+<a href="atmItem.php?sn=35433" class="products-card-img">
+<img src="https://p2.bahamut.com.tw/B/2KU/03/690147a69e8f4c8e21c6a19a1c1o2vz5.JPG" alt="" class="pic-products">
+</a>
+<a href="atmItem.php?sn=35433" class="products-name" title="《幻日夜羽 -蜃景努瑪梓-》中文一般版（附贈預購特典）">
+<p>《幻日夜羽 -蜃景努瑪梓-》中文一般版（附贈預購特典）</p>
+</a>
+<div class="products-info">
+<span class="color-NS">NS</span>
+<span class="feedback-point">紅利13</span>
+
+</div>
+<div class="products-price-area">
+<p class="products-price">NT$1390</p>
+</div>
+<a href="javascript:void(0);" class="btn-buy-now " onclick="buyPart.remind('', 'TW-12TO18', buyPart.buyNext(35433, '050f26fcc82f9e18bd1a64029aa5738378592ae6f395741b65bb4e7a'))">前往預購</a>
+</div>    </div><div id="BH-pagebtn" onkeydown="chpagehotkey(event.keyCode)" >
+<a title="上一頁快速鍵：F7" class="prev no">◄</a><a  href='indexList.php?page=2&gc1=27&sort=1' title='下一頁快速鍵：F8' class='next'>►</a><p class="BH-pagebtnA">
+<a class="pagenow">1</a><a  href="indexList.php?page=2&gc1=27&sort=1">2</a><a  href="indexList.php?page=3&gc1=27&sort=1">3</a><a  href="indexList.php?page=4&gc1=27&sort=1">4</a>...<a  href="indexList.php?page=11&gc1=27&sort=1">11</a></p>
+</div>
+<script>
+function chpagehotkey(code, e){
+if (code === 119) {
+location.href = "indexList.php?page=2&gc1=27&sort=1";
+e && e.preventDefault();
+} else if(code === 118) {
+location.href = "indexList.php?page=0&gc1=27&sort=1";
+e && e.preventDefault();
+}
+}
+</script>
   </div>
+</div></div>
+<!--實體商品 結束-->
 
-  <hr>
-  <div class="container-fluid">
-    <table class="table table-hover align-middle text-center">
-      <thead>
-        <tr>
-          <!-- <th width="7%">編號</th> -->
-          <th width="15%">品名</th>
-          <th width="30%">Desc</th>
-          <th width="" class="text-start">操作</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- <tr>
-          <td>
-            <img class="rounded-circle" src="https://picsum.photos/id/26/120/120" alt="">
-          </td>
-          <td class="text-start">
-            咖啡
-            <br>
-            單價 <span>100</span>元
-            <div class="mb-3">
-              <label for="" class="form-label">數量</label>
-              <input type="number" class="form-control" id="" max="20" min="1" value="1">
-            </div>
-            <hr>
-            小計 : <span>100</span>
-          </td>
-          <td class="text-start">
-            <button type="button" class="cloneBtn btn btn-warning">Clone</button>
-            <button type="button" class="delBtn btn btn-danger">Del</button>
-          </td>
-        </tr> -->
-      </tbody>
-    </table>
-  </div>
+</div>
+<div class="side-area-ad"><a href="https://buy.gamer.com.tw/announce.php" data-gtm="EC_Right banner" data-sn="2297">
+<img src="https://p2.bahamut.com.tw/B/2KU/46/e85018234d54463393017233ea1osdu5.JPG" alt="">
+</a><a href="https://buy.gamer.com.tw/search.php?kw=%E9%99%90%E6%99%82%E6%B4%BB%E5%8B%95" data-gtm="EC_Right banner" data-sn="2285">
+<img src="https://p2.bahamut.com.tw/B/2KU/21/0e13e30e81c298fbc216a9a2781opw95.JPG" alt="">
+</a><a href="https://buy.gamer.com.tw/search.php?kw=Backbone+One+USB-C+%E9%80%A3%E6%8E%A5%E5%9F%A0%E5%B0%88%E7%94%A8%E7%84%A1%E7%B7%9A%E6%89%8B%E9%81%8A%E6%8E%A7%E5%88%B6%E5%99%A8+V2" data-gtm="EC_Right banner" data-sn="2272">
+<img src="https://p2.bahamut.com.tw/B/2KU/18/c2457cae0734efc3e1529d20e11on465.JPG" alt="">
+</a><a href="https://buy.gamer.com.tw/search.php?kw=%E4%BA%BA%E4%B8%AD%E4%B9%8B%E9%BE%8D+8" data-gtm="EC_Right banner" data-sn="2215">
+<img src="https://p2.bahamut.com.tw/B/2KU/19/8b62312cf41374f20958a340301otaf5.JPG" alt="">
+</a><a href="https://buy.gamer.com.tw/search.php?kw=%E7%9C%9F%E4%BA%BA%E5%BF%AB%E6%89%93+1" data-gtm="EC_Right banner" data-sn="2073">
+<img src="https://p2.bahamut.com.tw/B/2KU/12/d25e02a442198f8f77729bbffa1niak5.JPG" alt="">
+</a><a href="https://buy.gamer.com.tw/atmItem.php?sn=34190" data-gtm="EC_Right banner" data-sn="2065">
+<img src="https://p2.bahamut.com.tw/B/2KU/66/b7bc214de1fa3e0012091b28db1on5i5.JPG" alt="">
+</a><a href="https://buy.gamer.com.tw/atmItem.php?sn=34403" data-gtm="EC_Right banner" data-sn="2229">
+<img src="https://p2.bahamut.com.tw/B/2KU/62/252d7a98cb52dcda813751ca551oe765.JPG" alt="">
+</a><a href="https://buy.gamer.com.tw/search.php?kw=%E6%BD%9B%E9%BE%8D%E8%AB%9C%E5%BD%B1+Master+Collection+Vol.1" data-gtm="EC_Right banner" data-sn="2197">
+<img src="https://p2.bahamut.com.tw/B/2KU/62/6ca278fc5e446d8dd0198b84ad1otbm5.JPG" alt="">
+</a><a href="https://buy.gamer.com.tw/search.php?kw=%E5%8A%AB%E8%96%AA%E6%97%A5+3" data-gtm="EC_Right banner" data-sn="2086">
+<img src="https://p2.bahamut.com.tw/B/2KU/50/ec8387c1f52bc2ce48e1c97cf31nkmy5.JPG" alt="">
+</a><a href="https://buy.gamer.com.tw/search.php?kw=%E7%91%AA%E8%8E%89%E7%9A%84%E9%8D%8A%E9%87%91%E5%B7%A5%E6%88%BF" data-gtm="EC_Right banner" data-sn="1851">
+<img src="https://p2.bahamut.com.tw/B/2KU/65/750c0766a94b1cbb09bce0563c1mkgl5.JPG" alt="">
+</a><a href="https://buy.gamer.com.tw/search.php?kw=%E5%8B%95%E7%95%AB%E7%98%8B" data-gtm="EC_Right banner" data-sn="117">
+<img src="https://p2.bahamut.com.tw/B/2KU/09/916123ab4e74eba28280b3112718k915.JPG" alt="">
+</a><a href="https://prj.gamer.com.tw/ec/chosenOne/" data-gtm="EC_Right banner" data-sn="323">
+<img src="https://p2.bahamut.com.tw/B/2KU/15/72aad84632a8492e959b00a2b81eopb5.JPG" alt="">
+</a><a href="https://www.gamer.com.tw/" data-gtm="EC_Right banner" data-sn="42">
+<img src="https://p2.bahamut.com.tw/B/2KU/27/156263d166ed21495060290bc21mwgv5.JPG" alt="">
+</a></div></div>
+<div class="shopping-footer-area">
+<div class="footer-block">
+<div class="footer-list">
+<div></div>
+<a href="//user.gamer.com.tw/bank/premiumlist.php" target="_blank">紅利紀錄</a>
+<div></div>
+<a href="//buy.gamer.com.tw/atmQA.php">客服中心</a>
+<div></div>
+<a href="javascript:;" onclick="Dialogify.confirm('您將進入「財政部電子發票整合服務平台」，執行會員載具歸戶動作。請點選「確定」前往進行歸戶。', {ok:function(){window.open('https://buy.gamer.com.tw/invoice_register.php', '_blank');}});">會員載具歸戶</a>
+<div></div>
+<a href="//user.gamer.com.tw/help/detail.php?sn=144#buy" target="_blank">巴哈商城隱私權政策</a>
+<div></div>
+<a href="//buy.gamer.com.tw/atmPublish.php" target="_blank">公司簡介</a>
+<div></div>
+<a href="//user.gamer.com.tw/help/tellus.php?c1=6&c2=3" target="_blank">合作洽談</a>
+<div></div>
+<div class="footer-co-logo">
+<span>提供交易機制</span>
+<img src="https://i2.bahamut.com.tw/newgshop/market-711.gif" alt="">
+<img src="https://i2.bahamut.com.tw/newgshop/market-family.gif" alt="">
+<img src="https://i2.bahamut.com.tw/newgshop/market-lia.gif" alt="">
+<img src="https://i2.bahamut.com.tw/newgshop/market-ok.gif" alt="">
+<img src="https://i2.bahamut.com.tw/newgshop/market-cat.gif" alt="">
+</div>
+</div>
+<p>本站所刊載之圖文內容等版權皆屬原廠商或原作者所有，非經同意請勿轉載</p>
+<p>巴 哈 姆 特 電 玩 資 訊 站 https://www.gamer.com.tw</p>
+</div>
+</div></div>
+</div>
+<div class ="btn-go-top">
+<svg data-icon="caret-up" viewBox= "0 0 48 48">
+<path d="M24.21 16.03L11.48 28.76c-.78.78-.78 2.047 0 2.827.78.78 2.048.78 2.83 0l9.898-9.9 9.9 9.9c.78.78 2.047.78 2.827 0 .78-.78.78-2.047 0-2.828L24.21 16.03z"></path>
+</svg>
+<p>TOP</p>
+</div>
+<form id="frm41" method="POST" action="vOrderPut.php" onsubmit="return false">
+<input type="hidden" name="sn" value="">
+<input type="hidden" name="code" value="0510ce6cf28cbd443c17d201d8870f68b1a08cd98d0f7ed265bb4e7a">
+<input type="hidden" name="n" value="">
+</form>
+</div><!--右側/全版區塊結束-->
+<br class="clearfloat" /><!--清除浮動-->
+</div>
+<!--最外層寬1000包裝結束-->
+</div>
+<div style="position: fixed; left: 20px; right: 20px; bottom: 20px; z-index: 99;">
+<div
+style="
+position: relative;
+display: none;
+padding: 15px 30px 15px 15px;
+border: 1px solid transparent;
+border-radius: 3px;
+line-height: 1.5;
+background: #FFFFDB;
+border-color: #E1D3B8;
+max-width: 1250px;
+margin: auto;
+color: #705930;">
+<a href="javascript:;" class="alert-close oldbrowser-close"><i class="fa fa-times"></i></a>
+<p style="color: #705930;"><i class="material-icons" style="vertical-align: bottom; font-size: 22px; margin-right: 5px;">face</i>基於日前微軟官方表示 Internet Explorer 不再支援新的網路標準，可能無法使用新的應用程式來呈現網站內容，在瀏覽器支援度及網站安全性的雙重考量下，為了讓巴友們有更好的使用體驗，巴哈姆特即將於 2019年9月2日 停止支援 Internet Explorer 瀏覽器的頁面呈現和功能。<br>屆時建議您使用下述瀏覽器來瀏覽巴哈姆特：<br><a href="https://www.google.com/intl/zh-TW_ALL/chrome/" style="color: #0055aa;" target="_blank">。Google Chrome（推薦）</a><br><a href="https://www.mozilla.org/zh-TW/firefox/new/" style="color: #0055aa;" target="_blank">。Mozilla Firefox</a><br><a href="https://www.microsoft.com/zh-tw/windows/microsoft-edge" style="color: #0055aa;" target="_blank">。Microsoft Edge（Windows10以上的作業系統版本才可使用）</a></p>
+</div>
+<div
+style="
+position: relative;
+display: none;
+padding: 15px 30px 15px 15px;
+border: 1px solid transparent;
+border-radius: 3px;
+line-height: 1.5;
+background: #FFFFDB;
+border-color: #E1D3B8;
+color: #705930;">
+<a href="javascript:;" class="alert-close adb-close"><i class="fa fa-times"></i></a>
+<p style="color: #705930;"><i class="material-icons" style="vertical-align: bottom; font-size: 22px; margin-right: 5px;">face</i>我們了解您不想看到廣告的心情⋯ 若您願意支持巴哈姆特永續經營，請將 gamer.com.tw 加入廣告阻擋工具的白名單中，謝謝 !<a href="https://goo.gl/PmkwWS" style="color: #0055aa;" target="_blank;">【教學】</a></p>
+</div>
+</div>
+<script>
 
-  <div class="container-fluid mt-3">
-    <div class="row">
-      <div class="col">
-        <div class="text-center">
-          合計 : <span id="mySum" class="display-4">0</span> NT.
-        </div>
-      </div>
-    </div>
-  </div>
+jQuery(".a-mercy-d").click(function() {
+var url = this.href;
+var goRedirect = false;
+var openNew = (this.target) ? true : false;
 
+if (url) {
+jQuery.get("/ajax/baha_lkasoo.php", {id: jQuery(this).data('ssn')})
+.done(function() {
+goRedirect = true;
+if (!openNew) {
+document.location = url;
+}
+});
 
+setTimeout(function() {
+if (!goRedirect) {
+if (!openNew) {
+document.location = url;
+}
+}
+}, 1500);
+}
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+if (!openNew) {
+return false;
+}
+});
 
-  <script>
-    $(document).ready(function () {
-   
-      function cloneFun(nowThis) {
-        console.log('clone ok');
-        let nowTr = $(nowThis).parent().parent();
-        // nowTr.clone(true).appendTo("tbody");
-        nowTr.clone(true).insertAfter(nowTr);
-        sumFun();
-      }
+var mercyadblock = (function () {
+var adblock = {};
 
-      const myBtn = $('.myBtn');
-   
-    
-      let delBtn = $('.delBtn');
-      let cloneBtn = $('.cloneBtn');
+adblock.show = function () {
+jQuery('.adb-close').parent().show();
+};
 
+adblock.hide = function () {
+jQuery('.adb-close').parent().hide();
+};
 
-      //sumBtn click
-   
+adblock.check = function () {
+if (localStorage.getItem('admercyblocks') === null) {
+jQuery('.adb-close').parent().show();
+} else {
+var hourts = Math.floor(Date.now() / 1000)-86400;
+if (localStorage.getItem('admercyblocks') < hourts) {
+jQuery('.adb-close').parent().show();
+localStorage.removeItem('admercyblocks');
+}
+}
+};
 
-      // init cloneBtn
-      cloneBtn.click(function (e) {
-        cloneFun(this);
-      });
+return adblock;
+} ());
 
-      // init delBtn
-      delBtn.click(function (e) {
-        delFun(this);
-      });
+var mercyoldbrowser = (function () {
+var oldbrowser = {};
 
-      myBtn.click(function (e) {
-        let name = $(this).attr('data-name');
-        let price = $(this).attr('data-price');
-        let imgUrl = $(this).attr('data-img');
+oldbrowser.show = function () {
+jQuery('.oldbrowser-close').parent().show();
+};
 
+oldbrowser.hide = function () {
+jQuery('.oldbrowser-close').parent().hide();
+};
 
+oldbrowser.check = function () {
+if (localStorage.getItem('oldbrowsermercy') === null) {
+jQuery('.oldbrowser-close').parent().show();
+} else {
+var hourts = Math.floor(Date.now() / 1000)-86400;
+if (localStorage.getItem('oldbrowsermercy') < hourts) {
+jQuery('.oldbrowser-close').parent().show();
+localStorage.removeItem('oldbrowsermercy');
+}
+}
+};
 
-        let content = `
-        <tr>
-          <td>
-            <img class="rounded-circle" src="https://picsum.photos/id/${imgUrl}/120/120" alt="">
-          </td>
-          <td class="text-start">
-            ${name}
-            <br>
-            單價 <span>${price}</span>元
-            <div class="mb-3">
-              <label for="" class="form-label">數量</label>
-              <input type="number" class="quantity form-control" id="" max="20" min="1" value="1">
-            </div>
-            <hr>
-            小計 : <span class="myTotal">${price}</span>
-          </td>
-          <td class="text-start">
-            <button type="button" class="cloneBtn btn btn-warning">Clone</button>
-            <button type="button" class="delBtn btn btn-danger">Del</button>
-          </td>
-        </tr>
-        `;
+return oldbrowser;
+} ());
 
-        $('tbody').append(content);
+jQuery(".oldbrowser-close").click(function () {
+mercyoldbrowser.hide();
 
-        addDelBtn = $('.delBtn').last();
-        addCloneBtn = $('.cloneBtn').last();
-        addQuantity = $('.quantity').last();
+if (typeof(Storage) !== "undefined") {
+localStorage.setItem('oldbrowsermercy', Math.floor(Date.now() / 1000));
+}
+});
 
-  
+jQuery(".adb-close").click(function() {
+mercyadblock.hide();
 
-        // addDelBtn
-        addDelBtn.click(function (e) {
-          delFun(this);
-        });
+if (typeof(Storage) !== "undefined") {
+localStorage.setItem('admercyblocks', Math.floor(Date.now() / 1000));
+}
+});
 
-        // addCloneBtn
-        addCloneBtn.click(function (e) {
-          cloneFun(this);
-        });
+if (typeof(chpagehotkey) == 'function') {
+document.onkeydown = function (evt){
+evt = window.event || evt;
+chpagehotkey(evt.keyCode, evt);
+};
+}
+</script>
+<script>
+var isIEFlag=window.ActiveXObject || "ActiveXObject" in window;
+jQuery(function() {
+if (typeof(Storage) === "undefined") {
+/*load fail*/
+if (typeof antiadb === 'undefined') {
+mercyadblock.show();
+} else {
+/*load success but open*/
+antiadb.onDetected(function () {
+mercyadblock.show();
+});
+}
 
-        // addQuantity
-        addQuantity.change(function (e) {
-          // let getQuantity = Number($(this).val());
-          // let closestQuantityTr = $(this).parent().parent().parent();
-          // let findTotal = closestQuantityTr.find('.myTotal');
-          // console.log('closestQuantityTr', closestQuantityTr);
-          // console.log('getQuantity', getQuantity);
-          // let total = getQuantity * price;
-          // console.log('total', total);
-          // findTotal.text(total);
-          console.log('dd')
+if (isIEFlag) {
+mercyoldbrowser.show();
+}
+} else {
+/*load fail*/
+if (typeof antiadb === 'undefined') {
+mercyadblock.check();
+} else {
+/*load success but open*/
+antiadb.onDetected(function(){
+mercyadblock.check();
+});
+}
 
-         
-        });
-
-      });
-    });
-
-  </script>
+if (isIEFlag) {
+mercyoldbrowser.check();
+}
+}
+});
+</script>
 </body>
-
 </html>

@@ -26,46 +26,73 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-      
-        <button type="button" class="myBtn btn  btn-primary" data-name="薩爾達傳說：王國之淚" data-price="1500"
-          data-img="薩爾達傳說：王國之淚">薩爾達傳說：王國之淚</button>
-        <button type="button" class="myBtn btn  btn-primary" data-name="超級瑪利歐兄弟驚奇" data-price="1500"
-          data-img="超級瑪利歐兄弟驚奇">超級瑪利歐兄弟驚奇</button>
-        <button type="button" class="myBtn btn  btn-primary" data-name="寶可夢 朱／紫" data-price="1300" 
-        data-img="寶可夢 朱／紫">寶可夢 朱／紫</button>
+  <div>
+    <h2 class="text-center">購物網</h2>
+
+
+    <div class="container">
+      <!--title  -->
+      <div class="row mb-4">
+        <div class=" col">
+          遊戲收尋<input type="text ">
+        </div>
+        <div class="text-end me-5 col">
+
+          <img src="https://i2.bahamut.com.tw/newgshop/store_shopping_car.svg">
+          購物車&nbsp;&nbsp;&nbsp;
+          <img src="https://i2.bahamut.com.tw/newgshop/store_my_order.svg">
+          我的訂單&nbsp;&nbsp;
+          <img src="https://i2.bahamut.com.tw/newgshop/store_custom_service.svg">
+          客服中心&nbsp;&nbsp;
+          <img src="https://i2.bahamut.com.tw/newgshop/store_announcement.svg">
+          公告&nbsp;&nbsp;&nbsp;
+
+        </div>
+      </div>
+      <!-- title -->
+      <div class="row">
+
+        <div class="col">
+
+          <button type="button" class="myBtn btn  btn-primary" data-name="薩爾達傳說：王國之淚" data-price="1650"
+            data-img="薩爾達傳說：王國之淚">薩爾達傳說：王國之淚</button>
+          <button type="button" class="myBtn btn  btn-primary" data-name="超級瑪利歐兄弟驚奇" data-price="1500"
+            data-img="超級瑪利歐兄弟驚奇">超級瑪利歐兄弟驚奇</button>
+          <button type="button" class="myBtn btn  btn-primary" data-name="寶可夢 朱／紫" data-price="1450"
+            data-img="寶可夢 朱／紫">寶可夢 朱／紫</button>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <button type="button" class="myBtn btn  btn-success" data-name="俠盜獵車手5" data-price="999"
+            data-img="俠盜獵車手5">俠盜獵車手5</button>
+          <button type="button" class="myBtn btn  btn-success" data-name="絕地求生" data-price="450"
+            data-img="絕地求生">絕地求生</button>
+          <button type="button" class="myBtn btn  btn-success" data-name="方舟：生存進化" data-price="268"
+            data-img="方舟：生存進化">方舟：生存進化</button>
+          <button type="button" class="myBtn btn  btn-success" data-name="原神" data-price="0" data-img="原神">原神</button>
+
+        </div>
       </div>
     </div>
-    <div class="row mt-3">
-      <div class="col">
-        <button type="button" class="myBtn btn  btn-success" data-name="俠盜獵車手5" data-price="700" data-img="俠盜獵車手5">俠盜獵車手5</button>
-        <button type="button" class="myBtn btn  btn-success" data-name="絕地求生" data-price="800" data-img="絕地求生">絕地求生</button>
-        <button type="button" class="myBtn btn  btn-success" data-name="方舟：生存進化" data-price="800" data-img="方舟：生存進化">方舟：生存進化</button>
-        <button type="button" class="myBtn btn  btn-success" data-name="原神" data-price="0" data-img="原神">原神</button>
-    
-      </div>
-    </div>
-  </div>
-  <hr>
-  <div class="container">
-    <table class="table table-hover align-middle text-center">
-      <thead>
-        <tr>
-          <!-- <th width="7%">編號</th> -->
-          <th width="12%">品名</th>
-          <th width="12%">單價</th>
-          <th width="12%">數量</th>
-          <th>小計</th>
-          <th width="15%">備註</th>
-          <th width="15%">
-            operate
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- <tr>
+    <hr>
+    <div class="container">
+      <table class="table table-hover align-middle text-center">
+        <thead>
+          <tr>
+            <!-- <th width="7%">編號</th> -->
+            <th width="12%">品名</th>
+            <th width="12%">單價</th>
+            <th width="12%">數量</th>
+            <th>小計</th>
+            <th width="15%">備註</th>
+            <th width="15%">
+              operate
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
          
           <td>
             <img src="../game/薩爾達傳說：王國之淚.jpg" alt="" style="width: 250px;">
@@ -86,83 +113,83 @@
             <button type="button" class="delBtn btn btn-danger">Del</button>
           </td>
         </tr> -->
-      </tbody>
-    </table>
+        </tbody>
+      </table>
 
-  </div>
-  <div class="container-fluid mt-3">
-    <div class="row">
-      <div class="col text-center">
-        合計: 
-        <span id="mySum">0</span>
+    </div>
+    <div class="container-fluid mt-3">
+      <div class="row">
+        <div class="col text-center">
+          合計:
+          <span id="mySum">0</span>
+        </div>
       </div>
     </div>
-  </div>
 
 
 
 
-  <script>
-    $(document).ready(function () {
-      function sumFun(){
-       let myTotal=$('.myTotal');
-       console.log('myTotal',myTotal);
-       let getMyTotal=myTotal.length;
-      //  console.log(getMyTotal)
-      let sum=0;
-      myTotal.each(function(index,value){
-        // console.log('index', index);
-          // console.log('value', value);
-          sum=sum+Number($(value).text());
-      });
-      mySum.text(sum);
+    <script>
+      $(document).ready(function () {
+        function sumFun() {
+          let myTotal = $('.myTotal');
+          console.log('myTotal', myTotal);
+          let getMyTotal = myTotal.length;
+          //  console.log(getMyTotal)
+          let sum = 0;
+          myTotal.each(function (index, value) {
+            // console.log('index', index);
+            // console.log('value', value);
+            sum = sum + Number($(value).text());
+          });
+          mySum.text(sum);
 
-      }
+        }
 
-      function delFun(nowThis) {
-        // console.log('del ok');
-        let nowTr = $(nowThis).parent().parent();
+        function delFun(nowThis) {
+          // console.log('del ok');
+          let nowTr = $(nowThis).parent().parent();
           nowTr.remove();
           sumFun();
-        // let getTrCount = $('tr').length;
-        // console.log('getTrCount', getTrCount);
-        // if (getTrCount > 2) {
-        //   let nowTr = $(nowThis).parent().parent();
-        //   nowTr.remove();
+          // let getTrCount = $('tr').length;
+          // console.log('getTrCount', getTrCount);
+          // if (getTrCount > 2) {
+          //   let nowTr = $(nowThis).parent().parent();
+          //   nowTr.remove();
 
-        // }
+          // }
 
 
-      }
+        }
 
-      function cloneFun(nowThis) {
-        let nowTr = $(nowThis).parent().parent();
+        function cloneFun(nowThis) {
+          let nowTr = $(nowThis).parent().parent();
           // nowTr.clone(true).appendTo("tbody");
           nowTr.clone(true).insertAfter(nowTr);
           sumFun();
-      }
-      const myBtn = $('.myBtn');
-      const mySum=$('#mySum');
-   
-      let delBtn = $('.delBtn');
-      let cloneBtn = $('.cloneBtn');
+        }
+        const myBtn = $('.myBtn');
+        const mySum = $('#mySum');
 
-      cloneBtn.click(function (e) {
-        cloneFun(this);
-        sumFun();
-      
-      });
+        let delBtn = $('.delBtn');
+        let cloneBtn = $('.cloneBtn');
 
-      delBtn.click(function (e) {
-        delFun($(this));
-        sumFun();
-      });
+        cloneBtn.click(function (e) {
+          cloneFun(this);
+          sumFun();
 
-      myBtn.click(function (e) {
-        let name = $(this).attr('data-name');
-        let price=$(this).attr('data-price');
-        let imgUrl =$(this).attr('data-img')
-        let content = `
+        });
+
+        delBtn.click(function (e) {
+          delFun($(this));
+          sumFun();
+        });
+
+        myBtn.click(function (e) {
+          let name = $(this).attr('data-name');
+          let price = $(this).attr('data-price');
+          let imgUrl = $(this).attr('data-img')
+          let content = `
         <tr>
    
           <td>
@@ -191,43 +218,43 @@
         
         `;
 
-        $('tbody').append(content);
-        addDelBtn = $('.delBtn').last();
-        addCloneBtn=$('.cloneBtn').last();
-         addQuantity = $('.quantity').last();
+          $('tbody').append(content);
+          addDelBtn = $('.delBtn').last();
+          addCloneBtn = $('.cloneBtn').last();
+          addQuantity = $('.quantity').last();
 
 
-         sumFun();
-        addDelBtn.click(function () {
-          delFun($(this));
+          sumFun();
+          addDelBtn.click(function () {
+            delFun($(this));
+          });
+
+          addCloneBtn.click(function () {
+            cloneFun(this);
+          });
+
+
+
+          addQuantity.change(function () {
+            let getQuantity = Number($(this).val());
+            let closestQuantityTr = $(this).parent().parent()
+            // console.log('getQuantity', getQuantity);
+            let findTotal = closestQuantityTr.find('.myTotal');
+            console.log('closestQuantityTr', closestQuantityTr);
+            let total = getQuantity * price;
+            findTotal.text(total);
+            sumFun()
+          });
+
+
         });
 
-        addCloneBtn.click(function(){
-          cloneFun(this);
-        });
-
-       
-     
-        addQuantity.change(function(){
-          let getQuantity= Number($(this).val());
-          let closestQuantityTr=$(this).parent().parent()
-          // console.log('getQuantity', getQuantity);
-          let findTotal=closestQuantityTr.find('.myTotal');
-         console.log('closestQuantityTr', closestQuantityTr);
-          let total=getQuantity*price;
-          findTotal.text(total);
-          sumFun()
-        });
-   
-   
-      });
 
 
 
+      })
 
-    })
-
-  </script>
+    </script>
 
 </body>
 
