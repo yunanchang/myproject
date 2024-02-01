@@ -15,13 +15,23 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script></script>
   <!-- jq -->
   <style>
+    body{
+      background-color: #71c4d6;   }
     .box {
       height: 200px;
       width: 100vh;
       background-color: aqua;
     }
+    #queryValue {
+            border: 1px solid #ccc;
+            transition: border-color 2s ease;
+            color: #119656;
+            background-color:#E3FAFF;
+            border-radius: 5px;
+        }
   </style>
 </head>
 
@@ -33,8 +43,9 @@
     <div class="container">
       <!--title  -->
       <div class="row mb-4">
-        <div class=" col">
-          遊戲收尋<input type="text ">
+        <div class=" col ">
+          遊戲搜尋:&nbsp;&nbsp;<input type="text " class="input" id="queryValue"> 
+          <button class="btn searchBtn" onclick="search()"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
         <div class="text-end me-5 col">
 
@@ -51,7 +62,7 @@
       </div>
       <!-- title -->
       <div class="row">
-
+        
         <div class="col">
 
           <button type="button" class="myBtn btn  btn-primary" data-name="薩爾達傳說：王國之淚" data-price="1650"
@@ -249,7 +260,10 @@
 
         });
 
-
+        let btn = $('.searchBtn');
+        btn.click(function () {
+          alert('只是裝飾用的');
+        })
 
 
       })
