@@ -22,7 +22,7 @@
                     <th>id</th>
                     <th>name</th>
                     <th>Height</th>
-                    <th>Weight</th>
+                    <th>weight</th>
                     <th>寶可夢台灣官方網站</th>
                 </tr>
             </thead>
@@ -43,7 +43,7 @@
             const tbody = $('tbody')
 
             let url = 'https://pokeapi.co/api/v2/pokemon?limit=15';
-
+            
             // 04 ajax get php 03
             $.ajax({
                 type: "get",
@@ -52,40 +52,25 @@
                 dataType: "json",
                 success: function (res) {
                     console.log('res', res);
-
                     // jq each array
                     $.each(res.results, function (index, pokemon) {
                         console.log('index', index);
                         console.log('pokemon', pokemon);
-
-                        // 取得 Pokemon 的詳細資訊
-                        $.ajax({
-                            type: "get",
-                            url: pokemon.url,
-                            data: "data",
-                            dataType: "json",
-                            success: function (detail) {
-                                console.log('detail', detail);
-
-                                let formattedIndex = (index + 1).toString().padStart(4, '0');
-
-                                let content = `
-                                    <tr>
-                                        <td><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png" alt="${pokemon.name}"></td>
-                                        <td>${index + 1}</td>
-                                        <td>${pokemon.name}</td>
-                                        <td>${detail.height}</td>
-                                        <td>${detail.weight}</td>
-                                        <td><a href="https://tw.portal-pokemon.com/play/pokedex/${formattedIndex}" target="_blank">詳細資料</a></td>
-                                    </tr>
-                                `;
-                                tbody.append(content);
-
-                                // 初始化 DataTable
-                                $('#myTable').DataTable();
-                            }
-                        });
+                        let formattedIndex = (index + 1).toString().padStart(4, '0');
+                        
+                        let content = `
+                            <tr>
+                              <td><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png" alt="${pokemon.name}"></td>
+                                <td>${index + 1}</td>
+                                <td>${pokemon.name}</td>
+                                <td>${pokemon.height}</td>
+                                <td>${pokemon.weight}</td>
+                                <td><a href="https://tw.portal-pokemon.com/play/pokedex/${formattedIndex}" target="_blank">詳細資料</a></td>
+                            </tr>
+                        `;
+                        tbody.append(content);
                     });
+                    $('#myTable').DataTable();
                 }
             });
         });
