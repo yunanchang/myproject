@@ -41,7 +41,7 @@
     <script>
      $(document).ready(async function () {
     const tbody = $('tbody');
-    const url = 'https://pokeapi.co/api/v2/pokemon/?limit=386';
+    const url = 'https://pokeapi.co/api/v2/pokemon/?limit=200';
 
     try {
         const response = await $.ajax({
@@ -62,7 +62,7 @@
 
             let content = `
                 <tr>
-                    <td>66</td>
+                    <td><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonDetails.id}.png" alt="${pokemon.name}"></td> 
                     <td>${pokemonDetails.id}</td>
                     <td>${pokemon.name}</td>
                     <td>${pokemonDetails.height}</td>
@@ -84,5 +84,4 @@
 
 </html>
 
-<!-- <td><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonDetails.id}.png" alt="${pokemon.name}"></td> -->
                 

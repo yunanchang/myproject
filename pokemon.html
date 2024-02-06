@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-  img{width: 70px;}
-</style>
+
 <head>
   <title>PokeAPI Example</title>
   <meta charset="utf-8">
@@ -27,8 +25,8 @@
           <th>Image</th>
           <th>Name</th>
           <th>Types</th>
-          <th>Height( m )</th>
-          <th>Weight( kg )</th>
+          <th>Height</th>
+          <th>Weight</th>
           <th>
             Details</th>
         </tr>
@@ -46,7 +44,7 @@
       let dataTableInitialized = false;
       let fetchCounter = 0;
 
-      for (let i = 1; i <= 1010; i++) {
+      for (let i = 1; i <= 300; i++) {
         getPokemonInfo(i);
       }
 
@@ -59,20 +57,13 @@
             console.log(pokemonData);
             let types = pokemonData.types.map(type => type.type.name).join(', ');
             let formattedIndex = (pokemonData.id).toString().padStart(4, '0');
-            // 
-            let icon=`<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonData.id}.png" alt="${pokemonData.name}">`
-            // 特殊icon
-            let spriteUrl = pokemonData.sprites.other['official-artwork'].front_default;
-            let icon2=`<img  src="${spriteUrl}" alt="${pokemonData.name}" />`
-            // 特殊icon
-            
             let content = `<tr>
                               <td>${pokemonData.id}</td>
-                              <td>${icon2}</td>
-                              <td>${pokemonData.name}</td>
+                              <td><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonData.id}.png" alt="${pokemonData.name}"></td>
+                                <td>${pokemonData.name}</td>
                                 <td>${types}</td>
-                              <td>${pokemonData.height/ 10}</td>
-                              <td>${pokemonData.weight/ 10}</td>
+                              <td>${pokemonData.height}</td>
+                              <td>${pokemonData.weight}</td>
                               <td><a href="https://tw.portal-pokemon.com/play/pokedex/${formattedIndex}" target="_blank">link</a></td>
               
                             </tr>`;
@@ -80,7 +71,7 @@
 
             fetchCounter++;
 
-            if (fetchCounter === 1010 && !dataTableInitialized) {
+            if (fetchCounter === 300 && !dataTableInitialized) {
               $('#myTable').DataTable();
               dataTableInitialized = true;
             }
