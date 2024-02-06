@@ -39,42 +39,50 @@
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
 
     <script>
-        $(document).ready(function () {
-            const tbody = $('tbody')
+     $(document).ready(async function () {
+    const tbody = $('tbody');
+    const url = 'https://pokeapi.co/api/v2/pokemon/?limit=386';
 
-            let url = 'https://pokeapi.co/api/v2/pokemon?limit=15';
-            
-            // 04 ajax get php 03
-            $.ajax({
-                type: "get",
-                url: url,
-                data: "data",
-                dataType: "json",
-                success: function (res) {
-                    console.log('res', res);
-                    // jq each array
-                    $.each(res.results, function (index, pokemon) {
-                        console.log('index', index);
-                        console.log('pokemon', pokemon);
-                        let formattedIndex = (index + 1).toString().padStart(4, '0');
-                        
-                        let content = `
-                            <tr>
-                              <td><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png" alt="${pokemon.name}"></td>
-                                <td>${index + 1}</td>
-                                <td>${pokemon.name}</td>
-                                <td>${pokemon.height}</td>
-                                <td>${pokemon.weight}</td>
-                                <td><a href="https://tw.portal-pokemon.com/play/pokedex/${formattedIndex}" target="_blank">詳細資料</a></td>
-                            </tr>
-                        `;
-                        tbody.append(content);
-                    });
-                    $('#myTable').DataTable();
-                }
-            });
+    try {
+        const response = await $.ajax({
+            type: "get",
+            url: url,
+            dataType: "json",
         });
-    </script>
+
+        // 使用Promise.all並行處理所有詳細信息的AJAX請求
+        await Promise.all(response.results.map(async (pokemon) => {
+            const pokemonDetails = await $.ajax({
+                type: "get",
+                url: pokemon.url,
+                dataType: "json",
+            });
+
+            let formattedIndex = (pokemonDetails.id).toString().padStart(4, '0');
+
+            let content = `
+                <tr>
+                    <td>66</td>
+                    <td>${pokemonDetails.id}</td>
+                    <td>${pokemon.name}</td>
+                    <td>${pokemonDetails.height}</td>
+                    <td>${pokemonDetails.weight}</td>
+                    <td><a href="https://tw.portal-pokemon.com/play/pokedex/${formattedIndex}" target="_blank">詳細資料</a></td>
+                </tr>
+            `;
+            tbody.append(content);
+        }));
+
+        // 初始化DataTable
+        $('#myTable').DataTable();
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+});
+  </script>
 </body>
 
 </html>
+
+<!-- <td><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonDetails.id}.png" alt="${pokemon.name}"></td> -->
+                

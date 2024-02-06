@@ -2,94 +2,77 @@
 <html lang="en">
 
 <head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+  <title>PokeAPI Example</title>
+  <meta charset="utf-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
-    <div class="container-fluid mt-3">
-        <table class="display " id="myTable">
-            <thead>
-                <tr>
-                    <th>image</th>
-                    <th>id</th>
-                    <th>name</th>
-                    <th>Height</th>
-                    <th>Weight</th>
-                    <th>寶可夢台灣官方網站</th>
-                </tr>
-            </thead>
-            <tbody>
+  <div class="container">
+    <table class="display" id="myTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Height</th>
+          <th>Weight</th>
+        </tr>
+      </thead>
+      <tbody>
 
-            </tbody>
-        </table>
-    </div>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $(document).ready(function () {
+      const tbody = $('tbody');
 
-    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+      for (let i = 1; i <= 3; i++) {
+        getPokemonInfo(i);
+      }
 
-    <script>
-        $(document).ready(function () {
-            const tbody = $('tbody')
-
-            let url = 'https://pokeapi.co/api/v2/pokemon?limit=15';
-
-            // 04 ajax get php 03
-            $.ajax({
-                type: "get",
-                url: url,
-                data: "data",
-                dataType: "json",
-                success: function (res) {
-                    console.log('res', res);
-
-                    // jq each array
-                    $.each(res.results, function (index, pokemon) {
-                        console.log('index', index);
-                        console.log('pokemon', pokemon);
-
-                        // 取得 Pokemon 的詳細資訊
-                        $.ajax({
-                            type: "get",
-                            url: pokemon.url,
-                            data: "data",
-                            dataType: "json",
-                            success: function (detail) {
-                                console.log('detail', detail);
-
-                                let formattedIndex = (index + 1).toString().padStart(4, '0');
-
-                                let content = `
-                                    <tr>
-                                        <td><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png" alt="${pokemon.name}"></td>
-                                        <td>${index + 1}</td>
-                                        <td>${pokemon.name}</td>
-                                        <td>${detail.height}</td>
-                                        <td>${detail.weight}</td>
-                                        <td><a href="https://tw.portal-pokemon.com/play/pokedex/${formattedIndex}" target="_blank">詳細資料</a></td>
-                                    </tr>
-                                `;
-                                tbody.append(content);
-
-                                // 初始化 DataTable
-                                $('#myTable').DataTable();
-                            }
-                        });
-                    });
-                }
-            });
+      // 使用 jQuery 的 AJAX 请求获取 Pokémon 信息的示例
+      function getPokemonInfo(pokemonId) {
+        $.ajax({
+          url: `https://pokeapi.co/api/v2/pokemon/${pokemonId}`,
+          method: 'GET',
+          success: function (pokemonData) {
+            console.log(pokemonData);
+            
+            let content = `<tr>
+                              <td>${pokemonData.id}</td>
+                              <td><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonData.id}.png" alt="${pokemonData.name}"></td>
+                              <td>${pokemonData.name}</td>
+                              <td>${pokemonData.height}</td>
+                              <td>${pokemonData.weight}</td>
+                            </tr>`;
+            tbody.append(content);
+            
+            // 在每次迴圈後初始化 DataTables
+            if (pokemonId === 3) {
+              $('#myTable').DataTable();
+            }
+          },
+          error: function (error) {
+            console.error('Error fetching Pokemon data:', error);
+          }
         });
-    </script>
+      }
+    });
+  </script>
+
 </body>
 
 </html>

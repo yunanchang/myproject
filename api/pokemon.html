@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css">
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -17,14 +18,14 @@
 
 <body>
   <div class="container">
-    <table class="display " id="myTable">
+    <table class="display" id="myTable">
       <thead>
         <tr>
-          <th>Image</th>
           <th>ID</th>
+          <th>Image</th>
           <th>Name</th>
           <th>Height</th>
-          <th>Width</th>
+          <th>Weight</th>
         </tr>
       </thead>
       <tbody>
@@ -32,59 +33,47 @@
       </tbody>
     </table>
   </div>
+  <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+
   <script>
     $(document).ready(function () {
-  const tbody = $('tbody');
+      const tbody = $('tbody');
+      let dataTableInitialized = false;
 
- 
-    for (let i = 10; i <= 151; i++) {
-    getPokemonInfo(i);
-  }
+      for (let i = 1; i <= 30; i++) {
+        getPokemonInfo(i);
+      }
 
-  // 使用 jQuery 的 AJAX 请求获取 Pokémon 信息的示例
-  function getPokemonInfo(pokemonId) {
-    $.ajax({
-    url: `https://pokeapi.co/api/v2/pokemon/${pokemonId}?language=ja`, // 指定中文为语言
-      method: 'GET',
-      success: function (pokemonData) {
-        displayPokemonInfo(pokemonData);
-      },
-      error: function (error) {
-        console.error('Error fetching Pokemon data:', error);
+      // 使用 jQuery 的 AJAX 请求获取 Pokémon 信息的示例
+      function getPokemonInfo(pokemonId) {
+        $.ajax({
+          url: `https://pokeapi.co/api/v2/pokemon/${pokemonId}`,
+          method: 'GET',
+          success: function (pokemonData) {
+            console.log(pokemonData);
+            
+            let content = `<tr>
+                              <td>${pokemonData.id}</td>
+                              <td><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonData.id}.png" alt="${pokemonData.name}"></td>
+                              <td>${pokemonData.name}</td>
+                              <td>${pokemonData.height}</td>
+                              <td>${pokemonData.weight}</td>
+                            </tr>`;
+            tbody.append(content);
+            
+            if (!dataTableInitialized && pokemonId === 30) {
+              $('#myTable').DataTable();
+              dataTableInitialized = true;
+            }
+          },
+          error: function (error) {
+            console.error('Error fetching Pokemon data:', error);
+          }
+        });
       }
     });
-  }
+  </script>
 
-  // 将 Pokemon 信息显示在表格中
-  function displayPokemonInfo(pokemon) {
-    let newRow = `<tr>
-                    <td><img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"></td>
-                    <td>${pokemon.id}</td>
-                    <td>${pokemon.name}</td>
-                    <td>${pokemon.height}</td>
-                    <td>${pokemon.weight}</td>
-                  </tr>`;
-
-    // 将新行添加到 tbody 中
-    tbody.append(newRow);
-
-    // 对 tbody 中的所有行进行排序，按照第二列（即ID）的值升序排列
-    let rows = tbody.find('tr').get();
-    rows.sort(function (a, b) {
-      let keyA = $(a).children('td').eq(1).text();
-      let keyB = $(b).children('td').eq(1).text();
-      return keyA - keyB;
-    });
-
-    // 将排序后的行重新添加到 tbody 中
-    tbody.empty();
-    $.each(rows, function (index, row) {
-      tbody.append(row);
-    });
-  }
-});
-
-     </script>
 </body>
 
 </html>
