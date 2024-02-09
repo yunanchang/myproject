@@ -10,7 +10,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link rel="stylesheet" href="./css.css">
+  <link rel="stylesheet" href="./css.css">
 </head>
 
 <body>
@@ -18,31 +18,27 @@
     <button type="button" class="filter-button" data-type="normal">Normal</button>
     <button type="button" class="filter-button" data-type="fire">Fire</button>
     <button type="button" class="filter-button" data-type="water">Water</button>
-    <button type="button" class="filter-button" data-type="electric">Electric</button>
-    <button type="button" class="filter-button" data-type="grass">Grass</button>
-    <button type="button" class="filter-button" data-type="ice">Ice</button>
-    <button type="button" class="filter-button" data-type="fighting">Fighting</button>
-    <button type="button" class="filter-button" data-type="poison">Poison</button>
-    <button type="button" class="filter-button" data-type="ground">Ground</button>
-    <button type="button" class="filter-button" data-type="flying">Flying</button>
-    <button type="button" class="filter-button" data-type="psychic">Psychic</button>
-    <button type="button" class="filter-button" data-type="bug">Bug</button>
-    <button type="button" class="filter-button" data-type="rock">Rock</button>
-    <button type="button" class="filter-button" data-type="ghost">Ghost</button>
-    <button type="button" class="filter-button" data-type="dragon">Dragon</button>
-    <button type="button" class="filter-button" data-type="dark">Dark</button>
-    <button type="button" class="filter-button" data-type="steel">Steel</button>
-    <button type="button" class="filter-button" data-type="fairy">Fairy</button>
-    &nbsp&nbsp&nbsp&nbsp&nbsp
     <button type="button" id="resetFilters" class="btn btn-sm">Reset</button>
     <h4 id="currentFilter"></h4>
   </div>
 
   <div class="container mt-3">
+    <div>
+      <select name="imageType" id="imageType">
+        
+        <option value="official-artwork">Official Artwork</option>
+        <option value="front">Front Image</option>
+      
+        <option value="back">Back Image</option>
+    
+        </select>
+    </div>
     <table class="display" id="myTable">
       <thead>
         <tr>
           <th>ID</th>
+          <th>Image</th>
+     
           <th>Name</th>
           <th>Height</th>
           <th>Weight</th>
@@ -51,7 +47,7 @@
       </thead>
       <tbody></tbody>
     </table>
-    <p style="color: aqua;"></p>
+ 
   </div>
 
   <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
@@ -62,6 +58,7 @@
       const table = $('#myTable').DataTable();
       const currentFilter = $('#currentFilter');
       const activeFilters = [];
+      const imageTypeSelect = $('#imageType');
 
       for (let i = 1; i <= 20; i++) {
         getPokemonInfo(i);
@@ -75,9 +72,15 @@
             console.log(pokemonData)
             let types = pokemonData.types.map(type => type.type.name).join(', ');
 
-            // 將資料插入 DataTable
+            // 將選擇的圖片類型存儲在數據中
+            pokemonData.imageType = imageTypeSelect.val();
+
+            let img = getImageUrl(pokemonData);
+
+            // 將數據插入 DataTable
             table.row.add([
               pokemonData.id,
+              img,
               pokemonData.name,
               pokemonData.height,
               pokemonData.weight,
@@ -85,7 +88,7 @@
             ]).draw();
           },
           error: function (error) {
-            console.error('從 PokeAPI 取得寶可夢數據時發生錯誤：', error);
+            console.error('從PokeAPI獲取寶可夢數據時發生錯誤：', error);
           }
         });
       }
@@ -106,7 +109,7 @@
 
         // 使用 DataTable 的 column().search 方法，只顯示完全符合指定類型的行
         const filterRegex = activeFilters.map(filter => `(?=.*\\b${filter}\\b)`).join('');
-        table.column(4).search(filterRegex, true, false).draw();
+        table.column(5).search(filterRegex, true, false).draw();
 
         // 顯示當前篩選條件
         updateFilterText();
@@ -122,6 +125,43 @@
         currentFilter.text('');
       });
 
+      // 綁定 select 元素的 change 事件
+      imageTypeSelect.change(function () {
+        // 重新載入數據，以便更新圖片類型
+        table.clear().draw();
+        for (let i = 1; i <= 20; i++) {
+          getPokemonInfo(i);
+        }
+      });
+
+      function getImageUrl(pokemonData) {
+        // 根據選擇的圖片類型獲取對應的圖片 URL
+        let imageUrl = '';
+        switch (pokemonData.imageType) {
+          case 'front':
+            imageUrl = pokemonData.sprites.front_default;
+            break;
+          case 'back':
+            imageUrl = pokemonData.sprites.back_default;
+            break;
+          case 'front_shiny':
+            imageUrl = pokemonData.sprites.front_shiny;
+            break;
+          case 'back_shiny':
+            imageUrl = pokemonData.sprites.back_shiny;
+            break;
+          case 'official-artwork':
+            imageUrl = pokemonData.sprites.other['official-artwork'].front_default;
+            break; // 新增的處理
+            case 'official-artwork-shiny':
+            imageUrl = pokemonData.sprites.other['official-artwork'].front_shiny;
+            break; // 新增的處理
+          default:
+            imageUrl = pokemonData.sprites.front_default;
+        }
+        return `<img src="${imageUrl}" alt="Pokemon Image">`;
+      }
+
       function updateFilterText() {
         // 顯示當前篩選條件
         const filterText = activeFilters.join(', ');
@@ -129,6 +169,3 @@
       }
     });
   </script>
-</body>
-
-</html>

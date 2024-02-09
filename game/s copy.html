@@ -17,62 +17,67 @@
 </head>
 
 <body>
+  <div>
+    <button type="button" id="fire">fire</button>
+    <button type="button" id="grass">grass</button>
+   
+  </div>
   <div class="container">
     <table class="display" id="myTable">
       <thead>
         <tr>
           <th>ID</th>
-          <th>Image</th>
           <th>Name</th>
           <th>Height</th>
           <th>Weight</th>
+          <th>Types</th>
+
         </tr>
       </thead>
       <tbody>
 
       </tbody>
     </table>
+    <p style="color: aqua;"></p>
+   
   </div>
   <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
 
   <script>
-    $(document).ready(function () {
-      const tbody = $('tbody');
+   $(document).ready(function () {
+  const tbody = $('tbody');
 
-      for (let i = 1; i <= 3; i++) {
-        getPokemonInfo(i);
-      }
+  // 初始化 DataTable
+  const table = $('#myTable').DataTable();
 
-      // 使用 jQuery 的 AJAX 请求获取 Pokémon 信息的示例
-      function getPokemonInfo(pokemonId) {
-        $.ajax({
-          url: `https://pokeapi.co/api/v2/pokemon/${pokemonId}`,
-          method: 'GET',
-          success: function (pokemonData) {
-            console.log(pokemonData);
-            
-            let content = `<tr>
-                              <td>${pokemonData.id}</td>
-                              <td><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonData.id}.png" alt="${pokemonData.name}"></td>
-                              <td>${pokemonData.name}</td>
-                              <td>${pokemonData.height}</td>
-                              <td>${pokemonData.weight}</td>
-                            </tr>`;
-            tbody.append(content);
-            
-            // 在每次迴圈後初始化 DataTables
-            if (pokemonId === 3) {
-              $('#myTable').DataTable();
-            }
-          },
-          error: function (error) {
-            console.error('Error fetching Pokemon data:', error);
-          }
-        });
+  for (let i = 1; i <= 20; i++) {
+    getPokemonInfo(i);
+  }
+
+  function getPokemonInfo(pokemonId) {
+    $.ajax({
+      url: `https://pokeapi.co/api/v2/pokemon/${pokemonId}`,
+      method: 'GET',
+      success: function (pokemonData) {
+        let types = pokemonData.types.map(type => type.type.name).join(', ');
+
+        // 將資料插入 DataTable
+        table.row.add([
+          pokemonData.id,
+          pokemonData.name,
+          pokemonData.height,
+          pokemonData.weight,
+          types
+        ]).draw();
+      },
+      error: function (error) {
+        console.error('從 PokeAPI 取得寶可夢數據時發生錯誤：', error);
       }
     });
-  </script>
+  }
+});
 
+  </script>
 </body>
 
 </html>

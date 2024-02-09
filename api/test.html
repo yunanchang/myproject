@@ -1,34 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-  * {
-    border-radius: 8px;
-    margin: auto;
-    text-align: center;
-  }
-
-  img {
-    width: 70px;
-  }
-
-  #icon {
-    width: 30px;
-  }
-
-  .link:hover {
-    background-color: rgb(107, 107, 93);
-  }
-</style>
 
 <head>
   <title>PokeAPI Example</title>
   <meta charset="utf-8">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css">
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -41,32 +18,16 @@
     <button type="button" class="filter-button" data-type="normal">Normal</button>
     <button type="button" class="filter-button" data-type="fire">Fire</button>
     <button type="button" class="filter-button" data-type="water">Water</button>
-    <button type="button" class="filter-button" data-type="electric">Electric</button>
-    <button type="button" class="filter-button" data-type="grass">Grass</button>
-    <button type="button" class="filter-button" data-type="ice">Ice</button>
-    <button type="button" class="filter-button" data-type="fighting">Fighting</button>
-    <button type="button" class="filter-button" data-type="poison">Poison</button>
-    <button type="button" class="filter-button" data-type="ground">Ground</button>
-    <button type="button" class="filter-button" data-type="flying">Flying</button>
-    <button type="button" class="filter-button" data-type="psychic">Psychic</button>
-    <button type="button" class="filter-button" data-type="bug">Bug</button>
-    <button type="button" class="filter-button" data-type="rock">Rock</button>
-    <button type="button" class="filter-button" data-type="ghost">Ghost</button>
-    <button type="button" class="filter-button" data-type="dragon">Dragon</button>
-    <button type="button" class="filter-button" data-type="dark">Dark</button>
-    <button type="button" class="filter-button" data-type="steel">Steel</button>
-    <button type="button" class="filter-button" data-type="fairy">Fairy</button>
-    &nbsp&nbsp&nbsp&nbsp&nbsp
     <button type="button" id="resetFilters" class="btn btn-sm">Reset</button>
-    <h3 id="currentFilter"></h3>
+    <h4 id="currentFilter"></h4>
   </div>
-  <div class="container">
+
+  <div class="container mt-3">
     <div>
       <select name="imageType" id="imageType">
         <option value="front">Front View</option>
         <option value="back">Back View</option>
         <option value="official-artwork">Official Artwork</option>
-        <option value="Pokemon-home">Pokemon Home</option>
         <option value="showdown-front">Showdown Front</option>
         <option value="showdown-back">Showdown Back</option>
       </select>
@@ -76,76 +37,41 @@
         <tr>
           <th>ID</th>
           <th>Image</th>
-          <th>Shiny Image</th>
+          <th>Image</th>
           <th>Name</th>
-          <td>ability</td>
+          <th>Height</th>
+          <th>Weight</th>
           <th>Types</th>
-          <th>Height( m )</th>
-          <th>Weight( kg )</th>
-          <th>
-            <img src="../game/pokemon.png" alt="" id="icon">
-            Details
-          </th>
         </tr>
       </thead>
-      <tbody>
-
-      </tbody>
+      <tbody></tbody>
     </table>
+    <p style="color: aqua;"></p>
   </div>
+
   <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
 
   <script>
     $(document).ready(function () {
       const tbody = $('tbody');
-      let dataTableInitialized = false;
-      let fetchCounter = 0;
       const table = $('#myTable').DataTable();
       const currentFilter = $('#currentFilter');
       const activeFilters = [];
       const imageTypeSelect = $('#imageType');
 
-      for (let i = 1; i <= 30; i++) {
+      for (let i = 1; i <= 60; i++) {
         getPokemonInfo(i);
       }
 
-      // 綁定 select 元素的 change 事件
-      imageTypeSelect.change(function () {
-        // 重新載入數據，以便更新圖片類型
-        table.clear().draw();
-        for (let i = 1; i <= 30; i++) {
-          getPokemonInfo(i);
-        }
-      });
-
-      // 使用 jQuery 的 AJAX 请求获取 Pokémon 信息的示例
       function getPokemonInfo(pokemonId) {
         $.ajax({
           url: `https://pokeapi.co/api/v2/pokemon/${pokemonId}`,
           method: 'GET',
           success: function (pokemonData) {
+            console.log(pokemonData)
             let types = pokemonData.types.map(type => type.type.name).join(', ');
-            let ability = pokemonData['abilities'][0]['ability']['name'];
-            let formattedIndex = (pokemonData.id).toString().padStart(4, '0');
 
-            let img = `<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonData.id}.png" alt="${pokemonData.name}">`;
-
-            // 判斷kabi-pika---------------------------------------
-            let link = `<img src="../game/up-arrow.png" alt="" style="width: 30px">`;
-            if (pokemonData.id === 143) {
-              link = `<img src="../game/snorlax.png" alt="" style="width: 30px">`;
-            }
-            if (pokemonData.id === 25) {
-              link = `<img src="../game/pikachu.png" alt="" style="width: 30px">`;
-            }
-            if (pokemonData.id === 151) {
-              link = `<img src="../game/mew.png" alt="" style="width: 30px">`;
-            }
-
-            // 判斷kabi-pika  end---------------------------------------
-            let plink = `<a href="https://tw.portal-pokemon.com/play/pokedex/${formattedIndex}" target="_blank">
-                          <div class='link'>${link} </div>  </a>`
-
+            // 將選擇的圖片類型存儲在數據中
             pokemonData.imageType = imageTypeSelect.val();
 
             let images = getImageUrl(pokemonData);
@@ -156,16 +82,13 @@
               images.normal,  // 使用普通图像
               images.shiny,   // 使用闪光图像
               pokemonData.name,
-              ability,
-              types,
-              (pokemonData.height / 10),
-              (pokemonData.weight / 10),
-              plink
+              pokemonData.height,
+              pokemonData.weight,
+              types
             ]).draw();
-
           },
           error: function (error) {
-            console.error('Error fetching Pokemon data:', error);
+            console.error('從PokeAPI獲取寶可夢數據時發生錯誤：', error);
           }
         });
       }
@@ -186,7 +109,7 @@
 
         // 使用 DataTable 的 column().search 方法，只顯示完全符合指定類型的行
         const filterRegex = activeFilters.map(filter => `(?=.*\\b${filter}\\b)`).join('');
-        table.column(5).search(filterRegex, true, false).draw();
+        table.column(6).search(filterRegex, true, false).draw();
 
         // 顯示當前篩選條件
         updateFilterText();
@@ -202,11 +125,15 @@
         currentFilter.text('');
       });
 
-      function updateFilterText() {
-        // 顯示當前篩選條件
-        const filterText = activeFilters.join(', ');
-        currentFilter.text(`Current Filter: ${filterText}`);
-      }
+      // 綁定 select 元素的 change 事件
+      imageTypeSelect.change(function () {
+        // 重新載入數據，以便更新圖片類型
+        table.clear().draw();
+        for (let i = 1; i <= 60; i++) {
+          getPokemonInfo(i);
+        }
+      });
+
       function getImageUrl(pokemonData) {
         // 根據選擇的圖片類型獲取對應的圖片 URL
         let imageUrl = '';
@@ -223,10 +150,6 @@
           case 'official-artwork':
             imageUrl = pokemonData.sprites.other['official-artwork'].front_default;
             shinyImageUrl = pokemonData.sprites.other['official-artwork'].front_shiny;
-            break;
-          case 'Pokemon-home':
-            imageUrl = pokemonData.sprites.other['home'].front_default;
-            shinyImageUrl = pokemonData.sprites.other['home'].front_shiny;
             break;
           case 'showdown-front':
             imageUrl = pokemonData.sprites.other['showdown'].front_default;
@@ -246,9 +169,10 @@
         };
       }
 
-
+      function updateFilterText() {
+        // 顯示當前篩選條件
+        const filterText = activeFilters.join(', ');
+        currentFilter.text(`Current Filter: ${filterText}`);
+      }
     });
   </script>
-</body>
-
-</html>

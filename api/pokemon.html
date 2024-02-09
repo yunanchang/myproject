@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
+  *{border-radius: 8px;}
   img{width: 70px;}
+  #icon{width: 30px;}
+  .link:hover{background-color: whitesmoke;}
 </style>
 <head>
   <title>PokeAPI Example</title>
@@ -26,15 +29,17 @@
           <th>ID</th>
           <th>Image</th>
           <th>Name</th>
+          <td>ability</td>
           <th>Types</th>
           <th>Height( m )</th>
           <th>Weight( kg )</th>
-          <th>
+          <th >
+            <img src="../game/pokemon.png" alt="" id="icon">
             Details</th>
         </tr>
       </thead>
       <tbody>
-
+        
       </tbody>
     </table>
   </div>
@@ -46,7 +51,7 @@
       let dataTableInitialized = false;
       let fetchCounter = 0;
 
-      for (let i = 1; i <= 1010; i++) {
+      for (let i = 1; i <= 20; i++) {
         getPokemonInfo(i);
       }
 
@@ -56,31 +61,46 @@
           url: `https://pokeapi.co/api/v2/pokemon/${pokemonId}`,
           method: 'GET',
           success: function (pokemonData) {
-            console.log(pokemonData);
+          
             let types = pokemonData.types.map(type => type.type.name).join(', ');
+            let ability = pokemonData['abilities'][0]['ability']['name']
             let formattedIndex = (pokemonData.id).toString().padStart(4, '0');
             // 
-            let icon=`<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonData.id}.png" alt="${pokemonData.name}">`
-            // 特殊icon
+            // 
+            // 特殊icon--------------------------------------------------------
             let spriteUrl = pokemonData.sprites.other['official-artwork'].front_default;
+            // let icon=`<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonData.id}.png" alt="${pokemonData.name}">`
             let icon2=`<img  src="${spriteUrl}" alt="${pokemonData.name}" />`
-            // 特殊icon
-            
+               // 特殊icon--------------------------------------------------------
+
+            // 判斷kabi-pika---------------------------------------
+            // let link=`  <i class="fa-solid fa-square-up-right" style="font-size: 34px;"></i>`;
+            let link=`<img src="../game/up-arrow.png" alt=""  style="width: 30px">`;
+            if(pokemonData.id===143){
+              link=`<img src="../game/snorlax.png" alt=""  style="width: 30px">`;
+            }
+            if(pokemonData.id===25){
+              link=`<img src="../game/pikachu.png" alt=""  style="width: 30px">`;
+            }
+
+              // 判斷kabi-pika  end---------------------------------------
             let content = `<tr>
                               <td>${pokemonData.id}</td>
                               <td>${icon2}</td>
                               <td>${pokemonData.name}</td>
-                                <td>${types}</td>
+                              <td>${ability}</td>
+                              <td>${types}</td>
                               <td>${pokemonData.height/ 10}</td>
                               <td>${pokemonData.weight/ 10}</td>
-                              <td><a href="https://tw.portal-pokemon.com/play/pokedex/${formattedIndex}" target="_blank">link</a></td>
+                              <td class='link'><a href="https://tw.portal-pokemon.com/play/pokedex/${formattedIndex}" target="_blank">
+                              ${link}   </a></td>
               
                             </tr>`;
             tbody.append(content);
 
             fetchCounter++;
 
-            if (fetchCounter === 1010 && !dataTableInitialized) {
+            if (fetchCounter === 20 && !dataTableInitialized) {
               $('#myTable').DataTable();
               dataTableInitialized = true;
             }
