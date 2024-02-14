@@ -25,20 +25,19 @@
   <div class="container mt-3">
     <div>
       <select name="imageType" id="imageType">
-        
+        <option value="front">Front View</option>
+        <option value="back">Back View</option>
         <option value="official-artwork">Official Artwork</option>
-        <option value="front">Front Image</option>
-      
-        <option value="back">Back Image</option>
-    
-        </select>
+        <option value="showdown-front">Showdown Front</option>
+        <option value="showdown-back">Showdown Back</option>
+      </select>
     </div>
     <table class="display" id="myTable">
       <thead>
         <tr>
           <th>ID</th>
           <th>Image</th>
-     
+          <th>Image</th>
           <th>Name</th>
           <th>Height</th>
           <th>Weight</th>
@@ -47,7 +46,7 @@
       </thead>
       <tbody></tbody>
     </table>
- 
+  
   </div>
 
   <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
@@ -60,9 +59,16 @@
       const activeFilters = [];
       const imageTypeSelect = $('#imageType');
 
-      for (let i = 1; i <= 20; i++) {
+      for (let i = 1; i <= 60; i++) {
         getPokemonInfo(i);
       }
+      imageTypeSelect.change(function () {
+        // 重新載入數據，以便更新圖片類型
+        table.clear().draw();
+        for (let i = 1; i <= 60; i++) {
+          getPokemonInfo(i);
+        }
+      });
 
       function getPokemonInfo(pokemonId) {
         $.ajax({
@@ -75,12 +81,13 @@
             // 將選擇的圖片類型存儲在數據中
             pokemonData.imageType = imageTypeSelect.val();
 
-            let img = getImageUrl(pokemonData);
+            let images = getImageUrl(pokemonData);
 
             // 將數據插入 DataTable
             table.row.add([
               pokemonData.id,
-              img,
+              images.normal,  // 使用普通图像
+              images.shiny,   // 使用闪光图像
               pokemonData.name,
               pokemonData.height,
               pokemonData.weight,
@@ -109,7 +116,7 @@
 
         // 使用 DataTable 的 column().search 方法，只顯示完全符合指定類型的行
         const filterRegex = activeFilters.map(filter => `(?=.*\\b${filter}\\b)`).join('');
-        table.column(5).search(filterRegex, true, false).draw();
+        table.column(6).search(filterRegex, true, false).draw();
 
         // 顯示當前篩選條件
         updateFilterText();
@@ -126,40 +133,41 @@
       });
 
       // 綁定 select 元素的 change 事件
-      imageTypeSelect.change(function () {
-        // 重新載入數據，以便更新圖片類型
-        table.clear().draw();
-        for (let i = 1; i <= 20; i++) {
-          getPokemonInfo(i);
-        }
-      });
+      
 
       function getImageUrl(pokemonData) {
         // 根據選擇的圖片類型獲取對應的圖片 URL
         let imageUrl = '';
+        let shinyImageUrl = '';  // 新增這一行
         switch (pokemonData.imageType) {
           case 'front':
             imageUrl = pokemonData.sprites.front_default;
+            shinyImageUrl = pokemonData.sprites.front_shiny;
             break;
           case 'back':
             imageUrl = pokemonData.sprites.back_default;
-            break;
-          case 'front_shiny':
-            imageUrl = pokemonData.sprites.front_shiny;
-            break;
-          case 'back_shiny':
-            imageUrl = pokemonData.sprites.back_shiny;
+            shinyImageUrl = pokemonData.sprites.back_shiny;
             break;
           case 'official-artwork':
             imageUrl = pokemonData.sprites.other['official-artwork'].front_default;
-            break; // 新增的處理
-            case 'official-artwork-shiny':
-            imageUrl = pokemonData.sprites.other['official-artwork'].front_shiny;
-            break; // 新增的處理
+            shinyImageUrl = pokemonData.sprites.other['official-artwork'].front_shiny;
+            break;
+          case 'showdown-front':
+            imageUrl = pokemonData.sprites.other['showdown'].front_default;
+            shinyImageUrl = pokemonData.sprites.other['showdown'].front_shiny;
+            break;
+          case 'showdown-back':
+            imageUrl = pokemonData.sprites.other['showdown'].back_default;
+            shinyImageUrl = pokemonData.sprites.other['showdown'].back_shiny;
+            break;
           default:
-            imageUrl = pokemonData.sprites.front_default;
+            imageUrl = pokemonData.sprites.other['official-artwork'].front_default;
+            shinyImageUrl = pokemonData.sprites.other['official-artwork'].front_shiny;
         }
-        return `<img src="${imageUrl}" alt="Pokemon Image">`;
+        return {
+          normal: `<img src="${imageUrl}" alt="Pokemon Image">`,
+          shiny: `<img src="${shinyImageUrl}" alt="Shiny Pokemon Image">`
+        };
       }
 
       function updateFilterText() {

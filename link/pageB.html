@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div>
+    <input type="checkbox" id="switch" onclick="toggleAndRedirect()" />
+    <label id='ww'for="switch">bb</label>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
+<script>
+  function toggleAndRedirect() {
+    var checkbox = document.getElementById('switch');
+    
+    // Check if the checkbox is checked
+    if (checkbox.checked) {
+      // Set a timeout to wait for 1000 milliseconds (1 second)
+      setTimeout(function() {
+        // Redirect to pageB.html
+        window.location.href = "./pageA.html";
+      }, 800);
+    }
+  }
+</script>

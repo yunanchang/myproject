@@ -19,6 +19,17 @@
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="./css.css">
+  <style>
+    th {
+      text-align: center;
+
+    }
+
+    img {
+      height: 60px;
+    }
+  </style>
+
 </head>
 
 <body class="container">
@@ -59,21 +70,31 @@
   </div>
   <div>
     <div class="allselect">
-      <select name="imageType" id="imageType">
-        <option value="front">Front View</option>
-        <option value="back">Back View</option>
-        <option value="official-artwork">Official Artwork</option>
-        <option value="Pokemon-home">Pokemon Home</option>
-        <option value="showdown-front">Showdown Front</option>
-        <option value="showdown-back">Showdown Back</option>
-      </select>
-      <div class="text-end">
-        <a href="">dd</a>
-        <i class="fa-solid fa-toggle-off"></i>
-        <i class="fa-solid fa-toggle-on"></i>
-        
-        <a href="">dd</a>
+    <h5>dream-world</h5>
+      <!-- linkkk-------------------------------- -->
+   
+      <link rel="stylesheet" href="./styles_right.css">
+      <div class="d-flex  justify-content-end">
+        <p>basic &nbsp;&nbsp;</p>
+        <input type="checkbox" id="switch" onclick="toggleAndRedirect()" />
+        <label id='ww' for="switch">Toggle</label>
+        <p>&nbsp;&nbsp;Statistic</p>
       </div>
+      <script>
+        function toggleAndRedirect() {
+          var checkbox = document.getElementById('switch');
+
+          // Check if the checkbox is checked
+          if (checkbox.checked) {
+            // Set a timeout to wait for 1000 milliseconds (1 second)
+            setTimeout(function () {
+              // Redirect to pageB.html
+              window.location.href = "./pokemon_basic.html";
+            }, 500);
+          }
+        }
+      </script>
+      <!-- linkkk end ------------------------------- -->
     </div>
     <table class="display" id="myTable">
       <thead>
@@ -81,15 +102,14 @@
           <th>ID</th>
           <th>Name</th>
           <th>Image</th>
-          <th>Shiny Image</th>
-          <td>Ability</td>
-          <th>Types</th>
-          <th>Height( m )</th>
-          <th>Weight( kg )</th>
-          <th>
-            <img src="../game/pokemon.png" alt="" id="icon">
-            Details
-          </th>
+          <th style="width:13%;">Type</th>
+          <th>HP</th>
+          <th>Attack</th>
+          <th>Defense</th>
+          <th>Sp. Attack</th>
+          <th>Sp. Defense</th>
+          <th>Speed</th>
+          <th>Total</th>
         </tr>
       </thead>
       <tbody>
@@ -98,67 +118,15 @@
     </table>
   </div>
   <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
-
+  <script src="./script.js"></script>
   <script>
     $(document).ready(function () {
-      // Generations -----------------------------------------------------------------------------
-      // 獲取網址查詢字符串
-      var queryString = window.location.search;
-
-      // 解析查詢字符串
-      var urlParams = new URLSearchParams(queryString);
-
-      // 從查詢字符串中獲取 start 和 end 的值，如果沒有則使用預設值
-      var start = urlParams.get('start') || 1;
-      var end = urlParams.get('end') || 151;
-
-      // 監聽所有按鈕的點擊事件
-      $(".gen-button").click(function (event) {
-        event.preventDefault(); // 阻止按鈕的默認行為
-
-        // 獲取按鈕的文本（Generation 1、Generation 2等）
-        var buttonText = $(this).text();
-
-        // 定義每個世代的起始和結束數量
-        var generations = {
-          "Generation 1": { start: 1, end: 151 },
-          "Generation 2": { start: 152, end: 251 },
-          "Generation 3": { start: 252, end: 386 },
-          "Generation 4": { start: 387, end: 493 },
-          "Generation 5": { start: 494, end: 649 },
-          "Generation 6": { start: 650, end: 721 },
-          "Generation 7": { start: 722, end: 809 },
-          "Generation 8": { start: 810, end: 905 },
-          "Generation 9": { start: 906, end: 999 },
-          // Generation 9 到1025有bug暫時先改道999
-          "Generation All": { start: 1, end: 1025 },
-          // 添加其他世代的數據
-        };
-
-        // 根據按鈕文本獲取對應的數據
-        var data = generations[buttonText];
-
-        // 設置新的 start 和 end 的值
-        start = data.start;
-        end = data.end;
-
-        // 將數據轉換為查詢字符串
-        var queryString = $.param({ start: start, end: end });
-
-        // 使用 window.location.href 重新導向到相同頁面並附帶查詢字符串
-        window.location.href = window.location.href.split('?')[0] + "?" + queryString;
-
-        // 將結果顯示在 result 元素中
-
-      });
-
-      // Generations end-----------------------------------------------------------------------------
 
       const tbody = $('tbody');
       const table = $('#myTable').DataTable({
         "columnDefs": [
           {
-            "targets": 5, // "Types" 欄位的索引
+            "targets": 3, // "Types" 欄位的索引
             "createdCell": function (td, cellData, rowData, row, col) {
               // 解析多屬性
               const types = cellData.split(', ');
@@ -274,24 +242,26 @@
             }
 
             // 判斷kabi-pika  end---------------------------------------
-            let plink = `<a href="https://tw.portal-pokemon.com/play/pokedex/${formattedIndex}" target="_blank">
-                          <div class='link'>${link} </div>  </a>`
 
-            pokemonData.imageType = imageTypeSelect.val();
+            // Calculate Total Stat (for demonstration purposes)
+            const totalStat = pokemonData.stats.reduce((sum, stat) => sum + stat.base_stat, 0);
 
-            let images = getImageUrl(pokemonData);
+            // Build image URL
+            const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemonId}.svg`;
 
             // 將數據插入 DataTable
             table.row.add([
-              pokemonData.id,
+            pokemonData.id,
               pokemonData.name,
-              images.normal,  // 使用普通图像
-              images.shiny,   // 使用闪光图像
-              ability,
+              `<img src="${imageUrl}" alt="Pokemon Image">`,
               types,
-              (pokemonData.height / 10),
-              (pokemonData.weight / 10),
-              plink
+              pokemonData.stats[0].base_stat, // HP
+              pokemonData.stats[1].base_stat, // Attack
+              pokemonData.stats[2].base_stat, // Defense
+              pokemonData.stats[3].base_stat, // Sp. Attack
+              pokemonData.stats[4].base_stat, // Sp. Defense
+              pokemonData.stats[5].base_stat, // Speed
+              totalStat
             ]).draw();
 
           },
@@ -317,7 +287,7 @@
 
         // 使用 DataTable 的 column().search 方法，只顯示完全符合指定類型的行
         const filterRegex = activeFilters.map(filter => `(?=.*\\b${filter}\\b)`).join('');
-        table.column(5).search(filterRegex, true, false).draw();
+        table.column(3).search(filterRegex, true, false).draw();
 
         // 顯示當前篩選條件
         updateFilterText();
@@ -337,44 +307,6 @@
         // 顯示當前篩選條件
         const filterText = activeFilters.join(', ');
         currentFilter.text(`Current Filter: ${filterText}`);
-      }
-      function getImageUrl(pokemonData) {
-        // 根據選擇的圖片類型獲取對應的圖片 URL
-        let imageUrl = '';
-        let shinyImageUrl = '';  // 新增這一行
-        switch (pokemonData.imageType) {
-          case 'front':
-            imageUrl = pokemonData.sprites.front_default;
-            shinyImageUrl = pokemonData.sprites.front_shiny;
-            break;
-          case 'back':
-            imageUrl = pokemonData.sprites.back_default;
-            shinyImageUrl = pokemonData.sprites.back_shiny;
-            break;
-          case 'official-artwork':
-            imageUrl = pokemonData.sprites.other['official-artwork'].front_default;
-            shinyImageUrl = pokemonData.sprites.other['official-artwork'].front_shiny;
-            break;
-          case 'Pokemon-home':
-            imageUrl = pokemonData.sprites.other['home'].front_default;
-            shinyImageUrl = pokemonData.sprites.other['home'].front_shiny;
-            break;
-          case 'showdown-front':
-            imageUrl = pokemonData.sprites.other['showdown'].front_default;
-            shinyImageUrl = pokemonData.sprites.other['showdown'].front_shiny;
-            break;
-          case 'showdown-back':
-            imageUrl = pokemonData.sprites.other['showdown'].back_default;
-            shinyImageUrl = pokemonData.sprites.other['showdown'].back_shiny;
-            break;
-          default:
-            imageUrl = pokemonData.sprites.other['official-artwork'].front_default;
-            shinyImageUrl = pokemonData.sprites.other['official-artwork'].front_shiny;
-        }
-        return {
-          normal: `<img src="${imageUrl}" alt="Pokemon Image">`,
-          shiny: `<img src="${shinyImageUrl}" alt="Shiny Pokemon Image">`
-        };
       }
 
 

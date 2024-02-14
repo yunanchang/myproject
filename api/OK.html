@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-  *{border-radius: 8px;
-  margin: auto;
-text-align: center;}
 
-  #icon{width: 30px;}
-  
-  .link:hover{background-color: rgb(107, 107, 93);}
+
 </style>
+
 <head>
   <title>PokeAPI Example</title>
   <meta charset="utf-8">
@@ -22,11 +18,23 @@ text-align: center;}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link rel="stylesheet" href="./css.css">
-  </head>
+  <link rel="stylesheet" href="./css.css">
+</head>
 
-<body>
-  <div class="container allBtn">
+<body class="container">
+  <div class="Generations m-3">
+    <button type="button" class="gen-button " data-generation="1">Generation 1</button>
+    <button type="button" class="gen-button " data-generation="2">Generation 2</button>
+    <button type="button" class="gen-button " data-generation="3">Generation 3</button>
+    <button type="button" class="gen-button " data-generation="4">Generation 4</button>
+    <button type="button" class="gen-button " data-generation="5">Generation 5</button>
+    <button type="button" class="gen-button " data-generation="6">Generation 6</button>
+    <button type="button" class="gen-button " data-generation="7">Generation 7</button>
+    <button type="button" class="gen-button " data-generation="8">Generation 8</button>
+    <button type="button" class="gen-button " data-generation="9">Generation 9</button>
+    <button type="button" class="gen-button " data-generation="10">Generation All</button>
+  </div>
+  <div class="allBtn">
     <button type="button" class="filter-button" data-type="normal">Normal</button>
     <button type="button" class="filter-button" data-type="fire">Fire</button>
     <button type="button" class="filter-button" data-type="water">Water</button>
@@ -45,37 +53,39 @@ text-align: center;}
     <button type="button" class="filter-button" data-type="dark">Dark</button>
     <button type="button" class="filter-button" data-type="steel">Steel</button>
     <button type="button" class="filter-button" data-type="fairy">Fairy</button>
-    &nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <button type="button" id="resetFilters" class="btn btn-sm">Reset</button>
-    <div id="currentFilter"></div>
+    <h3 id="currentFilter"></h3>
   </div>
-  <div class="container">
-    <div>
+  <div class="allselect">
       <select name="imageType" id="imageType">
-        <option value="front">Front Image</option>
-        <option value="back">Back Image</option>
-        <option value="front_shiny">Shiny Front Image</option>
-        <option value="back_shiny">Shiny Back Image</option>
-        <option value="official-artwork">Official Artwork</option> <!-- Newly added option -->
-         </select>
-    </div>
+        <option value="front">Front View</option>
+        <option value="back">Back View</option>
+        <option value="official-artwork">Official Artwork</option>
+        <option value="Pokemon-home">Pokemon Home</option>
+        <option value="showdown-front">Showdown Front</option>
+        <option value="showdown-back">Showdown Back</option>
+      </select>
+  
     <table class="display" id="myTable">
       <thead>
         <tr>
           <th>ID</th>
-          <th>Image</th>
           <th>Name</th>
-          <td>ability</td>
+          <th>Image</th>
+          <th>Shiny Image</th>
+          <td>Ability</td>
           <th>Types</th>
           <th>Height( m )</th>
-          <th >Weight( kg )</th>
-          <th >
+          <th>Weight( kg )</th>
+          <th>
             <img src="../game/pokemon.png" alt="" id="icon">
-            Details</th>
+            Details
+          </th>
         </tr>
       </thead>
       <tbody>
-        
+
       </tbody>
     </table>
   </div>
@@ -83,16 +93,154 @@ text-align: center;}
 
   <script>
     $(document).ready(function () {
+      // Generations -----------------------------------------------------------------------------
+      // 獲取網址查詢字符串
+      var queryString = window.location.search;
+
+      // 解析查詢字符串
+      var urlParams = new URLSearchParams(queryString);
+
+      // 從查詢字符串中獲取 start 和 end 的值，如果沒有則使用預設值
+      var start = urlParams.get('start') || 1;
+      var end = urlParams.get('end') || 151;
+
+      // 監聽所有按鈕的點擊事件
+      $(".gen-button").click(function (event) {
+        event.preventDefault(); // 阻止按鈕的默認行為
+
+        // 獲取按鈕的文本（Generation 1、Generation 2等）
+        var buttonText = $(this).text();
+
+        // 定義每個世代的起始和結束數量
+        var generations = {
+          "Generation 1": { start: 1, end: 151 },
+          "Generation 2": { start: 152, end: 251 },
+          "Generation 3": { start: 252, end: 386 },
+          "Generation 4": { start: 387, end: 493 },
+          "Generation 5": { start: 494, end: 649 },
+          "Generation 6": { start: 650, end: 721 },
+          "Generation 7": { start: 722, end: 809 },
+          "Generation 8": { start: 810, end: 905 },
+          "Generation 9": { start: 906, end: 999 },
+          // Generation 9 到1025有bug暫時先改道999
+          "Generation All": { start: 1, end: 1025 },
+          // 添加其他世代的數據
+        };
+
+        // 根據按鈕文本獲取對應的數據
+        var data = generations[buttonText];
+
+        // 設置新的 start 和 end 的值
+        start = data.start;
+        end = data.end;
+
+        // 將數據轉換為查詢字符串
+        var queryString = $.param({ start: start, end: end });
+
+        // 使用 window.location.href 重新導向到相同頁面並附帶查詢字符串
+        window.location.href = window.location.href.split('?')[0] + "?" + queryString;
+
+        // 將結果顯示在 result 元素中
+
+      });
+
+      // Generations end-----------------------------------------------------------------------------
+
       const tbody = $('tbody');
-      let dataTableInitialized = false;
-      let fetchCounter = 0;
-      const table = $('#myTable').DataTable();
+      const table = $('#myTable').DataTable({
+        "columnDefs": [
+          {
+            "targets": 5, // "Types" 欄位的索引
+            "createdCell": function (td, cellData, rowData, row, col) {
+              // 解析多屬性
+              const types = cellData.split(', ');
+              
+              // 清空現有內容
+              $(td).empty();
+              // 為每個屬性設置文字顏色
+              types.forEach((type, index) => {
+                if (index > 0) {
+                  $(td).append(', '); // 在類型之間添加逗號
+                }
+                switch (type.toLowerCase()) {
+                  case 'normal':
+                    $(td).append(`<span style="color: #A8A878;">${type}</span>`); // Normal - 灰色
+                    break;
+                  case 'fire':
+                    $(td).append(`<span style="color: #F08030;">${type}</span>`); // Fire - 橙色
+                    break;
+                  case 'water':
+                    $(td).append(`<span style="color: #6890F0;">${type}</span>`); // Water - 藍色
+                    break;
+                  case 'electric':
+                    $(td).append(`<span style="color: #F8D030;">${type}</span>`); // Electric - 黃色
+                    break;
+                  case 'grass':
+                    $(td).append(`<span style="color: #78C850;">${type}</span>`); // Grass - 綠色
+                    break;
+                  case 'ice':
+                    $(td).append(`<span style="color: #98D8D8;">${type}</span>`); // Ice - 淺藍色
+                    break;
+                  case 'fighting':
+                    $(td).append(`<span style="color: #C03028;">${type}</span>`); // Fighting - 紅色
+                    break;
+                  case 'poison':
+                    $(td).append(`<span style="color: #A040A0;">${type}</span>`); // Poison - 紫色
+                    break;
+                  case 'ground':
+                    $(td).append(`<span style="color: #E0C068;">${type}</span>`); // Ground - 啡色
+                    break;
+                  case 'flying':
+                    $(td).append(`<span style="color: #A890F0;">${type}</span>`); // Flying - 淺藍色
+                    break;
+                  case 'psychic':
+                    $(td).append(`<span style="color: #F85888;">${type}</span>`); // Psychic - 粉紅色
+                    break;
+                  case 'bug':
+                    $(td).append(`<span style="color: #A8B820;">${type}</span>`); // Bug - 橄欖綠
+                    break;
+                  case 'rock':
+                    $(td).append(`<span style="color: #B8A038;">${type}</span>`); // Rock - 啡色
+                    break;
+                  case 'ghost':
+                    $(td).append(`<span style="color: #705898;">${type}</span>`); // Ghost - 紫色
+                    break;
+                  case 'dark':
+                    $(td).append(`<span style="color: #705848;">${type}</span>`); // Dark - 深灰色
+                    break;
+                  case 'dragon':
+                    $(td).append(`<span style="color: #7038F8;">${type}</span>`); // Dark - 深灰色
+                    break;
+                  case 'steel':
+                    $(td).append(`<span style="color: #B8B8D0;">${type}</span>`); // Steel - 銀色
+                    break;
+                  case 'fairy':
+                    $(td).append(`<span style="color: #EE99AC;">${type}</span>`); // Fairy - 淺粉紅色
+                    break;
+                  // 如果需要，可以添加更多類型的案例
+
+                }
+              });
+            }
+          }
+        ]
+      });
       const currentFilter = $('#currentFilter');
       const activeFilters = [];
+      const imageTypeSelect = $('#imageType');
 
-      for (let i = 1; i <= 20; i++) {
+      for (let i = start; i <= end; i++) {
         getPokemonInfo(i);
       }
+
+      imageTypeSelect.change(function () {
+        // 重新載入數據，以便更新圖片類型
+        table.clear().draw();
+        for (let i = start; i <= end; i++) {
+          getPokemonInfo(i);
+        }
+      });
+
 
       // 使用 jQuery 的 AJAX 请求获取 Pokémon 信息的示例
       function getPokemonInfo(pokemonId) {
@@ -100,60 +248,53 @@ text-align: center;}
           url: `https://pokeapi.co/api/v2/pokemon/${pokemonId}`,
           method: 'GET',
           success: function (pokemonData) {
-          
             let types = pokemonData.types.map(type => type.type.name).join(', ');
-            let ability = pokemonData['abilities'][0]['ability']['name']
+            let ability = pokemonData['abilities'][0]['ability']['name'];
             let formattedIndex = (pokemonData.id).toString().padStart(4, '0');
-            // 
-            // 
-            // 特殊icon--------------------------------------------------------
-            // let img=`<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonData.id}.png" alt="${pokemonData.name}">`
-            let spriteUrl = pokemonData.sprites.other['official-artwork'].front_default;
-            let img=`<img  src="${spriteUrl}" alt="${pokemonData.name}" />`
-              //  特殊icon--------------------------------------------------------
-              // 
-           
 
-              //  
+
             // 判斷kabi-pika---------------------------------------
-            // let link=`  <i class="fa-solid fa-square-up-right" style="font-size: 34px;"></i>`;
-            let link=`<img src="../game/up-arrow.png" alt=""  style="width: 30px">`;
-            if(pokemonData.id===143){
-              link=`<img src="../game/snorlax.png" alt=""  style="width: 30px">`;
+            let link = `<img src="../game/up-arrow.png" alt="" style="width: 30px">`;
+            if (pokemonData.id === 143) {
+              link = `<img src="../game/snorlax.png" alt="" style="width: 30px">`;
             }
-            if(pokemonData.id===25){
-              link=`<img src="../game/pikachu.png" alt=""  style="width: 30px">`;
+            if (pokemonData.id === 25) {
+              link = `<img src="../game/pikachu.png" alt="" style="width: 30px">`;
             }
-            if(pokemonData.id===151){
-              link=`<img src="../game/mew.png" alt=""  style="width: 30px">`;
+            if (pokemonData.id === 151) {
+              link = `<img src="../game/mew.png" alt="" style="width: 30px">`;
             }
-            
-            // 判斷kabi-pika  end---------------------------------------
-            let plink=`<a href="https://tw.portal-pokemon.com/play/pokedex/${formattedIndex}" target="_blank">
-                              <div class='link'>${link} </div>  </a>`
-         
-          
-           table.row.add([
-          pokemonData.id,
-          img,
-          pokemonData.name,
-          ability,
-          types,
-          (pokemonData.height/10),
-          (pokemonData.weight/10),
-          plink
-        ]).draw();
-          
 
-           
+            // 判斷kabi-pika  end---------------------------------------
+            let plink = `<a href="https://tw.portal-pokemon.com/play/pokedex/${formattedIndex}" target="_blank">
+                          <div class='link'>${link} </div>  </a>`
+
+            pokemonData.imageType = imageTypeSelect.val();
+
+            let images = getImageUrl(pokemonData);
+
+            // 將數據插入 DataTable
+            table.row.add([
+              pokemonData.id,
+              pokemonData.name,
+              images.normal,  // 使用普通图像
+              images.shiny,   // 使用闪光图像
+              ability,
+              types,
+              (pokemonData.height / 10),
+              (pokemonData.weight / 10),
+              plink
+            ]).draw();
+
           },
           error: function (error) {
             console.error('Error fetching Pokemon data:', error);
           }
         });
       }
-     // 綁定屬性按鈕的點擊事件
-     $('.filter-button').click(function () {
+
+      // 綁定屬性按鈕的點擊事件
+      $('.filter-button').click(function () {
         const type = $(this).data('type');
 
         // 判斷是否已經存在於篩選條件中
@@ -168,7 +309,7 @@ text-align: center;}
 
         // 使用 DataTable 的 column().search 方法，只顯示完全符合指定類型的行
         const filterRegex = activeFilters.map(filter => `(?=.*\\b${filter}\\b)`).join('');
-        table.column(4).search(filterRegex, true, false).draw();
+        table.column(5).search(filterRegex, true, false).draw();
 
         // 顯示當前篩選條件
         updateFilterText();
@@ -189,6 +330,46 @@ text-align: center;}
         const filterText = activeFilters.join(', ');
         currentFilter.text(`Current Filter: ${filterText}`);
       }
+      function getImageUrl(pokemonData) {
+        // 根據選擇的圖片類型獲取對應的圖片 URL
+        let imageUrl = '';
+        let shinyImageUrl = '';  // 新增這一行
+        switch (pokemonData.imageType) {
+          case 'front':
+            imageUrl = pokemonData.sprites.front_default;
+            shinyImageUrl = pokemonData.sprites.front_shiny;
+            break;
+          case 'back':
+            imageUrl = pokemonData.sprites.back_default;
+            shinyImageUrl = pokemonData.sprites.back_shiny;
+            break;
+          case 'official-artwork':
+            imageUrl = pokemonData.sprites.other['official-artwork'].front_default;
+            shinyImageUrl = pokemonData.sprites.other['official-artwork'].front_shiny;
+            break;
+          case 'Pokemon-home':
+            imageUrl = pokemonData.sprites.other['home'].front_default;
+            shinyImageUrl = pokemonData.sprites.other['home'].front_shiny;
+            break;
+          case 'showdown-front':
+            imageUrl = pokemonData.sprites.other['showdown'].front_default;
+            shinyImageUrl = pokemonData.sprites.other['showdown'].front_shiny;
+            break;
+          case 'showdown-back':
+            imageUrl = pokemonData.sprites.other['showdown'].back_default;
+            shinyImageUrl = pokemonData.sprites.other['showdown'].back_shiny;
+            break;
+          default:
+            imageUrl = pokemonData.sprites.other['official-artwork'].front_default;
+            shinyImageUrl = pokemonData.sprites.other['official-artwork'].front_shiny;
+        }
+        return {
+          normal: `<img src="${imageUrl}" alt="Pokemon Image">`,
+          shiny: `<img src="${shinyImageUrl}" alt="Shiny Pokemon Image">`
+        };
+      }
+
+
     });
   </script>
 </body>

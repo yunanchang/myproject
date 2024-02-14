@@ -2,10 +2,10 @@
 * {
   /* font-family: Impact; */
   border-radius: 8px;
-  margin: auto;
+  /* margin: auto; */
   text-align: center;
 }
-body{background-color: #e8eefc;}
+body{background-color: #e9eaee;}
 .allBtn {
   text-align: center;
   background-color: #6890F0;
