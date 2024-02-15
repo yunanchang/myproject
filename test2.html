@@ -1,161 +1,121 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>臺北市政府體育局場地租借系統線上場地一覽表</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <!-- rwd datatable-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap4.min.css">
+    
 
-    .box {
-      display: flex;
-      width: 550px;
-      height: 200px;
-      justify-content: space-around;
-      align-items: center;
-      border: 1px solid black;
-    }
 
-    .item {
-      width: 150px;
-      height: 150px;
-    }
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTJ0SHTR8T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    .my-container {
-      position: relative;
-      height: 90vh;
-      overflow: hidden;
-    }
+        gtag('config', 'G-LTJ0SHTR8T');
+    </script>
 
-    #myImg {
-      position: absolute;
-      right: 20px;
-      bottom: 0px;
-      width: 300px;
-      height: 200px;
-    }
 
-    .myImgAnimation {
-      position: absolute;
-      bottom: 700px;
-      animation-name: example;
-      animation-duration: 5s;
-      animation-fill-mode: forwards;
-    }
+    <style>
+        body {
+            background: url('./img/logo.png');
+            background-repeat: repeat;
+                       
+        }
+    </style>
 
-    .myImgAnimationInit {
-      position: absolute;
-      bottom: 700px;
-    }
-
-    @keyframes example {
-      0% {
-        bottom: 0px;
-      }
-
-      25% {
-        bottom: 10px;
-      }
-
-      75% {
-        bottom: 200px;
-      }
-     
-      100% {
-        bottom: 1400px;
-       
-      }
-    }
-  </style>
 </head>
 
 <body>
-  <div class="container-fluid mt-5 my-container">
-    <div class="mb-5">
-      <h1 class="text-center text-warning ">紅 綠 燈</h1>
+    <h1 style="text-align: center; margin: 20px auto 30px auto;">臺北市政府體育局場地租借系統線上場地一覽表</h1>
+    <div class="container" style="background-color: #eff3ce ; padding: 10px;">
+        <table id="table_id" class="table table-striped table-bordered dt-responsive" style="text-align: center;width:100%;">
+            <thead>
+                <tr>
+                    <th scope="col" >地區</th>
+                    <th scope="col" >名稱</th>
+                    <!-- <th scope="col" style="width:80px;">英文名稱</th> -->
+                    <th scope="col" >場地類型</th>
+                    <!-- <th scope="col">英文地址</th> -->
+                    <th scope="col" >開放時間</th>
+                    
+                    <th scope="col" >關閉時間</th>
+                    <th scope="col" >電話</th>
+                    <th scope="col" >地址</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
     </div>
-    <div class="row">
-      <div class="col">
-        <div class="box rounded-pill">
-          <div id="light1" class="item bg-danger rounded-circle"></div>
-          <div id="light2" class="item bg-danger rounded-circle"></div>
-          <div id="light3" class="item bg-danger rounded-circle"></div>
-        </div>
-      </div>
-      <div class="col">
-        <button type="button" id="myBtn" class="btn btn-primary btn-lg mt-5">行人過馬路按鈕</button>
-      </div>
+
+    <div class="contaier" style="text-align: center; margin: 30px;">
+        <span style="color: rgb(46, 122, 189);">資料來源:臺北市政府體育局</span>
     </div>
-    <div class="row">
-      <div class="col">
-        <!-- <img src="../picture/MAINMEWTWO_2000x.jpg" alt="紅綠燈" title="全國學生美術比賽漫畫類特優" id="myImg"> -->
-        <img src="./picture/p.png" alt="紅綠燈" title="全國學生美術比賽漫畫類特優" id="myImg">
-       
-    </div>
-    </div>
-  </div>
-
-  <script>
-    function initFun() {
-      myBtn.setAttribute('class', 'btn btn-primary btn-lg mt-5 d-block');
-      myImg.setAttribute('class', 'myImgAnimationInit');
-    }
-    initFun();
-    let light1 = document.getElementById('light1');
-    let light2 = document.getElementById('light2');
-    let light3 = document.getElementById('light3');
-    let myBtn = document.getElementById('myBtn');
-    let myImg = document.getElementById('myImg');
 
 
 
-    myBtn.addEventListener('click', function () {
-      myBtn.setAttribute('class', 'btn btn-primary btn-lg mt-5 d-none');
+   <!-- 載入 -->
+   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+   integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+   crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+   integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+   crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+   integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+   crossorigin="anonymous"></script>
 
-      setTimeout(function () {
-        light1.setAttribute('class', 'item bg-success rounded-circle');
-      }, 2500);
+<!-- datatable -->
+<script type="text/javascript" charset="utf8"
+   src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
+<!-- datatable rwd-->
+<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap4.min.js"></script>
+    <!-- END-->
+    <script src="./js/sports_tms.js"></script>
+    <script>
 
-      setTimeout(function () {
-        light2.setAttribute('class', 'item bg-success rounded-circle');
-      }, 3000);
+        $(document).ready(function () {
 
-      setTimeout(function () {
-        light3.setAttribute('class', 'item bg-success rounded-circle');
-        myImg.setAttribute('class', 'd-block myImgAnimation');
-      }, 3500);
 
-      setTimeout(function () {
-        light1.setAttribute('class', 'item bg-danger rounded-circle');
-        light2.setAttribute('class', 'item bg-danger rounded-circle');
-        light3.setAttribute('class', 'item bg-danger rounded-circle');
 
-        // 切換圖片
-        // myImg.setAttribute('src', "./picture/1.png"); // 請替換成新圖片的URL
-        myImg.setAttribute('class', 'd-block myImgAnimationInit');
+            $('#table_id').DataTable({
+                data: datatw,
+                columns: [
+                    { data: 'Area' },
+                    { data: 'Name' },
+                    // { data: 'NameEng' },
+                    { data: 'SportType' },
+                    // { data: 'AddressEng' },
+                    { data: 'OpenTime' },
+                    { data: 'CloseTime' },
+                    { data: 'TEL' },
+                    { data: 'Address' },
+                ]
+            });
 
-       
-      }, 8000);
-    });
+            $('#btn').on('click', function () {
+            });
 
-//     myImg.addEventListener('animationiteration', function () {
-//   // 使用 getComputedStyle 確保取得正確的屬性值
-//   let currentBottom = parseInt(getComputedStyle(myImg).bottom);
-//   if (currentBottom === 700) {
-//     // 如果当前的bottom值为700px，则切换图片
-//     myImg.setAttribute('src',  "./picture/1.png" ); // 請替換成新圖片的URL
-//   }
-// });
-  </script>
+
+        });
+
+
+    </script>
+
+
 </body>
 
 </html>
-

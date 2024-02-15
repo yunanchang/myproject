@@ -101,7 +101,10 @@
         table.column(4).search(type).draw();
 
         // 顯示當前篩選條件
-        currentFilter.text(`Current Filter: ${type}`);
+        const pageInfo = table.page.info();
+        // 显示当前筛选条件和记录数
+        currentFilter.text(`Current Filter: ${type}, Records: ${pageInfo.recordsDisplay}`);
+   
       });
     });
   </script>
