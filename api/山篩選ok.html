@@ -68,7 +68,7 @@
       const table = $('#myTable').DataTable();
       const currentFilter = $('#currentFilter');
 
-      for (let i = 1; i <= 20; i++) {
+      for (let i = 906; i <= 1025; i++) {
         getPokemonInfo(i);
       }
 
@@ -78,7 +78,7 @@
           method: 'GET',
           success: function (pokemonData) {
             let types = pokemonData.types.map(type => type.type.name).join(', ');
-
+            console.log(pokemonData)
             // 將資料插入 DataTable
             table.row.add([
               pokemonData.id,

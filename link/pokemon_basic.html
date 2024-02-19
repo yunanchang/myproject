@@ -307,12 +307,27 @@
       });
 
       function updateFilterText() {
-        // 顯示當前篩選條件
-        const filterText = activeFilters.join(', ');
-        const pageInfo = table.page.info();
-        currentFilter.text(`Current Filter: ${filterText}`);
-        result.text(`Records: ${pageInfo.recordsDisplay}`);
+        // 清空原有內容
+        currentFilter.empty();
+
+        // 根據篩選條件添加不同顏色的元素
+        activeFilters.forEach((filter, index) => {
+          const color = getColorForType(filter.toLowerCase());
+
+          // 如果不是第一個篩選條件，添加連接符號
+          if (index > 0) {
+            currentFilter.append('<span style="color: #000000;"> - </span>');
+          }
+
+          const filterElement = $(`<span class="filter-text" style="color: ${color};">${filter}</span>`);
+          currentFilter.append(filterElement);
+        });
+
+        // 添加 "Current Filter:" 文本
+        currentFilter.prepend('Current Filter: ');
+
       }
+
 
 
     });

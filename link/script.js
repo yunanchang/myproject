@@ -45,8 +45,8 @@
       var urlParams = new URLSearchParams(queryString);
 
       // 從查詢字符串中獲取 start 和 end 的值，如果沒有則使用預設值
-      var start = urlParams.get('start') || 1;
-      var end = urlParams.get('end') || 15;
+      var start = parseInt(urlParams.get('start')) || 1;
+      var end = parseInt(urlParams.get('end')) || 15;
 
       // 監聽所有按鈕的點擊事件
       $(".gen-button").click(function (event) {
@@ -65,7 +65,7 @@
           "Generation 6": { start: 650, end: 721 },
           "Generation 7": { start: 722, end: 809 },
           "Generation 8": { start: 810, end: 905 },
-          "Generation 9": { start: 906, end: 999 },
+          "Generation 9": { start: 906, end: 1025 },
           // Generation 9 到1025有bug暫時先改道999
           "Generation All": { start: 1, end: 1025 },
           // 添加其他世代的數據
@@ -89,3 +89,48 @@
       });
 
       // Generations end-----------------------------------------------------------------------------
+      function getColorForType(type) {
+        // 返回相應屬性的顏色
+        switch (type) {
+            case 'normal':
+                return '#A8A878'; // Normal - 灰色
+            case 'fire':
+                return '#F08030'; // Fire - 橙色
+            case 'water':
+                return '#6890F0'; // Water - 藍色
+            case 'electric':
+                return '#F8D030'; // Electric - 黃色
+            case 'grass':
+                return '#78C850'; // Grass - 綠色
+            case 'ice':
+                return '#98D8D8'; // Ice - 淺藍色
+            case 'fighting':
+                return '#C03028'; // Fighting - 紅色
+            case 'poison':
+                return '#A040A0'; // Poison - 紫色
+            case 'ground':
+                return '#E0C068'; // Ground - 啡色
+            case 'flying':
+                return '#A890F0'; // Flying - 淺藍色
+            case 'psychic':
+                return '#F85888'; // Psychic - 粉紅色
+            case 'bug':
+                return '#A8B820'; // Bug - 橄欖綠
+            case 'rock':
+                return '#B8A038'; // Rock - 啡色
+            case 'ghost':
+                return '#705898'; // Ghost - 紫色
+            case 'dark':
+                return '#705848'; // Dark - 深灰色
+            case 'dragon':
+                return '#7038F8'; // Dragon - 深紫色
+            case 'steel':
+                return '#B8B8D0'; // Steel - 銀色
+            case 'fairy':
+                return '#EE99AC'; // Fairy - 淺粉紅色
+            // 添加其他屬性的顏色
+            default:
+                return '#000000'; // 默認為黑色
+        }
+    }
+    
