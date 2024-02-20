@@ -12,7 +12,16 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="./css.css">
 </head>
+<style>
+  /* 為不同的篩選添加樣式 */
+  .fire-filter {
+    color: #ff4500; /* 火屬性的顏色 */
+  }
 
+  .water-filter {
+    color: #0000ff; /* 水屬性的顏色 */
+  }
+</style>
 <body>
   <div class="container allBtn">
     <button type="button" class="filter-button" data-type="normal">Normal</button>
@@ -145,22 +154,7 @@
             imageUrl = pokemonData.sprites.front_default;
             shinyImageUrl = pokemonData.sprites.front_shiny;
             break;
-          case 'back':
-            imageUrl = pokemonData.sprites.back_default;
-            shinyImageUrl = pokemonData.sprites.back_shiny;
-            break;
-          case 'official-artwork':
-            imageUrl = pokemonData.sprites.other['official-artwork'].front_default;
-            shinyImageUrl = pokemonData.sprites.other['official-artwork'].front_shiny;
-            break;
-          case 'showdown-front':
-            imageUrl = pokemonData.sprites.other['showdown'].front_default;
-            shinyImageUrl = pokemonData.sprites.other['showdown'].front_shiny;
-            break;
-          case 'showdown-back':
-            imageUrl = pokemonData.sprites.other['showdown'].back_default;
-            shinyImageUrl = pokemonData.sprites.other['showdown'].back_shiny;
-            break;
+        
           default:
             imageUrl = pokemonData.sprites.other['official-artwork'].front_default;
             shinyImageUrl = pokemonData.sprites.other['official-artwork'].front_shiny;
@@ -172,9 +166,28 @@
       }
 
       function updateFilterText() {
-        // 顯示當前篩選條件
-        const filterText = activeFilters.join('- ');
-        currentFilter.text(`Current Filter: ${filterText}`);
-      }
+      // 獲取篩選文本的容器元素
+      const currentFilterContainer = $('#currentFilter');
+
+      // 移除現有的類
+      currentFilterContainer.removeClass('fire-filter water-filter');
+
+      // 檢查活動篩選並應用相應的樣式
+      activeFilters.forEach(filter => {
+        switch (filter) {
+          case 'fire':
+            currentFilterContainer.addClass('fire-filter');
+            break;
+          case 'water':
+            currentFilterContainer.addClass('water-filter');
+            break;
+          // 如果需要，為其他篩選添加更多案例
+        }
+      });
+
+      // 顯示當前篩選文本
+      const filterText = activeFilters.join('- ');
+      currentFilterContainer.text(`Current Filter: ${filterText}`);
+    }
     });
   </script>

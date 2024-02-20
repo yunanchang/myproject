@@ -5,10 +5,12 @@
   /* margin: auto; */
   text-align: center;
 }
-body{background-color: #e9eaee;}
+body{background-color: #e6e8f3;
+
+}
 .allBtn {
   text-align: center;
-  background-color: #bec0c5;
+  background-color: #e2dddd;
 }
 
 .gen-button{border: solid rgb(214, 221, 111);}
