@@ -74,6 +74,7 @@ img{
 
 .portfolio:nth-child(1) {
 	left: 0%;
+	transform: rotate(2deg);
 }
 .portfolio:nth-child(1):hover {  
 	-webkit-transform: rotate(-2deg);
@@ -85,7 +86,8 @@ img{
 
 .portfolio:nth-child(2) {
 	left: 10%;
-    top:3%
+    top:3%;
+	transform: rotate(-1deg);
 }
 .portfolio:nth-child(2):hover {
 	-webkit-transform: rotate(-2deg);
@@ -96,7 +98,8 @@ img{
 
 .portfolio:nth-child(3) {  
 	left: 20%;
-    top:-3%
+    top:-3%;
+	transform: rotate(1deg);
 }
 .portfolio:nth-child(3):hover {  
 	-webkit-transform: rotate(-2deg);
@@ -107,7 +110,8 @@ img{
 
 .portfolio:nth-child(4) {  
 	left: 30%;
-    top:3%
+    top:3%;
+	transform: rotate(0.5deg);
 }
 .portfolio:nth-child(4):hover {  
 	-webkit-transform: rotate(-2deg);
@@ -118,7 +122,8 @@ img{
 
 .portfolio:nth-child(5) {  
 	left: 40%;
-    top:-2%
+    top:-2%;
+	transform: rotate(-2deg);
 }
 .portfolio:nth-child(5):hover {  
 	-webkit-transform: rotate(-2deg);

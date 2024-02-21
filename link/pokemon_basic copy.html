@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-
-
+  <style>
+    #popup-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        display: none;
+        z-index: 999;
+    }
+    body{background-image: url('../game/1587627056-853497a9ae655a57259cb4a831b9c488.jpg');}
 </style>
 
 <head>
@@ -24,6 +30,9 @@
 </head>
 
 <body class="container">
+  <div class="nav">
+    ff
+  </div>
   <div class="Generations m-3">
     <button type="button" class="gen-button " data-generation="1">Generation 1</button>
     <button type="button" class="gen-button " data-generation="2">Generation 2</button>
@@ -59,7 +68,7 @@
     <button type="button" id="resetFilters" class="btn btn-sm">Reset</button>
     <div class="d-flex justify-content-between">
       <h3 id="currentFilter"></h3>
-      <h3 class="text-end" id="result">Records</h3>
+      <h3 class="text-end" id="result"></h3>
     </div>
     
   </div>
@@ -307,16 +316,76 @@
       });
 
       function updateFilterText() {
-        // 顯示當前篩選條件
-        const filterText = activeFilters.join('-');
+        // 清空原有內容
+        currentFilter.empty();
+
+        // 根據篩選條件添加不同顏色的元素
+        activeFilters.forEach((filter, index) => {
+          const color = getColorForType(filter.toLowerCase());
+
+          // 如果不是第一個篩選條件，添加連接符號
+          if (index > 0) {
+            currentFilter.append('<span style="color: #000000;"> - </span>');
+          }
+
+          const filterElement = $(`<span class="filter-text" style="color: ${color};">${filter}</span>`);
+          currentFilter.append(filterElement);
+        });
+
+        // 添加 "Current Filter:" 文本
+        currentFilter.prepend('Current Filter: ');
         const pageInfo = table.page.info();
-        currentFilter.text(`Current Filter: ${filterText}`);
         result.text(`Records: ${pageInfo.recordsDisplay}`);
       }
 
 
+
     });
   </script>
+   <div id="popup-container">
+    <img id="popup-image" alt="沒照片我也沒辦法啦~" style="width: 60px;">
+</div>
+<script>
+    $(document).ready(function () {
+        var popupContainer = $('#popup-container');
+        var popupImage = $('#popup-image');
+
+        // 定義照片連結的數量
+        var numberOfImages = 1025;
+
+        // 設定顯示和更換時間
+        var displayTime = 6000; // 6秒
+        var changeTime = 3000; // 3秒
+
+        // 顯示圖片
+        function showPopup(imageUrl) {
+            popupImage.attr('src', imageUrl);
+            popupContainer.css('display', 'block');
+        }
+
+        // 隱藏圖片
+        function hidePopup() {
+            popupContainer.css('display', 'none');
+        }
+
+        // 更換圖片
+        function changeImage() {
+            const randomIndex = Math.floor(Math.random() * numberOfImages) + 1;
+            const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${randomIndex}.png`;
+
+            showPopup(imageUrl);
+
+            // 3秒後隱藏圖片
+            setTimeout(hidePopup, changeTime);
+        }
+
+        // 啟動定時器，6秒顯示一次
+        setInterval(changeImage, displayTime);
+
+        // 初始顯示第一張圖片
+        changeImage();
+    });
+</script>
 </body>
 
 </html>
