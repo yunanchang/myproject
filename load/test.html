@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    <link href="./css/style2.css" rel="stylesheet">
+  
+</head>
+<body>
+    <section class="openingCover">
+        <section class="welcome">
+          <img src="../game/gamer.gif"></section>
+        <section class="loadingBar">
+          <section class="loadingValue"></section>
+        </section>
+      </section>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.js'></script>
+      <!-- jQuery -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js'></script>
+      <!-- gsap.js -->
+      <script src="../gsap/gsap.js"></script>
+    <div>
+      hello
+    </div>
+</body>
+</html>
+
+
+<script>
+       // header cover: website opening animation
+       const loadingtl = gsap.timeline();
+
+loadingtl
+  .to(".loadingValue", 2.8, { width: "100%" })
+  .to(".loadingBar", 0, { display: 'none' })
+  .to(".welcome", 0, { display: 'none' })
+  .to(".openingCover", 0.5, { height: 0 })
+
+</script>

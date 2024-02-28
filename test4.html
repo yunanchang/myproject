@@ -16,7 +16,7 @@
       display: none;
       z-index: 999;
       animation: slideIn 0.5s ease-out;
-     }
+    }
 
     @keyframes slideIn {
       from {
@@ -28,8 +28,7 @@
     }
 
     #popup-image {
-      transform: rotate(20deg) scale(1.1); /* 旋轉和放大效果 */
-      transition: transform 0.5s ease-in-out; /* 平滑過渡效果 */
+      transform: rotate(18deg) !important;
     }
   </style>
 </head>
@@ -54,8 +53,6 @@
       function showPopup(imageUrl) {
         popupImage.attr('src', imageUrl);
         popupContainer.css('display', 'block');
-        // 彈跳效果
-        popupContainer.animate({ bottom: '10px' }, 300).animate({ bottom: '0' }, 200);
       }
 
       // 隱藏圖片

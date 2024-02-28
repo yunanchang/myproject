@@ -22,8 +22,8 @@
 
  
 </head>
-
-<body class="container">
+<body>
+<div class="container">
   <div class="Generations m-3">
     <button type="button" class="gen-button " data-generation="1">Generation 1</button>
     <button type="button" class="gen-button " data-generation="2">Generation 2</button>
@@ -333,6 +333,52 @@
 
     });
   </script>
+</div>
+
+<div id="popup-container">
+  <img id="popup-image" alt="沒照片我也沒辦法啦~" style="width: 100px;">
+</div>
+<script>
+  $(document).ready(function () {
+    var popupContainer = $('#popup-container');
+    var popupImage = $('#popup-image');
+
+    // 定義照片連結的數量
+    var numberOfImages = 1025;
+
+    // 設定顯示和更換時間
+    var displayTime = 9000; // 6秒
+    var changeTime = 3000; // 3秒
+
+    // 顯示圖片
+    function showPopup(imageUrl) {
+      popupImage.attr('src', imageUrl);
+      popupContainer.css('display', 'block');
+    }
+
+    // 隱藏圖片
+    function hidePopup() {
+      popupContainer.css('display', 'none');
+    }
+
+    // 更換圖片
+    function changeImage() {
+      const randomIndex = Math.floor(Math.random() * numberOfImages) + 1;
+      const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${randomIndex}.png`;
+
+      showPopup(imageUrl);
+
+      // 3秒後隱藏圖片
+      setTimeout(hidePopup, changeTime);
+    }
+
+    // 啟動定時器，6秒顯示一次
+    setInterval(changeImage, displayTime);
+
+    // 初始顯示第一張圖片
+    // changeImage();
+  });
+</script>
 </body>
 
 </html>
