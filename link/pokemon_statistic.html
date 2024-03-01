@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Cute+Font">
+  <style>
+* {
 
+}
 
-</style>
+  </style>
 
 <head>
   <title>PokeAPI Example</title>
@@ -25,9 +28,7 @@
 
     }
 
-    img {
-      height: 60px;
-    }
+  
   </style>
 
 </head>
@@ -75,7 +76,10 @@
     <div class="allselect">
       <h5>Dream-world</h5>
       <!-- linkkk-------------------------------- -->
-
+  <!-- background -->
+  <label for="backgroundSelector">background</label>
+  <select id="backgroundSelector"></select>
+   <!-- background -->
       <link rel="stylesheet" href="./styles_right.css">
       <div class="d-flex  justify-content-end">
         <p>basic &nbsp;&nbsp;</p>
@@ -98,6 +102,7 @@
         }
       </script>
       <!-- linkkk end ------------------------------- -->
+      
     </div>
     <table class="display" id="myTable">
       <thead>
@@ -377,6 +382,28 @@
 
     // 初始顯示第一張圖片
     // changeImage();
+
+
+    for (var i = 1; i <= 250; i++) {
+        $('#backgroundSelector').append('<option value="./pokemonbackground/' + i + '.jpg">pokemon' + i + '</option>');
+      }
+
+   
+      $('#backgroundSelector').val('./pokemonbackground/132.jpg');
+
+    
+      updateBackground();
+
+    
+      $('#backgroundSelector').change(function () {
+        updateBackground();
+      });
+
+     
+      function updateBackground() {
+        var selectedValue = $('#backgroundSelector').val();
+        $('body').css('background-image', 'url(' + selectedValue + ')');
+      }
   });
 </script>
 </body>

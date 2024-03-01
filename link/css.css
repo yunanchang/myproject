@@ -4,6 +4,7 @@
   border-radius: 8px;
   /* margin: auto; */
   text-align: center;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 .allBtn {
@@ -176,7 +177,8 @@ img{width: 70px;
 
 
 body {
-background-image: url('../game/132.jpg');
+/* background-image: url('./pokemonbackground/132.jpg'); */
+/* background-image: url('../game/132.jpg'); */
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;

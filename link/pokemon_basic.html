@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-
-
+body{background-image: url(./pokemonbackground/1.jpg);}
 </style>
 
 <head>
@@ -74,6 +73,10 @@
         <option value="showdown-back">Showdown Back</option>
       </select>
       <!-- linkkk-------------------------------- -->
+      <!-- background -->
+      <label for="backgroundSelector">background</label>
+      <select id="backgroundSelector"></select>
+       <!-- background -->
       <link rel="stylesheet" href="./styles_left.css">
       <div class="d-flex  justify-content-end">
         <p>basic &nbsp;&nbsp;</p>
@@ -104,7 +107,7 @@
           <th>Name</th>
           <th>Image</th>
           <th>Shiny Image</th>
-          <td>Ability</td>
+          <th>Ability</th>
           <th>Types</th>
           <th>Height( m )</th>
           <th>Weight( kg )</th>
@@ -377,6 +380,27 @@
 
     // 初始顯示第一張圖片
     // changeImage();
+
+    for (var i = 1; i <= 250; i++) {
+        $('#backgroundSelector').append('<option value="./pokemonbackground/' + i + '.jpg">pokemon' + i + '</option>');
+      }
+
+   
+      $('#backgroundSelector').val('./pokemonbackground/132.jpg');
+
+    
+      updateBackground();
+
+    
+      $('#backgroundSelector').change(function () {
+        updateBackground();
+      });
+
+     
+      function updateBackground() {
+        var selectedValue = $('#backgroundSelector').val();
+        $('body').css('background-image', 'url(' + selectedValue + ')');
+      }
   });
 </script>
 </body>

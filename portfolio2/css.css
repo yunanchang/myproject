@@ -21,7 +21,9 @@ body{
 	font-size:12pt;
 	background:#444;
 	color:#352e2a;
-	background: url('http://www.claudiogomboli.com/lab/gallery/imgs/background.jpg');
+	background: url('./img/jessica-pamp-sGRMspZmfPE-unsplash.jpg');
+	
+	/* background-color: #9c8787; */
     background-size: cover;
     background-position: center center;
 }
@@ -73,19 +75,19 @@ img{
 
 
 .portfolio:nth-child(1) {
-	left: 0%;
+	left: -10%;
 	transform: rotate(2deg);
 }
 .portfolio:nth-child(1):hover {  
 	-webkit-transform: rotate(-2deg);
     -moz-transform: rotate(-2deg);
     transform: rotate(-2deg);
-	left: -25%;
+	left: -35%;
 }
 
 
 .portfolio:nth-child(2) {
-	left: 10%;
+	left: 5%;
     top:3%;
 	transform: rotate(-1deg);
 }
@@ -93,7 +95,7 @@ img{
 	-webkit-transform: rotate(-2deg);
     -moz-transform: rotate(-2deg);
     transform: rotate(-2deg);
-	left: -15%;
+	left: -25%;
 }
 
 .portfolio:nth-child(3) {  
@@ -105,11 +107,11 @@ img{
 	-webkit-transform: rotate(-2deg);
     -moz-transform: rotate(-2deg);
     transform: rotate(-2deg);
-	left: -5%;
+	left: -15%;
 }
 
 .portfolio:nth-child(4) {  
-	left: 30%;
+	left: 35%;
     top:3%;
 	transform: rotate(0.5deg);
 }
@@ -117,11 +119,11 @@ img{
 	-webkit-transform: rotate(-2deg);
     -moz-transform: rotate(-2deg);
     transform: rotate(-2deg);
-	left: 5%;
+	left: -5%;
 }
 
 .portfolio:nth-child(5) {  
-	left: 40%;
+	left: 50%;
     top:-2%;
 	transform: rotate(-2deg);
 }
@@ -129,7 +131,7 @@ img{
 	-webkit-transform: rotate(-2deg);
     -moz-transform: rotate(-2deg);
     transform: rotate(-2deg);
-	left: 15%;
+	left: 5%;
 }
 
 .opened {  
