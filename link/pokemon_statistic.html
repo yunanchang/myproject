@@ -96,7 +96,8 @@
             // Set a timeout to wait for 1000 milliseconds (1 second)
             setTimeout(function () {
               // Redirect to pageB.html
-              window.location.href = "./pokemon_basic.html";
+            
+              window.location.href = "./pokemon_basic.html?start=" + start + "&end=" + end;
             }, 500);
           }
         }
