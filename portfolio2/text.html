@@ -1,300 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>TaiShan Cafe</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- bs.css/style.css -->
-  <link href="./css/bs.css" rel="stylesheet">
-  <link href="./css/style.css" rel="stylesheet">
-  <!-- font-awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-  <!-- google-font -->
-  <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	
 </head>
-
 <body>
-  <!-- opening animation start-->
-  <section class="openingCover">
-    <section class="welcome"><img src="../game/01.svg"></section>
-    <section class="loadingBar">
-      <section class="loadingValue"></section>
-    </section>
-  </section>
-  <!-- opening animation end -->
-  <dotlottie-player src="https://lottie.host/021bd8a2-017f-4785-97f0-8427adca4e23/Kh3tdWk93g.json"
-    background="transparent" speed="1" style="width: 1000px; height: 1000px;" loop autoplay></dotlottie-player>
-
-  <div class="container-fluid">
-    <h1><img src="./img/resturant.png" style="width: 130px;height: 120px;"><img src="./img/Vanilla-0.7s-240px.svg"
-        style="height: 100px;" class="mt-2"></h1>
-    <div class="row mt-3 text-center">
-      <div class="col-5"></div>
-      <div class="col text-start">
-        <img src="./img/Vanilla-0.7s-125px_Drinks.svg">
-        <button type="button" class="myBtn btn btn-primary jello-horizontal" data-name="咖啡" data-price="100"
-          data-img="coffee">
-          <!-- <img src="./coffee-1.1s-120px.png" alt=""> -->
-          咖啡
-        </button>
-        <button type="button" class="myBtn btn btn-primary jello-horizontal" data-name="花茶" data-price="200"
-          data-img="tea">
-          花茶
-        </button>
-        <button type="button" class="myBtn btn btn-primary jello-horizontal" data-name="礦泉水" data-price="50"
-          data-img="water">
-          礦泉水
-        </button>
-      </div>
-      <div class="col"></div>
-    </div>
-    <div class="row mt-3 text-center">
-      <div class="col-5"></div>
-      <div class="col text-start">
-        <img src="./img/Vanilla-0.7s-125px_Foods.svg" style="scale: 1.1;">
-        <button type="button" class="myBtn btn btn-success jello-vertical" data-name="手工餅乾" data-price="120"
-          data-img="cookies" data-id="1">
-          手工餅乾
-        </button>
-        <button type="button" class="myBtn btn btn-success jello-vertical" data-name="吐司" data-price="65"
-          data-img="toast">
-          吐司
-        </button>
-        <button type="button" class="myBtn btn btn-success jello-vertical" data-name="馬卡龍" data-price="50"
-          data-img="macaron">
-          馬卡龍
-        </button>
-      </div>
-      <div class="col"></div>
-    </div>
-  </div>
-  <br>
-  <div class="container-fluid">
-    <table class="table table-hover align-middle text-center">
-      <thead>
-        <tr>
-          <th width="15%" style="font-size: x-large">品項</th>
-          <th width="30%" style="font-size: x-large">描述</th>
-          <th width="20%" style="font-size: x-large" class="text-start">操作</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- <tr>
-        <td>
-          <img class="rounded-circle" src="./coffee-1.1s-120px.png" alt="">
-        </td>
-        <td class="text-start">
-          咖啡
-          <br>
-          單價 <span>100</span>元
-          <div class="mb-3">
-            <label for="" class="form-label">數量</label>
-            <input type="number" class="form-control" id="" max="20" min="1" value="1">
-          </div>
-          <hr>
-          小計 : <span>100</span>
-        </td>
-        <td class="text-start">
-          <button type="button" class="cloneBtn btn btn-warning">Clone</button>
-          <button type="button" class="delBtn btn btn-danger">Del</button>
-        </td>
-      </tr> -->
-      </tbody>
-    </table>
-  </div>
-
-  <div class="container-fluid mt-3">
-    <div class="row">
-      <div class="col">
-        <div class="text-center">
-          <img src="./img/Vanilla-0.7s-130px_Total=.svg" class="mb-4"><span id="mySum" class="display-4">0</span> 元
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- 滑鼠 -->
-  <div id="myCursor">
-    <i class="fa-solid fa-computer-mouse fa-beat-fade fa-2xl" style="color: #000000;width: 150px;height: 50px;"></i>
-  </div>
-
-  <!-- bootstrap.js -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.js'></script>
-  <!-- jQuery -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js'></script>
-  <!-- gsap.js -->
-  <script src="../GASP/gsap/gsap.js"></script>
-  <script src="../GASP/gsap/ScrollToPlugin.js"></script>
-  <script src="../GASP/gsap/TextPlugin.js"></script>
-  <!-- <script src="./css/ScrollTrigger.js"></script>
-  <script src="./css/TextPlugin.js"></script> -->
-  <!-- lottie.js -->
-  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-
-  <script>
-
-    // header cover: website opening animation
-    const loadingtl = gsap.timeline();
-
-    loadingtl
-      .to(".loadingValue", 2.8, { width: "100%" })
-      .to(".loadingBar", 0, { display: 'none' })
-      .to(".welcome", 0, { display: 'none' })
-      .to(".openingCover", 0.5, { height: 0 })
-
-
-    $(document).ready(function () {
-      function sumFun() {
-        console.log('sumBtn ok');
-        let myTotal = $('.myTotal');
-        let getMyTotalCount = myTotal.length;
-        console.log('myTotal', myTotal);
-        let sum = 0;
-        myTotal.each(function (index, value) {
-          console.log('index', index);
-          console.log('value', value);
-          sum = sum + Number($(value).text());
-        });
-        console.log('final sum', sum);
-        mySum.text(sum);
-      }
-
-
-      function delFun(nowThis) {
-        console.log('del ok');
-        let nowTr = $(nowThis).parent().parent();
-        nowTr.remove();
-        sumFun();
-
-
-        // 抓tr數量
-        // 如果tr <=2 不能刪除
-
-        // 抓tr數量
-        // let getTrCount = $('tr').length;
-        // console.log('getTrCount', getTrCount);
-        // 如果tr <= 2 不能刪除
-        // if (getTrCount > 2) {
-        //   let nowTr = $(nowThis).parent().parent();
-        //   nowTr.remove();
-        // }
-      }
-
-      function cloneFun(nowThis) {
-        console.log('clone ok');
-        let nowTr = $(nowThis).parent().parent();
-        // nowTr.clone(true).appendTo("tbody");
-        nowTr.clone(true).insertAfter(nowTr);
-        sumFun();
-      }
-
-      const myBtn = $('.myBtn');
-      const mySum = $('#mySum');
-      const sumBtn = $('#sumBtn');
-      let delBtn = $('.delBtn');
-      let cloneBtn = $('.cloneBtn');
-
-
-      //sumBtn click
-      sumBtn.click(function (e) {
-        sumFun();
-      });
-
-      // init cloneBtn
-      cloneBtn.click(function (e) {
-        cloneFun(this);
-      });
-
-      // init delBtn
-      delBtn.click(function (e) {
-        delFun(this);
-      });
-
-      myBtn.click(function (e) {
-        let name = $(this).attr('data-name');
-        let price = $(this).attr('data-price');
-        let imgUrl = $(this).attr('data-img');
-
-
-        let content = `
-        <tr>
-          <td>
-            <img class="rounded-circle" src="./img/${imgUrl}-1.1s-120px.png" alt="">
-            </td>
-            <td class="text-start">
-              <b>${name}</b>
-              <br>
-              單價 <span>${price}</span>元
-              <div class="mb-3">
-                <label for="" class="form-label">數量</label>
-                <input type="number" class="quantity form-control" id="" max="20" min="1" value="1">
-                </div>
-                小計 : <span class="myTotal">${price}</span>
-                </td>
-                <td class="text-start">
-                  <button type="button" class="cloneBtn btn btn-warning jello-vertical">增加</button>
-                  <button type="button" class="delBtn btn btn-danger jello-vertical">刪除</button>
-                  </td>
-                  </tr>
-                  `;
-
-        $('tbody').append(content);
-
-        addDelBtn = $('.delBtn').last();
-        addCloneBtn = $('.cloneBtn').last();
-        addQuantity = $('.quantity').last();
-
-        sumFun();
-
-        // addDelBtn
-        addDelBtn.click(function (e) {
-          delFun(this);
-        });
-
-        // addCloneBtn
-        addCloneBtn.click(function (e) {
-          cloneFun(this);
-        });
-
-        // addQuantity
-        addQuantity.change(function (e) {
-          let getQuantity = Number($(this).val());
-          let closestQuantityTr = $(this).parent().parent().parent();
-          let findTotal = closestQuantityTr.find('.myTotal');
-          console.log('closestQuantityTr', closestQuantityTr);
-          console.log('getQuantity', getQuantity);
-          let total = getQuantity * price;
-          console.log('total', total);
-          findTotal.text(total);
-
-          sumFun();
-        });
-
-      });
-    });
-
-    // 追蹤滑鼠
-    let cursor = document.getElementById("myCursor");
-    let buttons = document.querySelectorAll(".myBtn");  // 取得文件中class=".mySpan" 的所有元素
-
-    window.addEventListener("mousemove", function (e) {
-      // 根據滑鼠位置更新鼠標位置 減去 myCursor 的一半讓中心點為鼠標觸發點
-      cursor.style.left = e.pageX + "px";
-      cursor.style.top = e.pageY + "px";
-    })
-
-    buttons.forEach(button => {
-      button.addEventListener("mouseenter", function () {
-        cursor.style.display = "none"
-      });
-
-      button.addEventListener("mouseleave", function () {
-        cursor.style.display = "initial"
-      });
-    })
-
-
-  </script>
+	<div id="all">
+		<div id="allcontent">
+			<div id="maincontent">
+				  <div class="portfolio">
+					  <img src="./img/date.png" alt="Portfolio img"><br>
+					  <span class="txt">eCommerce . iOS Icon.</span>
+					  <div class="ombra"></div>
+				  </div>
+				  <div class="portfolio">
+					  <img src="./img/pokemon.png" alt="Portfolio img"><br>
+					  <span class="txt">Speaker . iOS Icon.</span>
+					  <div class="ombra"></div>
+				  </div>
+				  <div class="portfolio">
+					  <img src="./img/shop.png" alt="Portfolio img"><br>
+					  <span class="txt">Poster . Laperquisa Cinema . <a href="http://cargocollective.com/gomboli/Laperquisa-Cinema-Screening-Posters" target="_blank" title="see more">see more</a>.</span>
+					  <div class="ombra"></div>
+				  </div>
+				  <div class="portfolio">
+					  <img src="http://www.claudiogomboli.com/lab/gallery/imgs/web01.jpg" alt="Portfolio img"><br>
+					  <span class="txt">Alfa Romeo <a href="http://www.alfaromeo.com/carconfigurator/IT/159/index.html" target="_blank" title="Alfa Romeo">Car Configurator</a> . <a href="http://wedoo.it" target="_blank" title="WEDOO">@Wedoo</a>.</span>
+					  <div class="ombra"></div>
+				  </div>
+				  <div class="portfolio">
+					  <img src="http://www.claudiogomboli.com/lab/gallery/imgs/illu01.jpg" alt="Portfolio img"><br>
+					 <a href="../ss.html">
+						<span class="txt">Mac Book Air . Keynote Illustration
+							<span style="font-size: 28px;"><i class="fa-solid fa-square-arrow-up-right" style="color: #63E6BE;"></i></ >
+						</span>
+					 </a>
+					  <div class="ombra"></div>
+				  </div>
+			  </div>
+			  <div id="navi"></div>
+			  <div class="footer"><a href="http://theeggs.biz" alt="home">c.gomboli</a> / <a href="http://lab.theeggs.biz" alt="lab">lab</a></div>
+		  </div>
+	  </div>
+	<script>
+		
+		$('.portfolio').each(function(index)
+		{
+			$(this).attr('id', 'img' + (index + 1));
+		});
+			
+		$('.portfolio').each(function(){
+		  $('#navi').append('<div class="circle"></div>');
+		});
+		  
+		$('.circle').each(function(index)
+		{
+			$(this).attr('id', 'circle' + (index + 1));
+		});   
+		   
+		$('.portfolio').click(function(){
+		if($(this).hasClass('opened')){
+			$(this).removeClass('opened');
+			$(".portfolio").fadeIn("fast");
+			$(this).find('.ombra').fadeOut();
+			$("#navi div").removeClass("activenav");
+		}
+		else{
+			var indexi = $("#maincontent .portfolio").index(this) + 1;
+			$(this).addClass('opened'); 
+			$(".portfolio").not(this).fadeOut("fast");
+			$(this).find('.ombra').fadeIn();
+			$("#circle" + indexi).addClass('activenav'); 
+		}
+		});	
+		
+		//navi buttons
+		$("#navi div").click(function() {
+		if($(this).hasClass("activenav")){
+			return false;
+		}
+				
+			$("#navi div").removeClass("activenav");
+			$(".portfolio").removeClass('opened');
+			$(".portfolio").show();
+				$('.ombra').hide();
+				
+			var index = $("#navi div").index(this) + 1;
+			$("#img" + index).addClass('opened'); 
+			$(".portfolio").not("#img" + index).fadeOut("fast");
+			$("#img" + index).find('.ombra').fadeIn();
+				
+			$(this).addClass("activenav");
+		});</script>
 </body>
-
 </html>
