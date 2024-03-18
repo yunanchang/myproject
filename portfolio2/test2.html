@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap One-Page Website</title>
+  <link rel="stylesheet" href="./css2.css">
+  <!-- 引入 Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* 自訂 CSS 樣式 */
+    body {
+      padding-top: 56px; /* 固定導覽欄高度 */
+    }
+    .main-section {
+      height: 100vh; /* 使主要區塊充滿整個屏幕高度 */
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .footer2 {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- 導覽欄 -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Your Brand</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 主要區塊 -->
+  <div id="home" class="main-section">
+    <div class="container text-center">
+      <h1>Welcome to Your Website</h1>
+      <p>This is a simple one-page website built with Bootstrap.</p>
+    </div>
+  </div>
+
+  <!-- 其他區塊 -->
+  <div id="about" class="container py-5">
+    <h2>About Us</h2>
+    <p>This is the about section of your website.</p>
+  </div>
+  <div id="services" class="container py-5">
+    <h2>Our Services</h2>
+    <p>Here you can describe the services you offer.</p>
+  </div>
+  <div id="contact" class="container py-5">
+    <h2>Contact Us</h2>
+    <p>Feel free to contact us for any inquiries.</p>
+  </div>
+
+  <!-- 頁腳 -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2023 Your Website</p>
+    </div>
+  </footer>
+<!-- -------------------------------------------- -->
+<div class="pro">
+
+    <div id="all" class="body">
+    </div>
+    <div id="allcontent">
+        <div id="maincontent">
+            <div class="portfolio">
+                <img src="./img/date.png" alt="Portfolio img"><br>
+                <span class="txt" style="font-size: 22px;">萬年曆-php</span>
+                <div class="ombra"></div>
+            </div>
+            <div class="portfolio">
+                <img src="./img/pokemon.png" alt="Portfolio img"><br>
+                <span class="txt">pokeapi</span>
+                <div class="ombra"></div>
+            </div>
+            <div class="portfolio">
+                <img src="./img/shop.png" alt="Portfolio img"><br>
+                <span class="txt">Poster . Laperquisa Cinema . <a
+                        href="http://cargocollective.com/gomboli/Laperquisa-Cinema-Screening-Posters"
+                        target="_blank" title="see more">see more</a>.</span>
+                <div class="ombra"></div>
+            </div>
+            <div class="portfolio">
+                <img src="http://www.claudiogomboli.com/lab/gallery/imgs/web01.jpg" alt="Portfolio img"><br>
+                <span class="txt">Alfa Romeo <a href="http://www.alfaromeo.com/carconfigurator/IT/159/index.html"
+                        target="_blank" title="Alfa Romeo">Car Configurator</a> . <a href="http://wedoo.it"
+                        target="_blank" title="WEDOO">@Wedoo</a>.</span>
+                <div class="ombra"></div>
+            </div>
+            <div class="portfolio">
+                <img src="http://www.claudiogomboli.com/lab/gallery/imgs/illu01.jpg" alt="Portfolio img"><br>
+                <a href="../ss.html">
+                    <span class="txt">Mac Book Air . Keynote Illustration
+                        <span style="font-size: 28px;"><i class="fa-solid fa-square-arrow-up-right"
+                                style="color: #63E6BE;"></i></>
+                        </span>
+                </a>
+                <div class="ombra"></div>
+            </div>
+        </div>
+        <div id="navi"></div>
+        <div class="footer"><a href="http://theeggs.biz" alt="home">c.gomboli</a> / <a href="http://lab.theeggs.biz"
+                alt="lab">lab</a></div>
+    </div>
+</div>
+<script>
+
+    $('.portfolio').each(function (index) {
+        $(this).attr('id', 'img' + (index + 1));
+    });
+
+    $('.portfolio').each(function () {
+        $('#navi').append('<div class="circle"></div>');
+    });
+
+    $('.circle').each(function (index) {
+        $(this).attr('id', 'circle' + (index + 1));
+    });
+
+    $('.portfolio').click(function () {
+        if ($(this).hasClass('opened')) {
+            $(this).removeClass('opened');
+            $(".portfolio").fadeIn("fast");
+            $(this).find('.ombra').fadeOut();
+            $("#navi div").removeClass("activenav");
+        }
+        else {
+            var indexi = $("#maincontent .portfolio").index(this) + 1;
+            $(this).addClass('opened');
+            $(".portfolio").not(this).fadeOut("fast");
+            $(this).find('.ombra').fadeIn();
+            $("#circle" + indexi).addClass('activenav');
+        }
+    });
+
+    //navi buttons
+    $("#navi div").click(function () {
+        if ($(this).hasClass("activenav")) {
+            return false;
+        }
+
+        $("#navi div").removeClass("activenav");
+        $(".portfolio").removeClass('opened');
+        $(".portfolio").show();
+        $('.ombra').hide();
+
+        var index = $("#navi div").index(this) + 1;
+        $("#img" + index).addClass('opened');
+        $(".portfolio").not("#img" + index).fadeOut("fast");
+        $("#img" + index).find('.ombra').fadeIn();
+
+        $(this).addClass("activenav");
+    });</script>
+  <!-- 引入 Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
