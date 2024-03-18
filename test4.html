@@ -1,83 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="script.js" defer></script>
-  <title>Popup Example</title>
+  <title>One-Page Website</title>
   <style>
-    #popup-container {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      display: none;
-      z-index: 999;
-      animation: slideIn 0.5s ease-out;
+    /* CSS 樣式表 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
-
-    @keyframes slideIn {
-      from {
-        transform: translateX(-100%) translateY(100%);
-      }
-      to {
-        transform: translateX(0) translateY(0);
-      }
+    section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
     }
-
-    #popup-image {
-      transform: rotate(18deg) !important;
+    .section-content {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+    }
+    .section-content h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .section-content p {
+      font-size: 1.2em;
     }
   </style>
 </head>
-
 <body>
-  <div id="popup-container">
-    <img id="popup-image" alt="沒照片我也沒辦法啦~" style="width: 100px;">
-  </div>
-  <script>
-    $(document).ready(function () {
-      var popupContainer = $('#popup-container');
-      var popupImage = $('#popup-image');
+  <!-- 第一部分 -->
+  <section id="home">
+    <div class="section-content">
+      <h1>Welcome to My Website</h1>
+      <p>This is a simple one-page website example.</p>
+    </div>
+  </section>
 
-      // 定義照片連結的數量
-      var numberOfImages = 1025;
+  <!-- 第二部分 -->
+  <section id="about">
+    <div class="section-content">
+      <h1>About Me</h1>
+      <p>I'm a web developer passionate about creating awesome websites.</p>
+    </div>
+  </section>
 
-      // 設定顯示和更換時間
-      var displayTime = 6000; // 6秒
-      var changeTime = 3000; // 3秒
+  <!-- 第三部分 -->
+  <section id="portfolio">
+    <div class="section-content">
+      <h1>My Portfolio</h1>
+      <p>Check out some of my latest projects.</p>
+    </div>
+  </section>
 
-      // 顯示圖片
-      function showPopup(imageUrl) {
-        popupImage.attr('src', imageUrl);
-        popupContainer.css('display', 'block');
-      }
-
-      // 隱藏圖片
-      function hidePopup() {
-        popupContainer.css('display', 'none');
-      }
-
-      // 更換圖片
-      function changeImage() {
-        const randomIndex = Math.floor(Math.random() * numberOfImages) + 1;
-        const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${randomIndex}.png`;
-
-        showPopup(imageUrl);
-
-        // 3秒後隱藏圖片
-        setTimeout(hidePopup, changeTime);
-      }
-
-      // 啟動定時器，6秒顯示一次
-      setInterval(changeImage, displayTime);
-
-      // 初始顯示第一張圖片
-      changeImage();
-    });
-  </script>
+  <!-- 第四部分 -->
+  <section id="contact">
+    <div class="section-content">
+      <h1>Contact Me</h1>
+      <p>Feel free to get in touch!</p>
+    </div>
+  </section>
 </body>
-
 </html>
